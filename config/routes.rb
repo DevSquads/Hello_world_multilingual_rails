@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     get 'app/index'
   end
 
-  post 'app/', to: 'app#create'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  post '/app', to: 'app#create'
+
   root 'app#index'
 end
