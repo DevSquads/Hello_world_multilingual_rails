@@ -2,96 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="576492f6-f6be-42fa-9805-78e1301a55b4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.generators" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.rakeTasks" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/multilingual.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.rspec" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.ruby-version" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Rakefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/config/manifest.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/.keep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/javascripts/app.coffee" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/javascripts/cable.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/javascripts/channels/.keep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/app.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/channels/application_cable/channel.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/channels/application_cable/connection.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/app_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/application_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/concerns/.keep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/helpers/app_helper.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/helpers/application_helper.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/jobs/application_job.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/mailers/application_mailer.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/application_record.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/concerns/.keep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/app/index.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/layouts/mailer.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/layouts/mailer.text.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/bundle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/rails" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/rake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/setup" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/spring" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/update" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/yarn" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config.ru" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/application.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/boot.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/cable.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/credentials.yml.enc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/database.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/environment.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/environments/development.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/environments/production.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/environments/test.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/initializers/application_controller_renderer.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/initializers/assets.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/initializers/backtrace_silencers.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/initializers/content_security_policy.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/initializers/cookies_serializer.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/initializers/filter_parameter_logging.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/initializers/inflections.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/initializers/mime_types.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/initializers/wrap_parameters.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/locales/ar.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/locales/en.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/puma.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/spring.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/storage.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/seeds.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/assets/.keep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/tasks/.keep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/log/.keep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/404.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/422.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/500.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/apple-touch-icon-precomposed.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/apple-touch-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/robots.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spec/controllers/app_controller_spec.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spec/helpers/app_helper_spec.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spec/rails_helper.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spec/spec_helper.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spec/views/app/index.html.erb_spec.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/.keep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tmp/.keep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/.keep" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -134,6 +45,7 @@
           <entry key="coffee" value="1" />
           <entry key="erb" value="8" />
           <entry key="lock" value="1" />
+          <entry key="md" value="1" />
           <entry key="rb" value="35" />
           <entry key="yml" value="26" />
         </counts>
@@ -141,6 +53,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CoffeeScript" value="1" />
+          <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="RHTML" value="8" />
           <entry key="Ruby" value="40" />
@@ -151,12 +64,16 @@
         <counts>
           <entry key="Gemfile" value="32" />
           <entry key="erb" value="250" />
+          <entry key="md" value="34" />
           <entry key="rb" value="3729" />
+          <entry key="txt" value="44" />
           <entry key="yml" value="105" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
+          <entry key="Markdown" value="34" />
+          <entry key="PLAIN_TEXT" value="44" />
           <entry key="RHTML" value="250" />
           <entry key="Ruby" value="3761" />
           <entry key="YAML" value="105" />
@@ -187,11 +104,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/app_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="9" lean-forward="true" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+            <state relative-caret-position="210">
+              <caret line="14" column="39" lean-forward="true" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="30">
+                <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -240,6 +169,7 @@
         <option value="$PROJECT_DIR$/spec/controllers/app_controller_spec.rb" />
         <option value="$PROJECT_DIR$/app/views/app/index.html.erb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -619,8 +549,16 @@
       <option name="presentableId" value="Default" />
       <updated>1537867762753</updated>
       <workItem from="1537867764959" duration="16546000" />
-      <workItem from="1537958007616" duration="6139000" />
+      <workItem from="1537958007616" duration="6374000" />
     </task>
+    <task id="LOCAL-00001" summary="[WIP]form to add language">
+      <created>1537965255073</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1537965255073</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -656,12 +594,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22685000" />
+    <option name="totallyTimeSpent" value="22920000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2532189" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2532189" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -673,8 +612,8 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.3293124" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.3293124" />
+      <window_info anchor="bottom" id="Version Control" order="9" visible="true" weight="0.3293124" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3293124" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.3293124" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -714,6 +653,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="[WIP]form to add language" />
+    <option name="LAST_COMMIT_MESSAGE" value="[WIP]form to add language" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/app.coffee">
@@ -859,8 +802,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/app_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="9" lean-forward="true" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+        <state relative-caret-position="210">
+          <caret line="14" column="39" lean-forward="true" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="30">
+            <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

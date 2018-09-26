@@ -1,24 +1,14 @@
-# README
+# Hello Wold Multi-lingual 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project aims to practise multilingual setup for rails web app
 
-Things you may want to cover:
+## To start you need to 
+* install ruby first.
+* install rails `gem install rails`
 
-* Ruby version
 
-* System dependencies
+* run the app
+`rails s`
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## To run the tests 
+`rspec`
