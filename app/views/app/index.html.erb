@@ -1,0 +1,14 @@
+<h1><%= t "our.hello" %></h1>
+<button>Add Language</button>
+
+<form id="addLanguageForm" action="/app/create">
+  <div>
+    <p class="dictKey" text="hello">hell</p>
+    <input/>
+  </div>
+
+  <% @dictKeys.each do |key| %>
+      <p class="dictKey" text="hello"><%= key %></p>
+      <input/>
+  <% end %>
+</form>
