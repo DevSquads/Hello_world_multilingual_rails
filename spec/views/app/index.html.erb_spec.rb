@@ -14,7 +14,7 @@ RSpec.describe "app/index.html.erb", type: :view do
 
     render
     expect(rendered).to have_css("form#addLanguageForm")
-    expect(rendered).to have_css("input[name=\"#{expected_key}\"]")
+    expect(rendered).to have_css("input[name=\"strings.#{expected_key}\"]")
 
     expect(rendered).to have_xpath("//p[contains(text(),\"#{expected_key}\")]")
   end

@@ -16,14 +16,29 @@ RSpec.describe AppController, type: :controller do
       hello_string = 'bonjour'
       file_path = Rails.root.join('config/locales', "#{language_name}.yml")
 
-      post :create, params: {language_name: language_name, strings: {hello: hello_string}}
+      post :create, params: {language_name: language_name, 'strings.hello': hello_string}
 
       expect(File.exists?(file_path))
 
       file_data = File.read(file_path)
       expect(file_data).to eql("fr:\n  our:\n    hello: \"bonjour\"")
     ensure
-      File.delete(file_path)
+      File.delete(file_path) if File.exist? file_path
+    end
+
+    it 'POST#create should create a new yml file with newlines between different string' do
+      language_name = 'fr'
+      hello_string = 'bonjour'
+      file_path = Rails.root.join('config/locales', "#{language_name}.yml")
+
+      post :create, params: {language_name: language_name, 'strings.hello': hello_string, 'strings.secondString': 'second'}
+
+      expect(File.exists?(file_path))
+
+      file_data = File.read(file_path)
+      expect(file_data).to eql("fr:\n  our:\n    hello: \"bonjour\"\n    secondString: \"second\"")
+    ensure
+      File.delete(file_path) if File.exist? file_path
     end
   end
 

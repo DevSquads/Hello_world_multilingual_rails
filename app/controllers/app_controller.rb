@@ -8,7 +8,15 @@ class AppController < ApplicationController
 
   def create
     yml_file_path = Rails.root.join('config/locales', "#{params[:language_name]}.yml")
-    dict_hash = params[:strings]
+    dict_hash = {}
+
+    params.each do |param_key, value|
+      if param_key.include? 'strings.'
+        dict_key_name = param_key.sub 'strings.', ''
+        dict_hash[dict_key_name] = value
+      end
+    end
+
     create_language_yml(dict_hash, yml_file_path)
   end
 
@@ -33,12 +41,18 @@ class AppController < ApplicationController
       yml_file.write("#{params[:language_name]}:\n")
       yml_file.write("  our:\n")
 
+      line_number = 0
       dict_hash.each do |key, value|
-        current_line = "    "
-        current_line += "#{key}: \"#{value}\""
+        if not line_number == 0
+          current_line = "\n"
+        else
+          current_line = ''
+        end
+
+        current_line += "    #{key}: \"#{value}\""
         yml_file.write(current_line)
+        line_number += 1
       end
     end
   end
-
 end
