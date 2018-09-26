@@ -1,14 +1,13 @@
 <h1><%= t "our.hello" %></h1>
-<button>Add Language</button>
 
-<form id="addLanguageForm" action="/app/create">
+<form id="addLanguageForm" action="/app" method="post">
   <div>
-    <p class="dictKey" text="hello">hell</p>
-    <input/>
+    <p id="language_label">Language</p>
+    <input name="language_name" id="language_name"/>
   </div>
-
-  <% @dictKeys.each do |key| %>
-      <p class="dictKey" text="hello"><%= key %></p>
-      <input/>
-  <% end %>
+    <% @dictKeys.each do |key| %>
+      <p class="dictKey"><%= key %>:</p>
+      <input name="<%= key %>">
+    <% end %>
+    <input type="submit" value="Submit" id="add_language"/>
 </form>
