@@ -28,6 +28,7 @@ gem 'capybara'
 gem 'rails-controller-testing'
 gem 'rspec-rails'
 gem 'selenium-webdriver'
+gem 'rspec_junit_formatter'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
