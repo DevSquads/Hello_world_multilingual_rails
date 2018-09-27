@@ -3,7 +3,7 @@
 <form id="addLanguageForm" action="/app" method="post">
   <div>
     <p id="language_label">Language</p>
-    <input name="language_name" id="language_name"/>
+    <input name="language_name" id="language_name" required="true"/>
   </div>
     <% @dictKeys.each do |key| %>
       <p class="dictKey"><%= key %>:</p>

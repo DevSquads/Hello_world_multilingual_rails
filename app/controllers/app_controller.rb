@@ -7,6 +7,8 @@ class AppController < ApplicationController
   end
 
   def create
+    params.require(:language_name)
+
     yml_file_path = Rails.root.join('config/locales', "#{params[:language_name]}.yml")
     dict_hash = {}
 
@@ -18,6 +20,10 @@ class AppController < ApplicationController
     end
 
     create_language_yml(dict_hash, yml_file_path)
+
+    render status: :ok if File.exist? yml_file_path
+  rescue ActionController::ParameterMissing
+    render status: :bad_request
   end
 
   def self.language_dict_to_array(lang)
@@ -37,17 +43,17 @@ class AppController < ApplicationController
   private
 
   def create_language_yml(dict_hash, yml_file_path)
-    File.open(yml_file_path, "w+") do |yml_file|
+    File.open(yml_file_path, 'w+') do |yml_file|
       yml_file.write("#{params[:language_name]}:\n")
       yml_file.write("  our:\n")
 
       line_number = 0
       dict_hash.each do |key, value|
-        if not line_number == 0
-          current_line = "\n"
-        else
-          current_line = ''
-        end
+        current_line = if line_number != 0
+                         "\n"
+                       else
+                         ''
+                       end
 
         current_line += "    #{key}: \"#{value}\""
         yml_file.write(current_line)

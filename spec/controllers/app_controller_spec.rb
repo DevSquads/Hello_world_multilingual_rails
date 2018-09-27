@@ -22,6 +22,7 @@ RSpec.describe AppController, type: :controller do
 
       file_data = File.read(file_path)
       expect(file_data).to eql("fr:\n  our:\n    hello: \"bonjour\"")
+      expect(response.status).to eql(200)
     ensure
       File.delete(file_path) if File.exist? file_path
     end
@@ -37,8 +38,15 @@ RSpec.describe AppController, type: :controller do
 
       file_data = File.read(file_path)
       expect(file_data).to eql("fr:\n  our:\n    hello: \"bonjour\"\n    secondString: \"second\"")
+      expect(response.status).to eql(200)
     ensure
       File.delete(file_path) if File.exist? file_path
+    end
+
+    it 'POST#create requires language name field' do
+      post :create, params: {'strings.hello': 'hello_string', 'strings.secondString': 'second'}
+
+      expect(response.status).to eql(400)
     end
   end
 

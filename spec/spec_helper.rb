@@ -45,6 +45,22 @@ RSpec.configure do |config|
   # triggering implicit auto-inclusion in groups with matching metadata.
   config.shared_context_metadata_behavior = :apply_to_host_groups
 
+  config.include Capybara::DSL
+
+  Capybara.register_driver :chrome do |app|
+    Capybara::Selenium::Driver.new(app, browser: :chrome)
+  end
+
+  Capybara.javascript_driver = :chrome
+  Capybara.server_port = 3000
+  Capybara.ignore_hidden_elements = false
+  Capybara.default_max_wait_time = 10
+
+  Capybara.configure do |config|
+    config.default_driver = :chrome
+  end
+
+
 # The settings below are suggested to provide a good initial experience
 # with RSpec, but feel free to customize to your heart's content.
 =begin
