@@ -8,9 +8,10 @@ pipeline {
             }
         stage('Test') {
             steps {
-            sh '/usr/local/rvm/gems/ruby-2.5.1/bin/rspec --format RspecJunitFormatter  --out spec/reports/result.xml'
-
-            junit 'spec/reports/*.xml'
+                nodejs('node') {
+                    sh '/usr/local/rvm/gems/ruby-2.5.1/bin/rspec --format RspecJunitFormatter  --out spec/reports/result.xml'
+                }
+                junit 'spec/reports/*.xml'
             }
         }
     }
