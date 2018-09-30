@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "app/index.html.erb", type: :view do
+RSpec.describe "language/index.html.erb", type: :view do
   it 'should contain form with input field to language' do
     assign(:dictKeys, [])
     render
@@ -30,7 +30,7 @@ RSpec.describe "app/index.html.erb", type: :view do
     assign(:dictKeys, [expected_key])
 
     render
-    expect(rendered).to have_css('form[action="/app"]')
+    expect(rendered).to have_css('form[action="/language"]')
     expect(rendered).to have_css('form[method="post"]')
   end
 end

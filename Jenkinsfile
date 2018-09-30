@@ -14,7 +14,6 @@ pipeline {
                 }
                 junit 'spec/reports/*.xml'
             }
-
         }
     }
 }

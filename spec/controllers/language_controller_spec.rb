@@ -2,10 +2,10 @@
 
 require 'rails_helper'
 
-RSpec.describe AppController, type: :controller do
+RSpec.describe LanguageController, type: :controller do
   render_views
 
-  describe 'AppController Actions' do
+  describe 'LanguageController Actions' do
     it 'Get#index returns http success' do
       get :index
       expect(response).to have_http_status(:success)
@@ -54,7 +54,7 @@ RSpec.describe AppController, type: :controller do
     it 'should extract dictionary to a flat array of key value pairs' do
       I18n.backend.send(:init_translations) unless I18n.backend.initialized?
 
-      result = AppController.language_dict_to_array(:en)
+      result = LanguageController.language_dict_to_array(:en)
 
       expect(result).to include('hello')
     end

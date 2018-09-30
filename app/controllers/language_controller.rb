@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-class AppController < ApplicationController
+class LanguageController < ApplicationController
   def index
-    @dictKeys = AppController.language_dict_to_array(:en)
+    @dictKeys = LanguageController.language_dict_to_array(:en)
     render :index
   end
 

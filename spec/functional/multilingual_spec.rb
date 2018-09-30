@@ -31,7 +31,7 @@ feature 'User adds a language', js: true do
 
     click_button 'add_language'
 
-    expect(current_path).to eql('/app')
+    expect(current_path).to eql('/language')
 
     file_path = Rails.root.join('config/locales', 'fr.yml')
 

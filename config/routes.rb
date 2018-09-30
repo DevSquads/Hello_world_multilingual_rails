@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   scope "(:locale)", locale: /en|ar/ do
-    get 'app/index'
+    get 'language/index'
   end
 
-  post '/app', to: 'app#create'
+  post '/language', to: 'language#create'
 
-  root 'app#index'
+  root 'language#index'
 end
