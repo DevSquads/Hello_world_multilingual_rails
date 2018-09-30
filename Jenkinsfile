@@ -9,8 +9,11 @@ pipeline {
             }
         stage('Test') {
             steps {
+            nodejs('node'){
                     sh 'rspec '
             }
+            }
+
         }
     }
 }
