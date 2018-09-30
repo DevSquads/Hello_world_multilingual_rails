@@ -46,20 +46,29 @@ RSpec.configure do |config|
   config.shared_context_metadata_behavior = :apply_to_host_groups
 
   config.include Capybara::DSL
-
+  require "selenium/webdriver"
   Capybara.register_driver :chrome do |app|
     Capybara::Selenium::Driver.new(app, browser: :chrome)
   end
 
-  Capybara.javascript_driver = :chrome
+  Capybara.register_driver :headless_chrome do |app|
+    capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
+      chromeOptions: { args: %w(headless  window-size=1280,1024) }
+    )
+
+    Capybara::Selenium::Driver.new app,
+                                   browser: :chrome,
+                                   desired_capabilities: capabilities
+  end
+
+  Capybara.javascript_driver = :headless_chrome
   Capybara.server_port = 3000
   Capybara.ignore_hidden_elements = false
   Capybara.default_max_wait_time = 10
 
   Capybara.configure do |config|
-    config.default_driver = :chrome
+    config.default_driver = :headless_chrome
   end
-
 
 # The settings below are suggested to provide a good initial experience
 # with RSpec, but feel free to customize to your heart's content.
@@ -111,4 +120,3 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
 end
-
