@@ -159,8 +159,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/spec/controllers/language_controller_spec.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+            <state relative-caret-position="93">
+              <caret line="49" column="27" selection-start-line="49" selection-end-line="50" />
             </state>
           </provider>
         </entry>
@@ -604,7 +604,7 @@
       <workItem from="1537958007616" duration="20542000" />
       <workItem from="1538041733462" duration="7654000" />
       <workItem from="1538063173456" duration="189000" />
-      <workItem from="1538063366601" duration="14209000" />
+      <workItem from="1538063366601" duration="14531000" />
     </task>
     <task id="LOCAL-00001" summary="[WIP]form to add language">
       <created>1537965255073</created>
@@ -677,7 +677,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59140000" />
+    <option name="totallyTimeSpent" value="59462000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -690,7 +690,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26466382" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -706,7 +705,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49928468" weight="0.3256936" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.4985694" visible="true" weight="0.15199035" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.4985694" visible="true" weight="0.6429433" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50143063" side_tool="true" weight="0.3293124" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.3293124" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -1021,8 +1020,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/spec/controllers/language_controller_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+        <state relative-caret-position="93">
+          <caret line="49" column="27" selection-start-line="49" selection-end-line="50" />
         </state>
       </provider>
     </entry>

@@ -2,20 +2,6 @@
 
 require 'rails_helper'
 
-def verify_file_content(file_path, content)
-  expect(File.exists?(file_path))
-
-  file_data = File.read(file_path)
-  expect(file_data).to eql(content)
-  expect(response.status).to eql(200)
-end
-
-def setup_french_locale
-  language_name = 'fr'
-  hello_string = 'bonjour'
-  file_path = Rails.root.join('config/locales', "#{language_name}.yml")
-  return file_path, hello_string, language_name
-end
 
 RSpec.describe LanguageController, type: :controller do
   render_views
@@ -62,4 +48,19 @@ RSpec.describe LanguageController, type: :controller do
       expect(result).to include('hello')
     end
   end
+end
+
+def verify_file_content(file_path, content)
+  expect(File.exists?(file_path))
+
+  file_data = File.read(file_path)
+  expect(file_data).to eql(content)
+  expect(response.status).to eql(200)
+end
+
+def setup_french_locale
+  language_name = 'fr'
+  hello_string = 'bonjour'
+  file_path = Rails.root.join('config/locales', "#{language_name}.yml")
+  return file_path, hello_string, language_name
 end

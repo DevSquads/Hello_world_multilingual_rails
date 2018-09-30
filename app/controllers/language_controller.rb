@@ -2,7 +2,7 @@
 
 class LanguageController < ApplicationController
   def index
-    @dictKeys = LanguageController.language_dict_to_array(:en)
+    @key_array = LanguageController.language_dict_to_array(:en)
     render :index
   end
 
@@ -27,7 +27,8 @@ class LanguageController < ApplicationController
   end
 
   def self.language_dict_to_array(lang)
-    key_paths(nil, I18n.backend.send(:translations)[lang][:our] || {}).flatten.sort
+    locale_dictionary = I18n.backend.send(:translations)[lang][:our] || {}
+    key_paths(nil, locale_dictionary).flatten.sort
   end
 
   def self.key_paths(key, hash_or_string)
