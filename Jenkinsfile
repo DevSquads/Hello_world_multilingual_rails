@@ -11,7 +11,7 @@ pipeline {
             steps {
                 nodejs('node') {
 
-                    sh 'rspec --t --format RspecJunitFormatter  --out spec/reports/result.xml'
+                    sh 'rspec --t'
                 }
                 junit 'spec/reports/*.xml'
             }
