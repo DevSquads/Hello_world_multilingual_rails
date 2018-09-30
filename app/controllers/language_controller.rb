@@ -9,28 +9,24 @@ class LanguageController < ApplicationController
   def create
     params.require(:language_name)
 
-    yml_file_path = Rails.root.join('config/locales', "#{params[:language_name]}.yml")
-    dict_hash = {}
-
+    request_locales_data = {}
     params.each do |param_key, value|
       if param_key.include? 'strings.'
         dict_key_name = param_key.sub 'strings.', ''
-        dict_hash[dict_key_name] = value
+        request_locales_data[dict_key_name] = value
       end
     end
 
-    create_language_yml(dict_hash, yml_file_path)
-
-    render status: :ok if File.exist? yml_file_path
+    write_language_to_yml_file(request_locales_data)
+    render status: :ok
   rescue ActionController::ParameterMissing
     render status: :bad_request
   end
 
   def self.language_dict_to_array(lang)
     locale_dictionary = I18n.backend.send(:translations)[lang][:our] || {}
-    extract_keys_from_dict locale_dictionary
+    extract_keys_from_dict(locale_dictionary)
   end
-
 
   def self.extract_keys_from_dict(dictionary)
     keys = []
@@ -42,7 +38,9 @@ class LanguageController < ApplicationController
 
   private
 
-  def create_language_yml(locales_dict, yml_file_path)
+  def write_language_to_yml_file(locales_dict)
+    yml_file_path = Rails.root.join('config/locales', "#{params[:language_name]}.yml")
+
     File.open(yml_file_path, 'w+') do |yml_file|
       yml_file.write("#{params[:language_name]}:\n")
       yml_file.write("  our:\n")
