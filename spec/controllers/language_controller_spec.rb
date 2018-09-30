@@ -2,6 +2,21 @@
 
 require 'rails_helper'
 
+def verify_file_content(file_path, content)
+  expect(File.exists?(file_path))
+
+  file_data = File.read(file_path)
+  expect(file_data).to eql(content)
+  expect(response.status).to eql(200)
+end
+
+def setup_french_locale
+  language_name = 'fr'
+  hello_string = 'bonjour'
+  file_path = Rails.root.join('config/locales', "#{language_name}.yml")
+  return file_path, hello_string, language_name
+end
+
 RSpec.describe LanguageController, type: :controller do
   render_views
 
@@ -12,33 +27,21 @@ RSpec.describe LanguageController, type: :controller do
     end
 
     it 'POST#create should create a new yml file' do
-      language_name = 'fr'
-      hello_string = 'bonjour'
-      file_path = Rails.root.join('config/locales', "#{language_name}.yml")
+      file_path, hello_string, language_name = setup_french_locale
 
       post :create, params: {language_name: language_name, 'strings.hello': hello_string}
 
-      expect(File.exists?(file_path))
-
-      file_data = File.read(file_path)
-      expect(file_data).to eql("fr:\n  our:\n    hello: \"bonjour\"")
-      expect(response.status).to eql(200)
+      verify_file_content(file_path, "fr:\n  our:\n    hello: \"bonjour\"")
     ensure
       File.delete(file_path) if File.exist? file_path
     end
 
-    it 'POST#create should create a new yml file with newlines between different string' do
-      language_name = 'fr'
-      hello_string = 'bonjour'
-      file_path = Rails.root.join('config/locales', "#{language_name}.yml")
+    it 'POST#create should create a new yml file with newlines between different strings' do
+      file_path, hello_string, language_name = setup_french_locale
 
       post :create, params: {language_name: language_name, 'strings.hello': hello_string, 'strings.secondString': 'second'}
 
-      expect(File.exists?(file_path))
-
-      file_data = File.read(file_path)
-      expect(file_data).to eql("fr:\n  our:\n    hello: \"bonjour\"\n    secondString: \"second\"")
-      expect(response.status).to eql(200)
+      verify_file_content(file_path, "fr:\n  our:\n    hello: \"bonjour\"\n    secondString: \"second\"")
     ensure
       File.delete(file_path) if File.exist? file_path
     end
