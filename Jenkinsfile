@@ -10,7 +10,8 @@ pipeline {
         stage('Test') {
             steps {
                 nodejs('node') {
-                    sh 'rspec --format RspecJunitFormatter  --out spec/reports/result.xml'
+
+                    sh 'rspec --t --format RspecJunitFormatter  --out spec/reports/result.xml'
                 }
                 junit 'spec/reports/*.xml'
             }
