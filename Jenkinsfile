@@ -9,11 +9,7 @@ pipeline {
             }
         stage('Test') {
             steps {
-                nodejs('node') {
-
                     sh 'rspec '
-                }
-                junit 'spec/reports/*.xml'
             }
         }
     }
