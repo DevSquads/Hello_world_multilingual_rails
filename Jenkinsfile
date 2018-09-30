@@ -11,7 +11,7 @@ pipeline {
             steps {
                 nodejs('node') {
 
-                    sh 'rspec --t'
+                    sh 'rspec '
                 }
                 junit 'spec/reports/*.xml'
             }
