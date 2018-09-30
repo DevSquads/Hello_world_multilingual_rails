@@ -2,7 +2,6 @@
 
 require 'rails_helper'
 
-
 RSpec.describe LanguageController, type: :controller do
   render_views
 
@@ -45,7 +44,13 @@ RSpec.describe LanguageController, type: :controller do
 
       result = LanguageController.language_dict_to_array(:en)
 
-      expect(result).to include('hello')
+      expect(result).to include(:hello)
+    end
+
+    it 'locale_keys should get keys from dictionary ' do
+      locale = { :hello => "hellloWorld", :goodBye => "Good Bye"}
+
+      expect(LanguageController.extract_keys_from_dict(locale)).to match([:hello, :goodBye])
     end
   end
 end

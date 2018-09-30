@@ -28,17 +28,16 @@ class LanguageController < ApplicationController
 
   def self.language_dict_to_array(lang)
     locale_dictionary = I18n.backend.send(:translations)[lang][:our] || {}
-    key_paths(nil, locale_dictionary).flatten.sort
+    extract_keys_from_dict locale_dictionary
   end
 
-  def self.key_paths(key, hash_or_string)
-    if hash_or_string.is_a?(Hash)
-      hash_or_string.keys.map do |subkey|
-        key_paths([key, subkey].compact.join('.'), hash_or_string[subkey])
-      end
-    else
-      key
+
+  def self.extract_keys_from_dict(dictionary)
+    keys = []
+    dictionary.each do |key, value|
+      keys.push(key)
     end
+    return keys
   end
 
   private
