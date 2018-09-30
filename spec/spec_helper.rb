@@ -14,6 +14,7 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 require 'capybara/rspec'
+require 'selenium/webdriver'
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
@@ -46,28 +47,26 @@ RSpec.configure do |config|
   config.shared_context_metadata_behavior = :apply_to_host_groups
 
   config.include Capybara::DSL
-  require "selenium/webdriver"
   Capybara.register_driver :chrome do |app|
     Capybara::Selenium::Driver.new(app, browser: :chrome)
   end
 
   Capybara.register_driver :headless_chrome do |app|
-    capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
-      chromeOptions: { args: %w(headless  window-size=1280,1024) }
-    )
+    # capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
+    #   chromeOptions: { args: %w(headless  window-size=1280,1024) }
+    # )
 
-    Capybara::Selenium::Driver.new app,
-                                   browser: :chrome,
-                                   desired_capabilities: capabilities
+    options = ::Selenium::WebDriver::Chrome::Options.new
+    options.add_argument 'headless'
+    options.add_argument 'disable-gpu'
+    options.add_argument 'window-size=1024,768'
+    Capybara::Selenium::Driver.new app, browser: :chrome, options: options
   end
-
-  Capybara.javascript_driver = :headless_chrome
-  Capybara.server_port = 3000
-  Capybara.ignore_hidden_elements = false
-  Capybara.default_max_wait_time = 10
-
   Capybara.configure do |config|
-    config.default_driver = :headless_chrome
+    config.javascript_driver = :headless_chrome
+    config.server_port = 3000
+    config.ignore_hidden_elements = false
+    config.default_max_wait_time = 10
   end
 
 # The settings below are suggested to provide a good initial experience
