@@ -14,9 +14,9 @@ RSpec.describe LanguageController, type: :controller do
     it 'POST#create should create a new yml file' do
       file_path, hello_string, language_name = setup_french_locale
 
-      post :create, params: {language_name: language_name, 'strings.hello': hello_string}
+      post :create, params: {language_name: language_name, 'translations': {'hello': hello_string}}
 
-      verify_file_content(file_path, "fr:\n  our:\n    hello: \"bonjour\"")
+      verify_file_content(file_path, "fr:\n  missions:\n    hello: \"bonjour\"")
     ensure
       File.delete(file_path) if File.exist? file_path
     end
@@ -24,17 +24,28 @@ RSpec.describe LanguageController, type: :controller do
     it 'POST#create should create a new yml file with newlines between different strings' do
       file_path, hello_string, language_name = setup_french_locale
 
-      post :create, params: {language_name: language_name, 'strings.hello': hello_string, 'strings.secondString': 'second'}
+      post :create, params: {language_name: language_name, 'translations': {'hello': hello_string, 'secondString': 'second'}}
 
-      verify_file_content(file_path, "fr:\n  our:\n    hello: \"bonjour\"\n    secondString: \"second\"")
+      verify_file_content(file_path, "fr:\n  missions:\n    hello: \"bonjour\"\n    secondString: \"second\"")
     ensure
       File.delete(file_path) if File.exist? file_path
     end
 
     it 'POST#create requires language name field' do
-      post :create, params: {'strings.hello': 'hello_string', 'strings.secondString': 'second'}
+      post :create, params: {'translations': {'hello': 'hello_string', 'secondString': 'second'}}
 
       expect(response.status).to eql(400)
+    end
+
+    it 'POST#create creates a YML file with a locale subdomain of missions' do
+      file_path, hello_string, language_name = setup_french_locale
+
+      post :create, params: {language_name: language_name, 'translations': {'hello': hello_string, 'secondString': 'second'}}
+
+      file_data = File.read(file_path)
+      expect(file_data).to match('missions')
+    ensure
+      File.delete(file_path) if File.exist? file_path
     end
   end
 
@@ -42,13 +53,14 @@ RSpec.describe LanguageController, type: :controller do
     it 'should extract dictionary to a flat array of key value pairs' do
       I18n.backend.send(:init_translations) unless I18n.backend.initialized?
 
-      result = LanguageController.language_dict_to_array(:en)
+      result = LanguageController.language_dict_to_keys_array(:en)
 
       expect(result).to include(:hello)
     end
 
+
     it 'locale_keys should get keys from dictionary ' do
-      locale = { :hello => "hellloWorld", :goodBye => "Good Bye"}
+      locale = {:hello => "hellloWorld", :goodBye => "Good Bye"}
 
       expect(LanguageController.extract_keys_from_dict(locale)).to match([:hello, :goodBye])
     end

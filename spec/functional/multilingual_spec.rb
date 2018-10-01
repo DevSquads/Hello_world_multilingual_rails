@@ -25,9 +25,9 @@ feature 'User adds a language', js: true do
 
     fill_in 'language_name', with: 'fr'
 
-    fill_in 'strings.hello', with: 'bonjour'
+    fill_in 'translations[hello]', with: 'bonjour'
 
-    fill_in 'strings.kaka', with: 'merde'
+    fill_in 'translations[kaka]', with: 'merde'
 
     click_button 'add_language'
 
@@ -42,7 +42,7 @@ feature 'User adds a language', js: true do
   end
 
   scenario 'retrieves locale correctly' do
-    file_data = "fr:\n  our:\n    hello: \"bonjour\"\n    secondString: \"second\""
+    file_data = "fr:\n  missions:\n    hello: \"bonjour\"\n    secondString: \"second\""
     file_path = Rails.root.join('config/locales', 'fr.yml')
 
     File.open(file_path, "w+") do |f|
