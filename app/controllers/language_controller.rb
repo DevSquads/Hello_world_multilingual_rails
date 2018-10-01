@@ -12,13 +12,7 @@ class LanguageController < ApplicationController
   def create
     params.require(:language_name)
 
-    request_locales_data = {}
-    params.each do |param_key, value|
-      if param_key.include? 'strings.'
-        dict_key_name = param_key.sub 'strings.', ''
-        request_locales_data[dict_key_name] = value
-      end
-    end
+    request_locales_data = params[:translations]
 
     write_language_to_yml_file(request_locales_data)
     render status: :ok

@@ -14,7 +14,7 @@ RSpec.describe LanguageController, type: :controller do
     it 'POST#create should create a new yml file' do
       file_path, hello_string, language_name = setup_french_locale
 
-      post :create, params: {language_name: language_name, 'strings.hello': hello_string}
+      post :create, params: {language_name: language_name, 'translations': {'hello': hello_string}}
 
       verify_file_content(file_path, "fr:\n  missions:\n    hello: \"bonjour\"")
     ensure
@@ -24,7 +24,7 @@ RSpec.describe LanguageController, type: :controller do
     it 'POST#create should create a new yml file with newlines between different strings' do
       file_path, hello_string, language_name = setup_french_locale
 
-      post :create, params: {language_name: language_name, 'strings.hello': hello_string, 'strings.secondString': 'second'}
+      post :create, params: {language_name: language_name, 'translations': {'hello': hello_string, 'secondString': 'second'}}
 
       verify_file_content(file_path, "fr:\n  missions:\n    hello: \"bonjour\"\n    secondString: \"second\"")
     ensure
@@ -32,7 +32,7 @@ RSpec.describe LanguageController, type: :controller do
     end
 
     it 'POST#create requires language name field' do
-      post :create, params: {'strings.hello': 'hello_string', 'strings.secondString': 'second'}
+      post :create, params: {'translations': {'hello': 'hello_string', 'secondString': 'second'}}
 
       expect(response.status).to eql(400)
     end
@@ -40,7 +40,7 @@ RSpec.describe LanguageController, type: :controller do
     it 'POST#create creates a YML file with a locale subdomain of missions' do
       file_path, hello_string, language_name = setup_french_locale
 
-      post :create, params: {language_name: language_name, 'strings.hello': hello_string, 'strings.secondString': 'second'}
+      post :create, params: {language_name: language_name, 'translations': {'hello': hello_string, 'secondString': 'second'}}
 
       file_data = File.read(file_path)
       expect(file_data).to match('missions')
