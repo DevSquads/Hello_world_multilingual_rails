@@ -2,7 +2,7 @@
 
 class LanguageController < ApplicationController
 
-  @@custom_locale_domain = :our
+  @@custom_locale_domain = :missions
 
   def index
     @key_array = LanguageController.language_dict_to_keys_array(:en)
