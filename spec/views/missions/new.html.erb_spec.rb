@@ -24,4 +24,9 @@ RSpec.describe "missions/new", type: :view do
       assert_select "input[name=?]", "mission[category]"
     end
   end
+
+  it "should render the duration form as number field" do
+    render
+    assert_select "input[name='mission[duration]']", :type => :number
+  end
 end
