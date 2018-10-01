@@ -42,10 +42,11 @@ RSpec.describe LanguageController, type: :controller do
     it 'should extract dictionary to a flat array of key value pairs' do
       I18n.backend.send(:init_translations) unless I18n.backend.initialized?
 
-      result = LanguageController.language_dict_to_array(:en)
+      result = LanguageController.language_dict_to_keys_array(:en)
 
       expect(result).to include(:hello)
     end
+
 
     it 'locale_keys should get keys from dictionary ' do
       locale = { :hello => "hellloWorld", :goodBye => "Good Bye"}

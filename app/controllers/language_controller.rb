@@ -1,8 +1,11 @@
 # frozen_string_literal: true
 
 class LanguageController < ApplicationController
+
+  @@custom_locale_domain = :our
+
   def index
-    @key_array = LanguageController.language_dict_to_array(:en)
+    @key_array = LanguageController.language_dict_to_keys_array(:en)
     render :index
   end
 
@@ -23,8 +26,8 @@ class LanguageController < ApplicationController
     render status: :bad_request
   end
 
-  def self.language_dict_to_array(lang)
-    locale_dictionary = I18n.backend.send(:translations)[lang][:our] || {}
+  def self.language_dict_to_keys_array(lang)
+    locale_dictionary = I18n.backend.send(:translations)[lang][@@custom_locale_domain] || {}
     extract_keys_from_dict(locale_dictionary)
   end
 
@@ -43,7 +46,7 @@ class LanguageController < ApplicationController
 
     File.open(yml_file_path, 'w+') do |yml_file|
       yml_file.write("#{params[:language_name]}:\n")
-      yml_file.write("  our:\n")
+      yml_file.write("  #{@@custom_locale_domain}:\n")
 
       line_number = 0
       four_spaces = "    "

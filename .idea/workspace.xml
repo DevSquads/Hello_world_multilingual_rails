@@ -4,6 +4,7 @@
     <list default="true" id="576492f6-f6be-42fa-9805-78e1301a55b4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/language_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/language_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/controllers/language_controller_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/controllers/language_controller_spec.rb" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -20,10 +21,11 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/multilingual@LanguageController_LanguageController_Actions_returns_an_array_from_a_recrusive_function__multilingual.rcov" NAME="LanguageController LanguageController Actions returns an array from a recrusive function: multilingual Coverage Results" MODIFIED="1538324545159" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
     <SUITE FILE_PATH="coverage/multilingual@AppController_GET__index_returns_index_template__multilingual.rcov" NAME="AppController GET #index returns index template: multilingual Coverage Results" MODIFIED="1537871656436" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
-    <SUITE FILE_PATH="coverage/multilingual@LanguageController_languageDictToArray_should_extract_dictionary_to_a_flat_array_of_key_value_pairs__multilingual.rcov" NAME="LanguageController languageDictToArray should extract dictionary to a flat array of key value pairs: multilingual Coverage Results" MODIFIED="1538326651170" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
+    <SUITE FILE_PATH="coverage/multilingual@LanguageController_languageDictToArray_should_extract_dictionary_to_a_flat_array_of_key_value_pairs__multilingual.rcov" NAME="LanguageController languageDictToArray should extract dictionary to a flat array of key value pairs: multilingual Coverage Results" MODIFIED="1538385121160" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
     <SUITE FILE_PATH="coverage/multilingual@AppController_AppController_Actions_POST_create_should_create_a_new_yml_file_with_newlines_between_different_string__multilingual.rcov" NAME="AppController AppController Actions POST#create should create a new yml file with newlines between different string: multilingual Coverage Results" MODIFIED="1537972865992" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
     <SUITE FILE_PATH="coverage/multilingual@User_adds_a_language_retrieves_locale_correctly__multilingual.rcov" NAME="User adds a language retrieves locale correctly: multilingual Coverage Results" MODIFIED="1538040975382" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
     <SUITE FILE_PATH="coverage/multilingual@User_adds_a_language_testing_that_capybara_can_fild_any_element__multilingual.rcov" NAME="User adds a language testing that capybara can fild any element: multilingual Coverage Results" MODIFIED="1538316778821" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
+    <SUITE FILE_PATH="coverage/multilingual@language_index_html_erb__multilingual.rcov" NAME="language/index.html.erb: multilingual Coverage Results" MODIFIED="1538384419002" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
     <SUITE FILE_PATH="coverage/multilingual@AppController_AppController_Actions_POST_create_should_create_a_new_yml_file__multilingual.rcov" NAME="AppController AppController Actions POST#create should create a new yml file: multilingual Coverage Results" MODIFIED="1537982006554" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
     <SUITE FILE_PATH="coverage/multilingual@app_index_html_erb_should_contain_button_to_add_language__multilingual.rcov" NAME="app/index.html.erb should contain button to add language: multilingual Coverage Results" MODIFIED="1537876059922" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
     <SUITE FILE_PATH="coverage/multilingual@app_index_html_erb_should_show_the_dictionary_form_with_the_keys_from_locale__multilingual.rcov" NAME="app/index.html.erb should show the dictionary form with the keys from locale: multilingual Coverage Results" MODIFIED="1537972322862" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
@@ -76,8 +78,8 @@
           <entry key="lock" value="1" />
           <entry key="md" value="1" />
           <entry key="rake" value="1" />
-          <entry key="rb" value="104" />
-          <entry key="yml" value="44" />
+          <entry key="rb" value="110" />
+          <entry key="yml" value="46" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -86,8 +88,8 @@
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="RHTML" value="19" />
-          <entry key="Ruby" value="112" />
-          <entry key="YAML" value="44" />
+          <entry key="Ruby" value="118" />
+          <entry key="YAML" value="46" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -96,9 +98,9 @@
           <entry key="Jenkinsfile" value="48" />
           <entry key="erb" value="385" />
           <entry key="md" value="362" />
-          <entry key="rb" value="7751" />
+          <entry key="rb" value="7978" />
           <entry key="txt" value="158" />
-          <entry key="yml" value="126" />
+          <entry key="yml" value="137" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -106,8 +108,8 @@
           <entry key="Markdown" value="362" />
           <entry key="PLAIN_TEXT" value="206" />
           <entry key="RHTML" value="385" />
-          <entry key="Ruby" value="7792" />
-          <entry key="YAML" value="126" />
+          <entry key="Ruby" value="8019" />
+          <entry key="YAML" value="137" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.actions.runAnything" />
@@ -163,8 +165,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spec/controllers/language_controller_spec.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1">
-              <caret line="20" column="25" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
+            <state relative-caret-position="89">
+              <caret line="42" column="13" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spec/views/language/index.html.erb_spec.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="268">
+              <caret line="20" selection-start-line="20" selection-end-line="20" />
             </state>
           </provider>
         </entry>
@@ -172,8 +183,44 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/language_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="33" column="10" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="10" />
+            <state relative-caret-position="318">
+              <caret line="38" column="18" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/.rvm/gems/ruby-2.5.1/gems/i18n-1.1.0/lib/i18n.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="178">
+              <caret line="54" selection-start-line="54" selection-end-line="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/.rvm/gems/ruby-2.5.1/gems/i18n-1.1.0/lib/i18n/backend/simple.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="158">
+              <caret line="69" selection-start-line="69" selection-end-line="69" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/locales/en.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="313">
+              <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/locales/ar.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="3" selection-start-column="3" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -181,8 +228,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/language/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="14" selection-start-column="11" selection-end-column="14" />
+            <state relative-caret-position="135">
+              <caret line="9" column="39" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -203,6 +250,7 @@
       <find>Capybara</find>
       <find>localhost</find>
       <find>app</find>
+      <find>our</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -221,7 +269,6 @@
         <option value="$PROJECT_DIR$/config/locales/ar.yml" />
         <option value="$PROJECT_DIR$/config/locales/fr.yml" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/config/locales/en.yml" />
         <option value="$PROJECT_DIR$/spec/views/app/index.html.erb_spec.rb" />
         <option value="$PROJECT_DIR$/app/views/app/create.html.erb" />
         <option value="$PROJECT_DIR$/app/views/app/index.html.erb" />
@@ -239,6 +286,7 @@
         <option value="$PROJECT_DIR$/spec/views/language/index.html.erb_spec.rb" />
         <option value="$PROJECT_DIR$/spec/functional/multilingual_spec.rb" />
         <option value="$PROJECT_DIR$/spec/controllers/language_controller_spec.rb" />
+        <option value="$PROJECT_DIR$/config/locales/en.yml" />
         <option value="$PROJECT_DIR$/app/controllers/language_controller.rb" />
       </list>
     </option>
@@ -281,31 +329,13 @@
             <path>
               <item name="multilingual" type="b2602c69:ProjectViewProjectNode" />
               <item name="multilingual" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="multilingual" type="b2602c69:ProjectViewProjectNode" />
-              <item name="multilingual" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="multilingual" type="b2602c69:ProjectViewProjectNode" />
-              <item name="multilingual" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="multilingual" type="b2602c69:ProjectViewProjectNode" />
-              <item name="multilingual" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="language" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="multilingual" type="b2602c69:ProjectViewProjectNode" />
               <item name="multilingual" type="462c0819:PsiDirectoryNode" />
               <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="locales" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="multilingual" type="b2602c69:ProjectViewProjectNode" />
@@ -366,7 +396,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="RSpec.LanguageController languageDictToArray locale_keys should get keys from dictionary : multilingual">
+  <component name="RunManager" selected="RSpec.LanguageController languageDictToArray should extract dictionary to a flat array of key value pairs: multilingual">
     <configuration name="LanguageController LanguageController Actions returns an array from a recrusive function: multilingual" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true">
       <predefined_log_file id="RUBY_RSPEC" enabled="true" />
       <module name="multilingual" />
@@ -469,40 +499,6 @@
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
       <method v="2" />
     </configuration>
-    <configuration name="User adds a language testing that a dom is rendered: multilingual" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true">
-      <predefined_log_file id="RUBY_RSPEC" enabled="true" />
-      <module name="multilingual" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
-      <envs>
-        <env name="RAILS_ENV" value="test" />
-        <env name="JRUBY_OPTS" value="-X+O" />
-      </envs>
-      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="true" />
-      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
-      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov">
-        <COVERAGE_PATTERN ENABLED="true">
-          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
-        </COVERAGE_PATTERN>
-      </EXTENSION>
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/spec/functional/multilingual_spec.rb" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_RUNNER_PATH" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="**/*_spec.rb" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="User adds a language testing that a dom is rendered" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_ARGS" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_SPEC_RUNNER" VALUE="false" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="ZEUS" VALUE="false" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPRING" VALUE="false" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
-      <method v="2" />
-    </configuration>
     <configuration name="User adds a language: multilingual" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true">
       <predefined_log_file id="RUBY_RSPEC" enabled="true" />
       <module name="multilingual" />
@@ -527,6 +523,40 @@
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_RUNNER_PATH" VALUE="" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="**/*_spec.rb" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="User adds a language" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_ARGS" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_SPEC_RUNNER" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="ZEUS" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPRING" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="language/index.html.erb: multilingual" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true">
+      <predefined_log_file id="RUBY_RSPEC" enabled="true" />
+      <module name="multilingual" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs>
+        <env name="RAILS_ENV" value="test" />
+        <env name="JRUBY_OPTS" value="-X+O" />
+      </envs>
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="true" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/spec/views/language/index.html.erb_spec.rb" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_RUNNER_PATH" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="**/*_spec.rb" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="language/index.html.erb" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_ARGS" VALUE="" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
@@ -638,18 +668,18 @@
       <item itemvalue="Rails.Production: multilingual" />
       <item itemvalue="Rails.Development: multilingual" />
       <item itemvalue="RSpec.User adds a language: multilingual" />
-      <item itemvalue="RSpec.User adds a language testing that a dom is rendered: multilingual" />
       <item itemvalue="RSpec.LanguageController LanguageController Actions returns an array from a recrusive function: multilingual" />
       <item itemvalue="RSpec.LanguageController languageDictToArray should extract dictionary to a flat array of key value pairs: multilingual" />
       <item itemvalue="RSpec.LanguageController languageDictToArray locale_keys should get keys from dictionary : multilingual" />
+      <item itemvalue="RSpec.language/index.html.erb: multilingual" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="RSpec.LanguageController languageDictToArray locale_keys should get keys from dictionary : multilingual" />
         <item itemvalue="RSpec.LanguageController languageDictToArray should extract dictionary to a flat array of key value pairs: multilingual" />
+        <item itemvalue="RSpec.language/index.html.erb: multilingual" />
+        <item itemvalue="RSpec.LanguageController languageDictToArray locale_keys should get keys from dictionary : multilingual" />
         <item itemvalue="RSpec.LanguageController LanguageController Actions returns an array from a recrusive function: multilingual" />
         <item itemvalue="RSpec.User adds a language: multilingual" />
-        <item itemvalue="RSpec.User adds a language testing that a dom is rendered: multilingual" />
       </list>
     </recent_temporary>
   </component>
@@ -709,39 +739,39 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="LanguageController_languageDictToArray_locale_keys_should_get_keys_from_dictionary___multilingual - 2018.09.30 at 18h 58m 11s.xml">
-      <configuration name="LanguageController languageDictToArray locale_keys should get keys from dictionary : multilingual" configurationId="RSpecRunConfigurationType" />
+    <history-entry file="language_index_html_erb__multilingual - 2018.09.30 at 20h 04m 40s.xml">
+      <configuration name="language/index.html.erb: multilingual" configurationId="RSpecRunConfigurationType" />
     </history-entry>
-    <history-entry file="LanguageController_languageDictToArray_locale_keys_should_get_keys_from_dictionary___multilingual - 2018.09.30 at 18h 59m 03s.xml">
-      <configuration name="LanguageController languageDictToArray locale_keys should get keys from dictionary : multilingual" configurationId="RSpecRunConfigurationType" />
+    <history-entry file="language_index_html_erb__multilingual - 2018.09.30 at 20h 05m 03s.xml">
+      <configuration name="language/index.html.erb: multilingual" configurationId="RSpecRunConfigurationType" />
     </history-entry>
-    <history-entry file="LanguageController_languageDictToArray_locale_keys_should_get_keys_from_dictionary___multilingual - 2018.09.30 at 18h 59m 06s.xml">
-      <configuration name="LanguageController languageDictToArray locale_keys should get keys from dictionary : multilingual" configurationId="RSpecRunConfigurationType" />
+    <history-entry file="language_index_html_erb__multilingual - 2018.10.01 at 11h 00m 23s.xml">
+      <configuration name="language/index.html.erb: multilingual" configurationId="RSpecRunConfigurationType" />
     </history-entry>
-    <history-entry file="LanguageController_languageDictToArray_locale_keys_should_get_keys_from_dictionary___multilingual - 2018.09.30 at 19h 01m 23s.xml">
-      <configuration name="LanguageController languageDictToArray locale_keys should get keys from dictionary : multilingual" configurationId="RSpecRunConfigurationType" />
+    <history-entry file="LanguageController_languageDictToArray_should_extract_dictionary_to_a_flat_array_of_key_value_pairs__multilingual - 2018.10.01 at 11h 00m 57s.xml">
+      <configuration name="LanguageController languageDictToArray should extract dictionary to a flat array of key value pairs: multilingual" configurationId="RSpecRunConfigurationType" />
     </history-entry>
-    <history-entry file="LanguageController_languageDictToArray_locale_keys_should_get_keys_from_dictionary___multilingual - 2018.09.30 at 19h 01m 42s.xml">
-      <configuration name="LanguageController languageDictToArray locale_keys should get keys from dictionary : multilingual" configurationId="RSpecRunConfigurationType" />
+    <history-entry file="LanguageController_languageDictToArray_should_extract_dictionary_to_a_flat_array_of_key_value_pairs__multilingual - 2018.10.01 at 11h 02m 07s.xml">
+      <configuration name="LanguageController languageDictToArray should extract dictionary to a flat array of key value pairs: multilingual" configurationId="RSpecRunConfigurationType" />
     </history-entry>
-    <history-entry file="LanguageController_languageDictToArray_locale_keys_should_get_keys_from_dictionary___multilingual - 2018.09.30 at 19h 02m 31s.xml">
-      <configuration name="LanguageController languageDictToArray locale_keys should get keys from dictionary : multilingual" configurationId="RSpecRunConfigurationType" />
+    <history-entry file="LanguageController_languageDictToArray_should_extract_dictionary_to_a_flat_array_of_key_value_pairs__multilingual - 2018.10.01 at 11h 02m 22s.xml">
+      <configuration name="LanguageController languageDictToArray should extract dictionary to a flat array of key value pairs: multilingual" configurationId="RSpecRunConfigurationType" />
     </history-entry>
-    <history-entry file="LanguageController_languageDictToArray_locale_keys_should_get_keys_from_dictionary___multilingual - 2018.09.30 at 19h 02m 40s.xml">
-      <configuration name="LanguageController languageDictToArray locale_keys should get keys from dictionary : multilingual" configurationId="RSpecRunConfigurationType" />
+    <history-entry file="LanguageController_languageDictToArray_should_extract_dictionary_to_a_flat_array_of_key_value_pairs__multilingual - 2018.10.01 at 11h 05m 08s.xml">
+      <configuration name="LanguageController languageDictToArray should extract dictionary to a flat array of key value pairs: multilingual" configurationId="RSpecRunConfigurationType" />
     </history-entry>
-    <history-entry file="LanguageController_languageDictToArray_locale_keys_should_get_keys_from_dictionary___multilingual - 2018.09.30 at 19h 03m 51s.xml">
-      <configuration name="LanguageController languageDictToArray locale_keys should get keys from dictionary : multilingual" configurationId="RSpecRunConfigurationType" />
+    <history-entry file="LanguageController_languageDictToArray_should_extract_dictionary_to_a_flat_array_of_key_value_pairs__multilingual - 2018.10.01 at 11h 05m 22s.xml">
+      <configuration name="LanguageController languageDictToArray should extract dictionary to a flat array of key value pairs: multilingual" configurationId="RSpecRunConfigurationType" />
     </history-entry>
-    <history-entry file="LanguageController_languageDictToArray_locale_keys_should_get_keys_from_dictionary___multilingual - 2018.09.30 at 19h 04m 15s.xml">
-      <configuration name="LanguageController languageDictToArray locale_keys should get keys from dictionary : multilingual" configurationId="RSpecRunConfigurationType" />
+    <history-entry file="LanguageController_languageDictToArray_should_extract_dictionary_to_a_flat_array_of_key_value_pairs__multilingual - 2018.10.01 at 11h 07m 45s.xml">
+      <configuration name="LanguageController languageDictToArray should extract dictionary to a flat array of key value pairs: multilingual" configurationId="RSpecRunConfigurationType" />
     </history-entry>
-    <history-entry file="LanguageController_languageDictToArray_locale_keys_should_get_keys_from_dictionary___multilingual - 2018.09.30 at 19h 07m 09s.xml">
-      <configuration name="LanguageController languageDictToArray locale_keys should get keys from dictionary : multilingual" configurationId="RSpecRunConfigurationType" />
+    <history-entry file="LanguageController_languageDictToArray_should_extract_dictionary_to_a_flat_array_of_key_value_pairs__multilingual - 2018.10.01 at 11h 09m 49s.xml">
+      <configuration name="LanguageController languageDictToArray should extract dictionary to a flat array of key value pairs: multilingual" configurationId="RSpecRunConfigurationType" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67620000" />
+    <option name="totallyTimeSpent" value="69910000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -769,7 +799,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49928468" weight="0.3256936" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.4985694" visible="true" weight="0.22195417" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.4985694" visible="true" weight="0.40289506" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50143063" side_tool="true" weight="0.3293124" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.3293124" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -851,6 +881,17 @@
     <MESSAGE value="configure chrome to output test results in report" />
     <option name="LAST_COMMIT_MESSAGE" value="configure chrome to output test results in report" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="ruby-line">
+          <url>file://$PROJECT_DIR$/app/controllers/language_controller.rb</url>
+          <line>26</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
       <expression>
@@ -861,18 +902,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/config/application.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/locales/ass.yml" />
-    <entry file="file://$USER_HOME$/.rvm/gems/ruby-2.5.1/gems/actionpack-5.2.1/lib/action_controller/metal/rescue.rb" />
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/mailer.text.erb">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/spring.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -903,20 +932,6 @@
     <entry file="file://$USER_HOME$/.rvm/gems/ruby-2.5.1/gems/rspec-core-3.8.0/lib/rspec/core/runner.rb" />
     <entry file="file://$PROJECT_DIR$/config/locales/fr.yml" />
     <entry file="file:///usr/local/rvm/gems/ruby-2.5.1/gems/capybara-3.8.1/lib/capybara/server.rb" />
-    <entry file="file://$PROJECT_DIR$/config/locales/ar.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="2" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/locales/en.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="34" column="17" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/result.xml" />
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
@@ -981,13 +996,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.rvm/gems/ruby-2.5.1/gems/i18n-1.1.0/lib/i18n.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="178" selection-start-line="178" selection-end-line="178" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.rvm/gems/ruby-2.5.1/gems/capybara-3.8.1/lib/capybara/spec/session/window/window_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="367">
@@ -1040,13 +1048,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spec/views/language/index.html.erb_spec.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="56" selection-start-line="32" selection-start-column="56" selection-end-line="32" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -1068,24 +1069,80 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spec/controllers/language_controller_spec.rb">
+    <entry file="file://$USER_HOME$/.rvm/rubies/ruby-2.5.1/lib/ruby/site_ruby/2.5.0/rubygems.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1">
-          <caret line="20" column="25" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
+        <state relative-caret-position="156">
+          <caret line="34" column="53" selection-start-line="34" selection-start-column="53" selection-end-line="34" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/locales/ar.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="3" selection-start-column="3" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/locales/en.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/language/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="14" selection-start-column="11" selection-end-column="14" />
+        <state relative-caret-position="135">
+          <caret line="9" column="39" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/views/language/index.html.erb_spec.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/controllers/language_controller_spec.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="89">
+          <caret line="42" column="13" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.rvm/gems/ruby-2.5.1/gems/rspec-core-3.8.0/lib/rspec/core/example.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="273" column="17" lean-forward="true" selection-start-line="273" selection-start-column="17" selection-end-line="273" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.rvm/gems/ruby-2.5.1/gems/rspec-support-3.8.0/lib/rspec/support.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="137" selection-start-line="137" selection-end-line="137" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.rvm/gems/ruby-2.5.1/gems/i18n-1.1.0/lib/i18n.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="54" selection-start-line="54" selection-end-line="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.rvm/gems/ruby-2.5.1/gems/i18n-1.1.0/lib/i18n/backend/simple.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="69" selection-start-line="69" selection-end-line="69" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/language_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="33" column="10" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="10" />
+        <state relative-caret-position="318">
+          <caret line="38" column="18" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="18" />
         </state>
       </provider>
     </entry>
