@@ -42,7 +42,7 @@ feature 'User adds a language', js: true do
   end
 
   scenario 'retrieves locale correctly' do
-    file_data = "fr:\n  our:\n    hello: \"bonjour\"\n    secondString: \"second\""
+    file_data = "fr:\n  missions:\n    hello: \"bonjour\"\n    secondString: \"second\""
     file_path = Rails.root.join('config/locales', 'fr.yml')
 
     File.open(file_path, "w+") do |f|

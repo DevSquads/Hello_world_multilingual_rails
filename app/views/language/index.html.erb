@@ -1,4 +1,4 @@
-<h1><%= t "our.hello" %></h1>
+<h1><%= t "missions.hello" %></h1>
 
 <form id="addLanguageForm" action="/language" method="post">
   <div>
@@ -8,6 +8,8 @@
     <% @key_array.each do |key| %>
       <p class="dictKey"><%= key %>:</p>
       <input name="strings.<%= key %>">
-    <% end %>
+      <%#= text_field_tag(:q) %>
+
+<% end %>
     <input type="submit" value="Submit" id="add_language"/>
 </form>

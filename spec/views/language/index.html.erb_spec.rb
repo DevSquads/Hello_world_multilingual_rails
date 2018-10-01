@@ -8,6 +8,13 @@ RSpec.describe "language/index.html.erb", type: :view do
     expect(rendered).to have_css("input#language_name")
   end
 
+  it 'should render the first locale field Hello in the title' do
+    assign(:key_array, [])
+
+    render
+    expect(rendered).to have_xpath("//h1[contains(text(),\"#{I18n.t('missions.hello')}\")]")
+  end
+
   it 'should show the dictionary form with the keys from locale' do
     expected_key = "hello"
     assign(:key_array, [expected_key])
@@ -15,7 +22,6 @@ RSpec.describe "language/index.html.erb", type: :view do
     render
     expect(rendered).to have_css("form#addLanguageForm")
     expect(rendered).to have_css("input[name=\"strings.#{expected_key}\"]")
-
     expect(rendered).to have_xpath("//p[contains(text(),\"#{expected_key}\")]")
   end
 
