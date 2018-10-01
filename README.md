@@ -5,8 +5,11 @@ This project aims to practise multilingual setup for rails web app
 ## System Prerequisites
 * google-chrome
 * chromedriver
-
-## To start you need to 
+## to start using docker
+* install docker ( mac https://download.docker.com/mac/stable/Docker.dmg )
+* run & build the docker images
+`docker-compose up --build `
+## To start WITHOUT Docker
 * install ruby 2.5.1  
 https://www.ruby-lang.org/en/documentation/installation/
 * install rails 5.2.1
