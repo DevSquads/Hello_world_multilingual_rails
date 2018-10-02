@@ -31,5 +31,15 @@
 
 en:
   missions:
-    hello: "Hello world!"
-    kaka: "koko!"
+    hello: "Hello, world!"
+    1:
+      title: "dummy title1"
+      instructions: "dummy instructions"
+
+    2:
+      title: "dummy title2"
+      instructions: "dummy instructions"
+
+    3:
+      title: "dummy title3"
+      instructions: "dummy instructions"

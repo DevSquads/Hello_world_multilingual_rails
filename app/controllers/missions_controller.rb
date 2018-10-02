@@ -28,11 +28,11 @@ class MissionsController < ApplicationController
 
     respond_to do |format|
       if @mission.save
-        format.html { redirect_to @mission, notice: 'Mission was successfully created.' }
-        format.json { render :show, status: :created, location: @mission }
+        format.html {redirect_to @mission, notice: 'Mission was successfully created.'}
+        format.json {render :show, status: :created, location: @mission}
       else
-        format.html { render :new }
-        format.json { render json: @mission.errors, status: :unprocessable_entity }
+        format.html {render :new}
+        format.json {render json: @mission.errors, status: :unprocessable_entity}
       end
     end
   end
@@ -42,11 +42,11 @@ class MissionsController < ApplicationController
   def update
     respond_to do |format|
       if @mission.update(mission_params)
-        format.html { redirect_to @mission, notice: 'Mission was successfully updated.' }
-        format.json { render :show, status: :ok, location: @mission }
+        format.html {redirect_to @mission, notice: 'Mission was successfully updated.'}
+        format.json {render :show, status: :ok, location: @mission}
       else
-        format.html { render :edit }
-        format.json { render json: @mission.errors, status: :unprocessable_entity }
+        format.html {render :edit}
+        format.json {render json: @mission.errors, status: :unprocessable_entity}
       end
     end
   end
@@ -56,19 +56,20 @@ class MissionsController < ApplicationController
   def destroy
     @mission.destroy
     respond_to do |format|
-      format.html { redirect_to missions_url, notice: 'Mission was successfully destroyed.' }
-      format.json { head :no_content }
+      format.html {redirect_to missions_url, notice: 'Mission was successfully destroyed.'}
+      format.json {head :no_content}
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_mission
-      @mission = Mission.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def mission_params
-      params.require(:mission).permit(:language, :title, :instructions, :duration, :category)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_mission
+    @mission = Mission.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def mission_params
+    params.require(:mission).permit(:language, :title, :instructions, :duration, :category)
+  end
 end

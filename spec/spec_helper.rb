@@ -65,7 +65,7 @@ RSpec.configure do |config|
   Capybara.configure do |config|
     config.javascript_driver = :headless_chrome
     config.default_driver = :headless_chrome
-    config.server_port = 3000
+    config.server_port = 3001
     config.ignore_hidden_elements = false
     config.default_max_wait_time = 10
   end

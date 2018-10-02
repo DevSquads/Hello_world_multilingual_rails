@@ -1,3 +1,7 @@
 ar:
   missions:
     hello: "هيللو ورلد!"
+
+    1:
+      title: 'دامي تيتل'
+      instructions: 'دامي انستراكشانس'
