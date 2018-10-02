@@ -2,16 +2,24 @@
 
 require 'rails_helper'
 
+def fill_mission_form(mission_category, mission_duration, mission_instructions, mission_language, mission_title)
+  fill_in 'mission_title', with: mission_title
+  fill_in 'mission_instructions', with: mission_instructions
+  fill_in 'mission_duration', with: mission_duration
+  fill_in 'mission_category', with: mission_category
+  fill_in 'mission_language', with: mission_language
+end
+
 feature 'Mission' do
 
   scenario 'should create successfully' do
-       visit 'http://localhost:3000/missions/new'
+    visit 'http://localhost:3000/missions/new'
 
-    fill_in 'mission_title', with: 'New Mission'
-    fill_in 'mission_instructions', with: 'New Mission Description'
-    fill_in 'mission_duration', with: '22'
-    fill_in 'mission_category', with: 'Healthy'
-    fill_in 'mission_language', with: 'en'
+    fill_mission_form('Healthy',
+                      '22',
+                      'New Mission Description',
+                      'en',
+                      'New Mission')
 
     click_button 'Create Mission'
 
@@ -25,7 +33,6 @@ feature 'Mission' do
     visit 'http://localhost:3000/missions/1/edit'
 
     fill_in 'mission_title', with: 'edited mission title'
-
     fill_in 'mission_instructions', with: 'edited mission title'
 
     click_button 'Update Mission'
@@ -67,11 +74,11 @@ feature 'Mission' do
 
     visit 'http://localhost:3000/missions/new'
 
-    fill_in 'mission_title', with: mission_title
-    fill_in 'mission_instructions', with: mission_instructions
-    fill_in 'mission_duration', with: mission_duration
-    fill_in 'mission_category', with: mission_category
-    fill_in 'mission_language', with: mission_language
+    fill_mission_form(mission_category,
+                      mission_duration,
+                      mission_instructions,
+                      mission_language,
+                      mission_title)
 
     click_button 'Create Mission'
 
