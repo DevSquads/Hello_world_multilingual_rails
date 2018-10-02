@@ -5,5 +5,6 @@ class Mission < ApplicationRecord
   validates :instructions, presence: true
   validates :duration, presence: true
   validates :category, presence: true
+  validates :language, presence: true
 
 end

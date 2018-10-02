@@ -30,12 +30,12 @@ RSpec.describe MissionsController, type: :controller do
   # adjust the attributes here as well.
   let(:valid_attributes) {
     # skip("Add a hash of attributes valid for your model")
-    {title: 'myTitle', instructions:'ay 7aga', category:'home', duration: 12}
+    {language: 'en', title: 'myTitle', instructions:'ay 7aga', category:'home', duration: 12}
   }
 
   let(:invalid_attributes) {
     # skip("Add a hash of attributes invalid for your model")
-    {title: '', instructions:'', category:'', duration: ''}
+    {language: '', title: '', instructions:'', category:'', duration: ''}
   }
 
   # This should return the minimal set of values that should be in the session

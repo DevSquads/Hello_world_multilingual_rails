@@ -6,7 +6,8 @@ RSpec.describe "missions/edit", type: :view do
       :title => "MyString",
       :instructions => "MyString",
       :duration => 10,
-      :category => "MyString"
+      :category => "MyString",
+      :language => "en"
     ))
   end
 
@@ -22,6 +23,8 @@ RSpec.describe "missions/edit", type: :view do
       assert_select "input[name=?]", "mission[duration]"
 
       assert_select "input[name=?]", "mission[category]"
+
+      assert_select "input[name=?]", "mission[language]"
     end
   end
 end

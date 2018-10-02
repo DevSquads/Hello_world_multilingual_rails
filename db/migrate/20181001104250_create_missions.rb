@@ -5,6 +5,7 @@ class CreateMissions < ActiveRecord::Migration[5.2]
       t.string :instructions
       t.integer :duration
       t.string :category
+      t.string :language
 
       t.timestamps
     end

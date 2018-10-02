@@ -28,4 +28,5 @@ RSpec.describe Mission, type: :model do
     record.valid?
     expect(record.errors[:category]).to include('can\'t be blank')
   end
+
 end

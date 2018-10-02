@@ -3,10 +3,11 @@ require 'rails_helper'
 RSpec.describe "missions/new", type: :view do
   before(:each) do
     assign(:mission, Mission.new(
-      :title => "MyString",
-      :instructions => "MyString",
-      :duration => "",
-      :category => "MyString"
+        :title => "MyString",
+        :instructions => "MyString",
+        :duration => 12,
+        :category => "MyString",
+        :language => "en"
     ))
   end
 
@@ -29,4 +30,10 @@ RSpec.describe "missions/new", type: :view do
     render
     assert_select "input[name='mission[duration]']", :type => :number
   end
+
+  it "should render the language field" do
+    render
+    assert_select "input[name=?]", "mission[language]"
+  end
+
 end

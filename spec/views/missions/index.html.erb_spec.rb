@@ -7,13 +7,15 @@ RSpec.describe "missions/index", type: :view do
         :title => "Title",
         :instructions => "Instructions",
         :duration => 10,
-        :category => "Category"
+        :category => "Category",
+        :language => "en"
       ),
       Mission.create!(
         :title => "Title",
         :instructions => "Instructions",
         :duration => 10,
-        :category => "Category"
+        :category => "Category",
+        :language => "fr"
       )
     ])
   end
