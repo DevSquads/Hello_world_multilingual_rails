@@ -5,21 +5,17 @@ require 'rails_helper'
 feature 'Mission' do
 
   scenario 'should create successfully' do
-    visit 'http://localhost:3000/missions/new'
+       visit 'http://localhost:3000/missions/new'
 
     fill_in 'mission_title', with: 'New Mission'
-
     fill_in 'mission_instructions', with: 'New Mission Description'
-
     fill_in 'mission_duration', with: '22'
-
     fill_in 'mission_category', with: 'Healthy'
-
     fill_in 'mission_language', with: 'en'
 
     click_button 'Create Mission'
 
-    expect(find('p#notice').text).to eql('Mission was successfully created.')
+    expect(find('p#notice')).to have_text('Mission was successfully created.')
     expect(current_path).to eql('/missions/1')
   end
 
@@ -34,7 +30,7 @@ feature 'Mission' do
 
     click_button 'Update Mission'
 
-    expect(find('p#notice').text).to eql('Mission was successfully updated.')
+    expect(find('p#notice')).to have_text('Mission was successfully updated.')
     expect(current_path).to eql('/missions/1')
   end
 
@@ -60,5 +56,37 @@ feature 'Mission' do
     end
 
     expect(find_all('tbody tr').length).to eql(0)
+  end
+
+  scenario 'Missions form should support multiple language' do
+    mission_title = 'مهمة جديدة'
+    mission_instructions = 'وصف المهمة الجديدة'
+    mission_duration = '22'
+    mission_category = 'Healthy'
+    mission_language =  'ar'
+
+    visit 'http://localhost:3000/missions/new'
+
+    fill_in 'mission_title', with: mission_title
+    fill_in 'mission_instructions', with: mission_instructions
+    fill_in 'mission_duration', with: mission_duration
+    fill_in 'mission_category', with: mission_category
+    fill_in 'mission_language', with: mission_language
+
+    click_button 'Create Mission'
+
+    expect(find('p#notice').text).to eql('Mission was successfully created.')
+    expect(current_path).to eql('/missions/1')
+
+    # check the created mission in form redirection show
+    expect(find('body > p:nth-child(2)')).to have_text(mission_title)
+    expect(find('body > p:nth-child(3)')).to have_text(mission_instructions)
+
+    # validate the created mission in show all
+    visit 'http://localhost:3000/missions'
+
+    expect(find_all('tbody tr').length).to eql(1)
+    expect(find('tbody > tr:nth-child(1) > td:nth-child(1)')).to have_text(mission_title)
+    expect(find('tbody > tr:nth-child(1) > td:nth-child(2)')).to have_text(mission_instructions)
   end
 end
