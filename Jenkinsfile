@@ -1,5 +1,5 @@
 pipeline {
-    agent docker
+    agent any
     stages {
         stage('clean Docker compose') {
                 steps {
