@@ -1,17 +1,15 @@
 pipeline {
-    agent any
+    agent docker
     stages {
-        stage('Build') {
+        stage('clean Docker compose') {
                 steps {
-                sh 'bash --login'
-                sh 'bundle install'
+               sh 'docker-compose down'
                 }
             }
         stage('Test') {
             steps {
-                nodejs('node'){
-                    sh 'rspec --format RspecJunitFormatter  --out spec/reports/result.xml'
-                }
+               sh 'docker-compose up -d'
+               sleep 20
                 junit 'spec/reports/*.xml'
             }
         }
