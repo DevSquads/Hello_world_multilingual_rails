@@ -1,10 +1,11 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
+default_url = 'http://localhost:3001'
 
 feature 'User adds a language', js: true do
   scenario 'window size is large enough for tests' do
-    visit 'http://localhost:3000'
+    visit default_url
     expect(current_window.size).to eql([1024, 768])
   end
 
@@ -15,13 +16,13 @@ feature 'User adds a language', js: true do
   end
 
   scenario 'testing that a dom is rendered' do
-    visit 'http://localhost:3000'
+    visit default_url
 
     expect(html).to match('language_name')
   end
 
   scenario 'fills form and adds a language' do
-    visit 'http://localhost:3000'
+    visit default_url
 
     fill_in 'language_name', with: 'fr'
 
@@ -51,7 +52,7 @@ feature 'User adds a language', js: true do
 
     I18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
 
-    visit 'http://localhost:3000/?locale=fr'
+    visit "#{default_url}/?locale=fr"
 
     expect(find('h1').text).to eql('bonjour')
   ensure

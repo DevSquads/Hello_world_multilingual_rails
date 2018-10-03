@@ -60,6 +60,11 @@ RSpec.configure do |config|
     options.add_argument 'headless'
     options.add_argument 'disable-gpu'
     options.add_argument 'window-size=1024,768'
+    options.add_argument("start-maximized"); 
+    options.add_argument("disable-infobars"); 
+    options.add_argument("disable-extensions"); 
+    options.add_argument("disable-dev-shm-usage"); 
+    options.add_argument("no-sandbox"); 
     Capybara::Selenium::Driver.new app, browser: :chrome, options: options
   end
   Capybara.configure do |config|
@@ -67,7 +72,7 @@ RSpec.configure do |config|
     config.default_driver = :headless_chrome
     config.server_port = 3001
     config.ignore_hidden_elements = false
-    config.default_max_wait_time = 10
+    config.default_max_wait_time = 3
   end
 
 # The settings below are suggested to provide a good initial experience

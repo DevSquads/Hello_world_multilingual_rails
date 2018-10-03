@@ -29,6 +29,7 @@ gem 'rails-controller-testing'
 gem 'rspec-rails'
 gem 'selenium-webdriver'
 gem 'rspec_junit_formatter'
+gem 'chromedriver-helper'
 gem 'database_cleaner'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'

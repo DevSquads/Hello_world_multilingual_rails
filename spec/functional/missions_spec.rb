@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
+default_url = 'http://localhost:3001'
 
 def fill_mission_form(mission_category, mission_duration, mission_instructions, mission_language, mission_title)
   fill_in 'mission_title', with: mission_title
@@ -13,7 +14,7 @@ end
 feature 'Mission' do
 
   scenario 'should create successfully' do
-    visit 'http://localhost:3000/missions/new'
+    visit "#{default_url}/missions/new"
 
     fill_mission_form('Healthy',
                       '22',
@@ -30,7 +31,7 @@ feature 'Mission' do
   scenario 'should edit successfully' do
     Mission.create!(title: 'title', instructions: 'instructions', duration: 10, category: 'category', :language => "en")
 
-    visit 'http://localhost:3000/missions/1/edit'
+    visit "#{default_url}/missions/1/edit"
 
     fill_in 'mission_title', with: 'edited mission title'
     fill_in 'mission_instructions', with: 'edited mission title'
@@ -46,7 +47,7 @@ feature 'Mission' do
     Mission.create!(title: 'second mission', instructions: 'instructions', duration: 10, category: 'category',:language => "fr")
     Mission.create!(title: 'third mission', instructions: 'instructions', duration: 10, category: 'category', :language => "sp")
 
-    visit 'http://localhost:3000/missions'
+    visit "#{default_url}/missions"
 
     expect(find_all('tbody tr').length).to eql(3)
   end
@@ -54,7 +55,7 @@ feature 'Mission' do
   scenario 'should delete the mission with destroy button' do
     Mission.create!(title: 'title', instructions: 'instructions', duration: 10, category: 'category', :language => "en")
 
-    visit 'http://localhost:3000/missions'
+    visit "#{default_url}/missions"
 
     expect(find_all('tbody tr').length).to eql(1)
 
@@ -72,7 +73,7 @@ feature 'Mission' do
     mission_category = 'Healthy'
     mission_language =  'ar'
 
-    visit 'http://localhost:3000/missions/new'
+    visit "#{default_url}/missions/new"
 
     fill_mission_form(mission_category,
                       mission_duration,
@@ -90,7 +91,7 @@ feature 'Mission' do
     expect(find('body > p:nth-child(3)')).to have_text(mission_instructions)
 
     # validate the created mission in show all
-    visit 'http://localhost:3000/missions'
+    visit "#{default_url}/missions"
 
     expect(find_all('tbody tr').length).to eql(1)
     expect(find('tbody > tr:nth-child(1) > td:nth-child(1)')).to have_text(mission_title)

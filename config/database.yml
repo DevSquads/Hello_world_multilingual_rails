@@ -3,14 +3,13 @@ development:
   adapter: postgresql
   encoding: utf-8
   # host: 192.168.32.2
-  database: demo_test_development
-  # database: missions
+  database: missions
   pool: 5
-  username: omar
-  password: e2368r
+  username: postgres
+  password: example
   timeout: 5000
-#  port: 5432
-#  host: postgdb
+  port: 5432
+  host: postgdb
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
   # domain sockets, so uncomment these lines.
@@ -37,6 +36,6 @@ test:
   encoding: utf-8
   database: demo_test_test
   pool: 5
-  username: omar
-  password: e2368r
+  username: postgres
+  password: example
   timeout: 5000

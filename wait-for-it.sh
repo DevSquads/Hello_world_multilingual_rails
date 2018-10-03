@@ -7,7 +7,7 @@ set -e
 
 host="$1"
 pport="$2"
-shift
+# shift
 cmd="$@"
 
 until PGPASSWORD=$POSTGRES_PASSWORD psql -h "$host" -p "$pport" -U "postgres" -c '\q'; do
