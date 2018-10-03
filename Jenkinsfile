@@ -1,19 +1,18 @@
 pipeline {
-    agent any
+    agent { 
+        nodejs { label 'node' }
+        docker { label 'docker'} 
+    }
     stages {
-        agent { 
-            nodejs { label 'node' }
-            docker { label 'docker'} 
-            }
         stage('clean Docker compose') {
-                steps {
-               sh 'docker-compose down'
-                }
+            steps {
+                sh 'docker-compose down'
             }
+        }
         stage('Test') {
             steps {
-               sh 'docker-compose up -d'
-               sleep 20
+                sh 'docker-compose up -d'
+                sleep 20
                 junit 'spec/reports/*.xml'
             }
         }
