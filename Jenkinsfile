@@ -9,7 +9,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'docker-compose up -d'
-                sleep 20
+                sleep 90
                 junit 'spec/reports/*.xml'
             }
         }
