@@ -1,6 +1,10 @@
 pipeline {
     agent any
     stages {
+        agent { 
+            nodejs { label 'node' }
+            docker { label 'docker'} 
+            }
         stage('clean Docker compose') {
                 steps {
                sh 'docker-compose down'
