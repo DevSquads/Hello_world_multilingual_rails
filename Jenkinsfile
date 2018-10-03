@@ -1,7 +1,4 @@
 pipeline {
-    agent { 
-        docker { label 'docker'} 
-    }
     stages {
         stage('clean Docker compose') {
             steps {
