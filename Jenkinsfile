@@ -1,6 +1,5 @@
 pipeline {
     agent { 
-        nodejs { label 'node' }
         docker { label 'docker'} 
     }
     stages {
