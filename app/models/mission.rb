@@ -14,7 +14,7 @@ class Mission < ApplicationRecord
     if id
       I18n.backend.send(:translations)[I18n.locale][:missions][id][:title]
     else
-      'placeholder_title'
+      ''
     end
   end
 
@@ -22,7 +22,7 @@ class Mission < ApplicationRecord
     if id
       I18n.backend.send(:translations)[I18n.locale][:missions][id][:instructions]
     else
-      'placeholder_instructions'
+      ''
     end
   end
 

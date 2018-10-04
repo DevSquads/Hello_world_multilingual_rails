@@ -26,7 +26,6 @@ describe 'Mission returns title and instructions by language' do
     en_yml_path = Rails.root.join('config/locales/en_test.yml')
     create_base_yml_file_without_missions(en_yml_path, 'en_test')
 
-
     I18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
     I18n.locale = 'en_test'
     record.save
@@ -55,7 +54,6 @@ describe 'Mission returns title and instructions by language' do
   ensure
     File.delete(en_yml_path) if File.exists? en_yml_path
   end
-
 
   it 'reads the title correctly based on locale' do
     ar_title = 'daght'
