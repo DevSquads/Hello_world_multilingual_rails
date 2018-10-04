@@ -1,20 +1,6 @@
-require 'rails_helper'
-require 'yaml'
-
-def create_yml_file_for_locale_mission(yaml_path, main_language, id, title, instructions)
-  File.open(yaml_path, "w+") do |file|
-    file.write("#{main_language}:\n")
-    file.write((' ' * 2) + "missions:\n")
-    file.write((' ' * 4) + "#{id}:\n")
-    file.write((' ' * 6) + "title: '#{title}'\n")
-    file.write((' ' * 6) + "instructions: '#{instructions}'")
-  end
-end
+# frozen_string_literal: true
 
 RSpec.describe Mission, type: :model do
-  before(:all) do
-    I18n.locale = 'en'
-  end
 
   xit 'validates presence of title' do
     record = Mission.new
@@ -42,88 +28,6 @@ RSpec.describe Mission, type: :model do
     record.category = ''
     record.valid?
     expect(record.errors[:category]).to include('can\'t be blank')
-  end
-
-  it 'should save the model with id' do
-    #create new mission
-    record = Mission.new
-    record.category = '96'
-    record.duration = 10
-    record.instructions = 'instructions'
-    record.title = 'title'
-
-    record.save
-
-    expect(record.errors[:title].length).to eql(0)
-    expect(record.errors[:instructions].length).to eql(0)
-  end
-
-  it 'reads the title correctly based on locale' do
-    ar_title = "daght"
-    en_title = "pushup"
-
-    #create locale files
-    en_yaml_path = Rails.root.join("config/locales/en_test.yml")
-    create_yml_file_for_locale_mission(en_yaml_path,'en_test', 1, en_title, 'exercise')
-
-    ar_yaml_path = Rails.root.join("config/locales/ar_test.yml")
-    create_yml_file_for_locale_mission(ar_yaml_path,'ar_test', 1, ar_title, 'instaructions')
-
-    I18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
-
-    #create new mission
-    record = Mission.new
-    record.category = '96'
-    record.duration = 10
-    record.instructions = 'instructions'
-    record.title = 'title'
-    record.save
-
-
-    #create en_test
-    I18n.locale = "en_test"
-    expect(record.title).to eql(en_title)
-
-    I18n.locale = "ar_test"
-    expect(record.title).to eql(ar_title)
-
-  ensure
-    File.delete(en_yaml_path) if File.exists?(en_yaml_path)
-    File.delete(ar_yaml_path) if File.exists?(ar_yaml_path)
-  end
-
-  it 'reads the instructions correctly based on locale' do
-    ar_instructions = "exercise"
-    en_instructions = "tamarin"
-
-    #create locale files
-    en_yaml_path = Rails.root.join("config/locales/en_test.yml")
-    create_yml_file_for_locale_mission(en_yaml_path, 'en_test', 1, 'en_title', en_instructions)
-
-    ar_yaml_path = Rails.root.join("config/locales/ar_test.yml")
-    create_yml_file_for_locale_mission(ar_yaml_path, 'ar_test', 1, 'ar_title', ar_instructions)
-
-    I18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
-
-    #create new mission
-    record = Mission.new
-    record.category = '96'
-    record.duration = 10
-    record.instructions = 'instructions'
-    record.title = 'title'
-    record.save
-
-
-    #create en_test
-    I18n.locale = "en_test"
-    expect(record.instructions).to eql(en_instructions)
-
-    I18n.locale = "ar_test"
-    expect(record.instructions).to eql(ar_instructions)
-
-  ensure
-    File.delete(en_yaml_path) if File.exists?(en_yaml_path)
-    File.delete(ar_yaml_path) if File.exists?(ar_yaml_path)
   end
 
 
