@@ -53,7 +53,7 @@ feature 'User adds a language', js: true do
     I18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
 
     visit "#{default_url}/?locale=fr"
-
+    sleep(1)
     expect(find('h1').text).to eql('bonjour')
   ensure
     I18n.locale = I18n.default_locale
