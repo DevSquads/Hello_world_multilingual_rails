@@ -1,6 +1,16 @@
 require 'rails_helper'
 require 'yaml'
 
+def create_yml_file_for_locale_mission(yaml_path, main_language, id, title, instructions)
+  File.open(yaml_path, "w+") do |file|
+    file.write("#{main_language}:\n")
+    file.write((' ' * 2) + "missions:\n")
+    file.write((' ' * 4) + "#{id}:\n")
+    file.write((' ' * 6) + "title: '#{title}'\n")
+    file.write((' ' * 6) + "instructions: '#{instructions}'")
+  end
+end
+
 RSpec.describe Mission, type: :model do
   before(:all) do
     I18n.locale = 'en'
@@ -49,23 +59,16 @@ RSpec.describe Mission, type: :model do
   end
 
   it 'reads the title correctly based on locale' do
+    ar_title = "daght"
+    en_title = "pushup"
+
     #create locale files
     en_yaml_path = Rails.root.join("config/locales/en_test.yml")
-    File.open(en_yaml_path, "w+") do |file|
-      file.write("en_test:\n")
-      file.write((' ' * 2) + "missions:\n")
-      file.write((' ' * 4) + "1:\n")
-      file.write((' ' * 6) + "title: 'pushup'\n")
-      file.write((' ' * 6) + "instructions: 'exercise'")
-    end
+    create_yml_file_for_locale_mission(en_yaml_path,'en_test', 1, en_title, 'exercise')
+
     ar_yaml_path = Rails.root.join("config/locales/ar_test.yml")
-    File.open(ar_yaml_path, "w+") do |file|
-      file.write("ar_test:\n")
-      file.write((' ' * 2) + "missions:\n")
-      file.write((' ' * 4) + "1:\n")
-      file.write((' ' * 6) + "title: 'daght'\n")
-      file.write((' ' * 6) + "instructions: 'tamreen'")
-    end
+    create_yml_file_for_locale_mission(ar_yaml_path,'ar_test', 1, ar_title, 'instaructions')
+
     I18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
 
     #create new mission
@@ -75,8 +78,7 @@ RSpec.describe Mission, type: :model do
     record.instructions = 'instructions'
     record.title = 'title'
     record.save
-    ar_title = "daght"
-    en_title = "pushup"
+
 
     #create en_test
     I18n.locale = "en_test"
