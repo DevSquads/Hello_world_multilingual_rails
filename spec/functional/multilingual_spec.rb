@@ -47,7 +47,7 @@ feature 'User adds a language', js: true do
     file_path = Rails.root.join('config/locales', 'fr.yml')
 
     File.open(file_path, "a") do |f|
-      File.chomd('0777',file_path)
+      File.chmod(0777,file_path)
       f.write(file_data)
     end
 
