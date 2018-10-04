@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
-default_url = 'http://localhost:3000'
+default_url = 'http://localhost:3001'
 
 def fill_mission_form(mission_category, mission_duration, mission_instructions, mission_language, mission_title)
   fill_in 'mission_title', with: mission_title
