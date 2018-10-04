@@ -4,7 +4,6 @@ require 'yaml'
 
 describe 'Mission returns title and instructions by language' do
 
-
   it 'should save the model with id' do
     # create new mission
     record = Mission.new
@@ -26,18 +25,37 @@ describe 'Mission returns title and instructions by language' do
     record.instructions = 'instructions'
     en_yml_path = Rails.root.join('config/locales/en_test.yml')
     create_base_yml_file_without_missions(en_yml_path, 'en_test')
+
+
     I18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
-
     I18n.locale = 'en_test'
-
     record.save
-    yml_hash = YAML.load(File.read(en_yml_path))
 
-    # expect(yml_hash['en_test']['missions']["m_#{record.id}"]).to match(:title)
-    expect(yml_hash['en_test']['missions']["m_#{record.id.to_s}"][:title]).to eql('the title')
+    yml_hash = YAML.load(File.read(en_yml_path))
+    expect(yml_hash['en_test']['missions']["m_#{record.id.to_s}"][:title]).to eql('demo_test_title')
   ensure
     File.delete(en_yml_path) if File.exists? en_yml_path
   end
+
+  it 'should save the instructions to the locale' do
+    record = Mission.new
+    record.category = '96'
+    record.duration = 10
+    record.title = 'demo_test_title'
+    record.instructions = 'go up and down'
+    en_yml_path = Rails.root.join('config/locales/en_test.yml')
+    create_base_yml_file_without_missions(en_yml_path, 'en_test')
+
+    I18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
+    I18n.locale = 'en_test'
+    record.save
+
+    yml_hash = YAML.load(File.read(en_yml_path))
+    expect(yml_hash['en_test']['missions']["m_#{record.id.to_s}"][:instructions]).to eql('go up and down')
+  ensure
+    File.delete(en_yml_path) if File.exists? en_yml_path
+  end
+
 
   it 'reads the title correctly based on locale' do
     ar_title = 'daght'

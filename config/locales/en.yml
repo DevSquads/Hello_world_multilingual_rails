@@ -12,8 +12,11 @@ en:
       title: dummy title3
       instructions: dummy instructions3
     m_1:
-      :title: the title
+      :title: Title
+      :instructions: Instructions
     m_2:
-      :title: the title
+      :title: Title
+      :instructions: Instructions
     m_3:
-      :title: the title
+      :title: third mission
+      :instructions: instructions
