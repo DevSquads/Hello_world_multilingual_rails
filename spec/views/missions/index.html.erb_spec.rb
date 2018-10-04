@@ -15,14 +15,15 @@ RSpec.describe "missions/index", type: :view do
         :instructions => "Instructions",
         :duration => 10,
         :category => "Category",
-        :language => "fr"
+        :language => "en"
       )
     ])
   end
 
   it "renders a list of missions" do
     render
-    assert_select "tr>td", :text => "Title".to_s, :count => 2
+    assert_select "tr>td", :text => "dummy title1".to_s, :count => 1
+    assert_select "tr>td", :text => "dummy title2".to_s, :count => 1
     assert_select "tr>td", :text => "Instructions".to_s, :count => 2
     assert_select "tr>td", :text => 10.to_s, :count => 2
     assert_select "tr>td", :text => "Category".to_s, :count => 2

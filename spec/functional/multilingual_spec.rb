@@ -57,6 +57,6 @@ feature 'User adds a language', js: true do
     expect(find('h1').text).to eql('bonjour')
   ensure
     I18n.locale = I18n.default_locale
-    File.delete(file_path) if File.exist? file_path
+    # File.delete(file_path) if File.exist? file_path
   end
 end

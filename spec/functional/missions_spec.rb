@@ -66,7 +66,7 @@ feature 'Mission' do
     expect(find_all('tbody tr').length).to eql(0)
   end
 
-  scenario 'Missions form should support creation of different language' do
+  xit 'Missions form should support creation of different language' do
     mission_title = 'مهمة جديدة'
     mission_instructions = 'وصف المهمة الجديدة'
     mission_duration = '22'
