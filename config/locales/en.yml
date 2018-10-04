@@ -34,11 +34,11 @@ en:
     hello: "Hello, world!"
     1:
       title: "dummy title1"
-      instructions: "dummy instructions"
+      instructions: "dummy instructions1"
     2:
       title: "dummy title2"
-      instructions: "dummy instructions"
+      instructions: "dummy instructions2"
 
     3:
       title: "dummy title3"
-      instructions: "dummy instructions"
+      instructions: "dummy instructions3"

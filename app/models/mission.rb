@@ -13,4 +13,12 @@ class Mission < ApplicationRecord
       'placeholder_title'
     end
   end
+
+  def instructions
+    if self.id
+      I18n.backend.send(:translations)[I18n.locale][:missions][self.id][:instructions]
+    else
+      'placeholder_instructions'
+    end
+  end
 end
