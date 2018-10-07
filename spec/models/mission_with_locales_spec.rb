@@ -40,17 +40,16 @@ describe 'Mission returns title and instructions by language' do
     record.duration = 10
     record.title = 'demo_test_title'
     record.instructions = 'go up and down'
-    en_yml_path = Rails.root.join('config/locales/en_test.yml')
-    create_base_yml_file_without_missions(en_yml_path, 'en_test')
+    create_base_yml_file_without_missions( 'en_test')
 
     I18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
     I18n.locale = 'en_test'
     record.save
 
-    yml_hash = YAML.load(File.read(en_yml_path))
+    yml_hash = YAML.load(File.read(yml_path('en_test')))
     expect(yml_hash['en_test']['missions']["m_#{record.id.to_s}"][:instructions]).to eql('go up and down')
   ensure
-    File.delete(en_yml_path) if File.exists? en_yml_path
+    File.delete(yml_path('en_test')) if File.exists? yml_path('en_test')
   end
 
   it 'reads the title correctly based on locale' do
@@ -58,11 +57,9 @@ describe 'Mission returns title and instructions by language' do
     en_title = 'pushup'
 
     # create locale files
-    en_yaml_path = Rails.root.join('config/locales/en_test.yml')
-    create_yml_file_for_locale_mission(en_yaml_path, 'en_test', 1, en_title, 'exercise')
+    create_yml_file_for_locale_mission('en_test', 1, en_title, 'exercise')
 
-    ar_yaml_path = Rails.root.join('config/locales/ar_test.yml')
-    create_yml_file_for_locale_mission(ar_yaml_path, 'ar_test', 1, ar_title, 'instaructions')
+    create_yml_file_for_locale_mission('ar_test', 1, ar_title, 'instructions')
 
     I18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
 
@@ -80,8 +77,8 @@ describe 'Mission returns title and instructions by language' do
     expect(record.title).to eql(ar_title)
 
   ensure
-    File.delete(en_yaml_path) if File.exist?(en_yaml_path)
-    File.delete(ar_yaml_path) if File.exist?(ar_yaml_path)
+    remove_locale_file 'en_test'
+    remove_locale_file 'ar_test'
   end
 
   it 'reads the instructions correctly based on locale' do
@@ -89,11 +86,9 @@ describe 'Mission returns title and instructions by language' do
     en_instructions = 'tamarin'
 
     # create locale files
-    en_yaml_path = Rails.root.join('config/locales/en_test.yml')
-    create_yml_file_for_locale_mission(en_yaml_path, 'en_test', 1, 'en_title', en_instructions)
+    create_yml_file_for_locale_mission('en_test', 1, 'en_title', en_instructions)
 
-    ar_yaml_path = Rails.root.join('config/locales/ar_test.yml')
-    create_yml_file_for_locale_mission(ar_yaml_path, 'ar_test', 1, 'ar_title', ar_instructions)
+    create_yml_file_for_locale_mission('ar_test', 1, 'ar_title', ar_instructions)
 
     I18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
 
@@ -111,7 +106,9 @@ describe 'Mission returns title and instructions by language' do
     expect(record.instructions).to eql(ar_instructions)
 
   ensure
+    en_yaml_path = yml_path 'en_test'
     File.delete(en_yaml_path) if File.exist?(en_yaml_path)
+    ar_yaml_path = yml_path'ar_test'
     File.delete(ar_yaml_path) if File.exist?(ar_yaml_path)
   end
 
