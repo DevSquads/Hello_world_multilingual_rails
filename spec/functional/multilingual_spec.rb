@@ -28,7 +28,7 @@ feature 'User adds a language', js: true do
 
     fill_in 'translations[hello]', with: 'bonjour'
 
-    fill_in 'translations[1]', with: 'merde'
+    fill_in 'translations[m_1]', with: 'merde'
 
     click_button 'add_language'
 

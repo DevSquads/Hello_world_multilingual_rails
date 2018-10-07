@@ -131,7 +131,7 @@ describe 'Mission returns title and instructions by language' do
     File.open(yaml_path, 'w+') do |file|
       file.write("#{main_language}:\n")
       file.write((' ' * 2) + "missions:\n")
-      file.write((' ' * 4) + "#{id}:\n")
+      file.write((' ' * 4) + "m_#{id}:\n")
       file.write((' ' * 6) + "title: '#{title}'\n")
       file.write((' ' * 6) + "instructions: '#{instructions}'")
     end
