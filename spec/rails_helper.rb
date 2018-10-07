@@ -77,7 +77,6 @@ RSpec.configure do |config|
         example.run
       end
     end
-  
   end
 
   config.after(:each) do
