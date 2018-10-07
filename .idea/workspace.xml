@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="576492f6-f6be-42fa-9805-78e1301a55b4" name="Default Changelist" comment="">
+    <list default="true" id="576492f6-f6be-42fa-9805-78e1301a55b4" name="Default Changelist" comment="configure chrome to output test results in report">
+      <change afterPath="$PROJECT_DIR$/entry_for_web_container.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/rails_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/rails_helper.rb" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -18,55 +20,55 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/multilingual@LanguageController_languageDictToArray_should_extract_dictionary_to_a_flat_array_of_key_value_pairs__multilingual.rcov" NAME="LanguageController languageDictToArray should extract dictionary to a flat array of key value pairs: multilingual Coverage Results" MODIFIED="1538385121160" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
-    <SUITE FILE_PATH="coverage/multilingual@Mission_should_edit_successfully__multilingual.rcov" NAME="Mission should edit successfully: multilingual Coverage Results" MODIFIED="1538405502111" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
     <SUITE FILE_PATH="coverage/multilingual@Mission_validate_the_type_of_instructions__multilingual.rcov" NAME="Mission validate the type of instructions: multilingual Coverage Results" MODIFIED="1538401154796" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
-    <SUITE FILE_PATH="coverage/multilingual@Mission_should_delete_the_mission_with_destroy_button__multilingual.rcov" NAME="Mission should delete the mission with destroy button: multilingual Coverage Results" MODIFIED="1538407760872" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
-    <SUITE FILE_PATH="coverage/multilingual@missions_new_should_render_the_language_field__multilingual.rcov" NAME="missions/new should render the language field: multilingual Coverage Results" MODIFIED="1538470195582" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
-    <SUITE FILE_PATH="coverage/multilingual@language_index_html_erb_should_render_the_first_locale_field_Hello_in_the_title__multilingual.rcov" NAME="language/index.html.erb should render the first locale field Hello in the title: multilingual Coverage Results" MODIFIED="1538387422195" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
     <SUITE FILE_PATH="coverage/multilingual@Mission_should_save_the_model_with_id__multilingual.rcov" NAME="Mission should save the model with id: multilingual Coverage Results" MODIFIED="1538660190849" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
-    <SUITE FILE_PATH="coverage/multilingual@LanguageController_LanguageController_Actions_returns_an_array_from_a_recrusive_function__multilingual.rcov" NAME="LanguageController LanguageController Actions returns an array from a recrusive function: multilingual Coverage Results" MODIFIED="1538324545159" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
-    <SUITE FILE_PATH="coverage/multilingual@User_adds_a_language_testing_that_capybara_can_fild_any_element__multilingual.rcov" NAME="User adds a language testing that capybara can fild any element: multilingual Coverage Results" MODIFIED="1538316778821" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
-    <SUITE FILE_PATH="coverage/multilingual@Mission_should_show_all_missions___multilingual.rcov" NAME="Mission should show all missions : multilingual Coverage Results" MODIFIED="1538407171786" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
-    <SUITE FILE_PATH="coverage/multilingual@app_index_html_erb_should_contain_button_to_add_language__multilingual.rcov" NAME="app/index.html.erb should contain button to add language: multilingual Coverage Results" MODIFIED="1537876059922" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
-    <SUITE FILE_PATH="coverage/multilingual@missions_new_should_render_the_duration_form_as_number_field__multilingual.rcov" NAME="missions/new should render the duration form as number field: multilingual Coverage Results" MODIFIED="1538404380157" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
-    <SUITE FILE_PATH="coverage/multilingual@User_adds_a_language_window_size_is_large_enough_for_tests__multilingual.rcov" NAME="User adds a language window size is large enough for tests: multilingual Coverage Results" MODIFIED="1538316100378" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
-    <SUITE FILE_PATH="coverage/multilingual@AppController_GET__index_returns_a_hello_world_string_in_english__multilingual.rcov" NAME="AppController GET #index returns a hello world string in english: multilingual Coverage Results" MODIFIED="1537870738368" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
-    <SUITE FILE_PATH="coverage/multilingual@language_index_html_erb_should_have_a_translations_parent_notation_in_the_input_names__multilingual.rcov" NAME="language/index.html.erb should have a translations parent notation in the input names: multilingual Coverage Results" MODIFIED="1538388023395" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
-    <SUITE FILE_PATH="coverage/multilingual@Mission_validate_the_type_of_title__multilingual.rcov" NAME="Mission validate the type of title: multilingual Coverage Results" MODIFIED="1538401318162" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
-    <SUITE FILE_PATH="coverage/multilingual@Mission_reads_the_title_correctly_based_on_locale__multilingual.rcov" NAME="Mission reads the title correctly based on locale: multilingual Coverage Results" MODIFIED="1538652395610" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
-    <SUITE FILE_PATH="coverage/multilingual@AppController_GET__index_returns_html__multilingual.rcov" NAME="AppController GET #index returns html: multilingual Coverage Results" MODIFIED="1537871082774" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
-    <SUITE FILE_PATH="coverage/multilingual@User_adds_a_language_retrieves_locale_correctly__multilingual.rcov" NAME="User adds a language retrieves locale correctly: multilingual Coverage Results" MODIFIED="1538386882506" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
-    <SUITE FILE_PATH="coverage/multilingual@language_index_html_erb__multilingual.rcov" NAME="language/index.html.erb: multilingual Coverage Results" MODIFIED="1538392924034" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
-    <SUITE FILE_PATH="coverage/multilingual@AppController_AppController_Actions_POST_create_should_create_a_new_yml_file__multilingual.rcov" NAME="AppController AppController Actions POST#create should create a new yml file: multilingual Coverage Results" MODIFIED="1537982006554" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
-    <SUITE FILE_PATH="coverage/multilingual@Mission_add_some_examples_to__or_delete______FILE_____multilingual.rcov" NAME="Mission add some examples to (or delete) #{__FILE__}: multilingual Coverage Results" MODIFIED="1538398707162" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
-    <SUITE FILE_PATH="coverage/multilingual@app_index_html_erb_should_show_the_dictionary_form_with_the_keys_from_locale__multilingual.rcov" NAME="app/index.html.erb should show the dictionary form with the keys from locale: multilingual Coverage Results" MODIFIED="1537972322862" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
-    <SUITE FILE_PATH="coverage/multilingual@AppController__multilingual.rcov" NAME="AppController: multilingual Coverage Results" MODIFIED="1537958041651" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
-    <SUITE FILE_PATH="coverage/multilingual@app_index_html_erb__multilingual.rcov" NAME="app/index.html.erb: multilingual Coverage Results" MODIFIED="1537960003992" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
-    <SUITE FILE_PATH="coverage/multilingual@User_adds_a_language_testing_that_a_dom_is_rendered__multilingual.rcov" NAME="User adds a language testing that a dom is rendered: multilingual Coverage Results" MODIFIED="1538317359518" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
-    <SUITE FILE_PATH="coverage/multilingual@AppController_languageDictToArray_should_extract_dictionary_to_a_flat_array_of_key_value_pairs__multilingual.rcov" NAME="AppController languageDictToArray should extract dictionary to a flat array of key value pairs: multilingual Coverage Results" MODIFIED="1537888716601" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
-    <SUITE FILE_PATH="coverage/multilingual@AppController_AppController_Actions_POST_create_requires_language_name_field__multilingual.rcov" NAME="AppController AppController Actions POST#create requires language name field: multilingual Coverage Results" MODIFIED="1537982673469" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
-    <SUITE FILE_PATH="coverage/multilingual@Mission__multilingual.rcov" NAME="Mission: multilingual Coverage Results" MODIFIED="1538401748781" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
-    <SUITE FILE_PATH="coverage/multilingual@Mission_validates_presence_of_duration__multilingual.rcov" NAME="Mission validates presence of duration: multilingual Coverage Results" MODIFIED="1538401823040" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
-    <SUITE FILE_PATH="coverage/multilingual@User_adds_a_language__multilingual.rcov" NAME="User adds a language: multilingual Coverage Results" MODIFIED="1538324225338" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
-    <SUITE FILE_PATH="coverage/multilingual@AppController_GET__index_returns_index_template__multilingual.rcov" NAME="AppController GET #index returns index template: multilingual Coverage Results" MODIFIED="1537871656436" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
-    <SUITE FILE_PATH="coverage/multilingual@MissionsController_PUT__update_with_invalid_params_returns_a_success_response__i_e__to_display_the__edit__template___multilingual.rcov" NAME="MissionsController PUT #update with invalid params returns a success response (i.e. to display the 'edit' template): multilingual Coverage Results" MODIFIED="1538394664466" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
-    <SUITE FILE_PATH="coverage/multilingual@AppController_AppController_Actions_POST_create_should_create_a_new_yml_file_with_newlines_between_different_string__multilingual.rcov" NAME="AppController AppController Actions POST#create should create a new yml file with newlines between different string: multilingual Coverage Results" MODIFIED="1537972865992" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
-    <SUITE FILE_PATH="coverage/multilingual@missions_index__multilingual.rcov" NAME="missions/index: multilingual Coverage Results" MODIFIED="1538402330946" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
-    <SUITE FILE_PATH="coverage/multilingual@MissionsController_POST__create_with_invalid_params_returns_a_success_response__i_e__to_display_the__new__template___multilingual.rcov" NAME="MissionsController POST #create with invalid params returns a success response (i.e. to display the 'new' template): multilingual Coverage Results" MODIFIED="1538394779468" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
-    <SUITE FILE_PATH="coverage/multilingual@AppController_GET__index_returns_index_with_ar_locales__multilingual.rcov" NAME="AppController GET #index returns index with ar locales: multilingual Coverage Results" MODIFIED="1537872472399" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
     <SUITE FILE_PATH="coverage/multilingual@AppController_GET__index__multilingual.rcov" NAME="AppController GET #index: multilingual Coverage Results" MODIFIED="1537871764907" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
-    <SUITE FILE_PATH="coverage/multilingual@Mission_validates_presence__multilingual.rcov" NAME="Mission validates presence: multilingual Coverage Results" MODIFIED="1538398668495" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
-    <SUITE FILE_PATH="coverage/multilingual@LanguageController_LanguageController_Actions_POST_create_creates_a_YML_file_with_a_locale_subdomain_of_missions__multilingual.rcov" NAME="LanguageController LanguageController Actions POST#create creates a YML file with a locale subdomain of missions: multilingual Coverage Results" MODIFIED="1538385477851" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
-    <SUITE FILE_PATH="coverage/multilingual@MissionsController_GET__index_returns_all_missions_in_english_given_a_LANG_header_of_english__multilingual.rcov" NAME="MissionsController GET #index returns all missions in english given a LANG header of english: multilingual Coverage Results" MODIFIED="1538490387906" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
-    <SUITE FILE_PATH="coverage/multilingual@Mission_create_mission_should_create_successfully__multilingual.rcov" NAME="Mission create mission should create successfully: multilingual Coverage Results" MODIFIED="1538405097856" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
-    <SUITE FILE_PATH="coverage/multilingual@LanguageController_languageDictToArray_locale_keys_should_get_keys_from_dictionary___multilingual.rcov" NAME="LanguageController languageDictToArray locale_keys should get keys from dictionary : multilingual Coverage Results" MODIFIED="1538327226875" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
-    <SUITE FILE_PATH="coverage/multilingual@Visitor_signs_up_with_valid_email_and_password__multilingual.rcov" NAME="Visitor signs up with valid email and password: multilingual Coverage Results" MODIFIED="1537981420089" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
-    <SUITE FILE_PATH="coverage/multilingual@User_adds_a_language_fills_form_and_adds_a_language__multilingual.rcov" NAME="User adds a language fills form and adds a language: multilingual Coverage Results" MODIFIED="1538316603634" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
-    <SUITE FILE_PATH="coverage/multilingual@LanguageController__multilingual.rcov" NAME="LanguageController: multilingual Coverage Results" MODIFIED="1538388247986" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
-    <SUITE FILE_PATH="coverage/multilingual@Mission_validates_presence_of_instructions__multilingual.rcov" NAME="Mission validates presence of instructions: multilingual Coverage Results" MODIFIED="1538401161250" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
-    <SUITE FILE_PATH="coverage/multilingual@MissionsController__multilingual.rcov" NAME="MissionsController: multilingual Coverage Results" MODIFIED="1538401906158" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
     <SUITE FILE_PATH="coverage/multilingual@Mission_Missions_form_should_support_multiple_language__multilingual.rcov" NAME="Mission Missions form should support multiple language: multilingual Coverage Results" MODIFIED="1538475013327" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
+    <SUITE FILE_PATH="coverage/multilingual@missions_new_should_render_the_language_field__multilingual.rcov" NAME="missions/new should render the language field: multilingual Coverage Results" MODIFIED="1538470195582" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
+    <SUITE FILE_PATH="coverage/multilingual@Mission_validates_presence_of_instructions__multilingual.rcov" NAME="Mission validates presence of instructions: multilingual Coverage Results" MODIFIED="1538401161250" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
+    <SUITE FILE_PATH="coverage/multilingual@LanguageController_LanguageController_Actions_POST_create_creates_a_YML_file_with_a_locale_subdomain_of_missions__multilingual.rcov" NAME="LanguageController LanguageController Actions POST#create creates a YML file with a locale subdomain of missions: multilingual Coverage Results" MODIFIED="1538385477851" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
+    <SUITE FILE_PATH="coverage/multilingual@Mission_create_mission_should_create_successfully__multilingual.rcov" NAME="Mission create mission should create successfully: multilingual Coverage Results" MODIFIED="1538405097856" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
+    <SUITE FILE_PATH="coverage/multilingual@User_adds_a_language__multilingual.rcov" NAME="User adds a language: multilingual Coverage Results" MODIFIED="1538324225338" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
+    <SUITE FILE_PATH="coverage/multilingual@Mission_should_delete_the_mission_with_destroy_button__multilingual.rcov" NAME="Mission should delete the mission with destroy button: multilingual Coverage Results" MODIFIED="1538407760872" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
+    <SUITE FILE_PATH="coverage/multilingual@app_index_html_erb__multilingual.rcov" NAME="app/index.html.erb: multilingual Coverage Results" MODIFIED="1537960003992" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
+    <SUITE FILE_PATH="coverage/multilingual@app_index_html_erb_should_contain_button_to_add_language__multilingual.rcov" NAME="app/index.html.erb should contain button to add language: multilingual Coverage Results" MODIFIED="1537876059922" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
+    <SUITE FILE_PATH="coverage/multilingual@User_adds_a_language_fills_form_and_adds_a_language__multilingual.rcov" NAME="User adds a language fills form and adds a language: multilingual Coverage Results" MODIFIED="1538316603634" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
+    <SUITE FILE_PATH="coverage/multilingual@language_index_html_erb_should_have_a_translations_parent_notation_in_the_input_names__multilingual.rcov" NAME="language/index.html.erb should have a translations parent notation in the input names: multilingual Coverage Results" MODIFIED="1538388023395" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
+    <SUITE FILE_PATH="coverage/multilingual@User_adds_a_language_retrieves_locale_correctly__multilingual.rcov" NAME="User adds a language retrieves locale correctly: multilingual Coverage Results" MODIFIED="1538386882506" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
+    <SUITE FILE_PATH="coverage/multilingual@Mission_validates_presence__multilingual.rcov" NAME="Mission validates presence: multilingual Coverage Results" MODIFIED="1538398668495" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
+    <SUITE FILE_PATH="coverage/multilingual@app_index_html_erb_should_show_the_dictionary_form_with_the_keys_from_locale__multilingual.rcov" NAME="app/index.html.erb should show the dictionary form with the keys from locale: multilingual Coverage Results" MODIFIED="1537972322862" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
+    <SUITE FILE_PATH="coverage/multilingual@MissionsController_GET__index_returns_all_missions_in_english_given_a_LANG_header_of_english__multilingual.rcov" NAME="MissionsController GET #index returns all missions in english given a LANG header of english: multilingual Coverage Results" MODIFIED="1538490387906" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
+    <SUITE FILE_PATH="coverage/multilingual@language_index_html_erb__multilingual.rcov" NAME="language/index.html.erb: multilingual Coverage Results" MODIFIED="1538392924034" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
+    <SUITE FILE_PATH="coverage/multilingual@missions_new_should_render_the_duration_form_as_number_field__multilingual.rcov" NAME="missions/new should render the duration form as number field: multilingual Coverage Results" MODIFIED="1538404380157" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
+    <SUITE FILE_PATH="coverage/multilingual@AppController_AppController_Actions_POST_create_requires_language_name_field__multilingual.rcov" NAME="AppController AppController Actions POST#create requires language name field: multilingual Coverage Results" MODIFIED="1537982673469" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
+    <SUITE FILE_PATH="coverage/multilingual@AppController_GET__index_returns_index_with_ar_locales__multilingual.rcov" NAME="AppController GET #index returns index with ar locales: multilingual Coverage Results" MODIFIED="1537872472399" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
+    <SUITE FILE_PATH="coverage/multilingual@Mission_add_some_examples_to__or_delete______FILE_____multilingual.rcov" NAME="Mission add some examples to (or delete) #{__FILE__}: multilingual Coverage Results" MODIFIED="1538398707162" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
+    <SUITE FILE_PATH="coverage/multilingual@LanguageController_LanguageController_Actions_returns_an_array_from_a_recrusive_function__multilingual.rcov" NAME="LanguageController LanguageController Actions returns an array from a recrusive function: multilingual Coverage Results" MODIFIED="1538324545159" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
+    <SUITE FILE_PATH="coverage/multilingual@Mission_validate_the_type_of_title__multilingual.rcov" NAME="Mission validate the type of title: multilingual Coverage Results" MODIFIED="1538401318162" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
+    <SUITE FILE_PATH="coverage/multilingual@MissionsController_POST__create_with_invalid_params_returns_a_success_response__i_e__to_display_the__new__template___multilingual.rcov" NAME="MissionsController POST #create with invalid params returns a success response (i.e. to display the 'new' template): multilingual Coverage Results" MODIFIED="1538394779468" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
+    <SUITE FILE_PATH="coverage/multilingual@User_adds_a_language_testing_that_capybara_can_fild_any_element__multilingual.rcov" NAME="User adds a language testing that capybara can fild any element: multilingual Coverage Results" MODIFIED="1538316778821" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
+    <SUITE FILE_PATH="coverage/multilingual@AppController_GET__index_returns_a_hello_world_string_in_english__multilingual.rcov" NAME="AppController GET #index returns a hello world string in english: multilingual Coverage Results" MODIFIED="1537870738368" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
+    <SUITE FILE_PATH="coverage/multilingual@Mission__multilingual.rcov" NAME="Mission: multilingual Coverage Results" MODIFIED="1538401748781" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
+    <SUITE FILE_PATH="coverage/multilingual@language_index_html_erb_should_render_the_first_locale_field_Hello_in_the_title__multilingual.rcov" NAME="language/index.html.erb should render the first locale field Hello in the title: multilingual Coverage Results" MODIFIED="1538387422195" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
+    <SUITE FILE_PATH="coverage/multilingual@Mission_reads_the_title_correctly_based_on_locale__multilingual.rcov" NAME="Mission reads the title correctly based on locale: multilingual Coverage Results" MODIFIED="1538652395610" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
+    <SUITE FILE_PATH="coverage/multilingual@MissionsController_PUT__update_with_invalid_params_returns_a_success_response__i_e__to_display_the__edit__template___multilingual.rcov" NAME="MissionsController PUT #update with invalid params returns a success response (i.e. to display the 'edit' template): multilingual Coverage Results" MODIFIED="1538394664466" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
+    <SUITE FILE_PATH="coverage/multilingual@Mission_should_edit_successfully__multilingual.rcov" NAME="Mission should edit successfully: multilingual Coverage Results" MODIFIED="1538405502111" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
+    <SUITE FILE_PATH="coverage/multilingual@AppController_GET__index_returns_index_template__multilingual.rcov" NAME="AppController GET #index returns index template: multilingual Coverage Results" MODIFIED="1537871656436" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
+    <SUITE FILE_PATH="coverage/multilingual@Visitor_signs_up_with_valid_email_and_password__multilingual.rcov" NAME="Visitor signs up with valid email and password: multilingual Coverage Results" MODIFIED="1537981420089" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
+    <SUITE FILE_PATH="coverage/multilingual@LanguageController_languageDictToArray_should_extract_dictionary_to_a_flat_array_of_key_value_pairs__multilingual.rcov" NAME="LanguageController languageDictToArray should extract dictionary to a flat array of key value pairs: multilingual Coverage Results" MODIFIED="1538385121160" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
+    <SUITE FILE_PATH="coverage/multilingual@AppController__multilingual.rcov" NAME="AppController: multilingual Coverage Results" MODIFIED="1537958041651" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
+    <SUITE FILE_PATH="coverage/multilingual@LanguageController_languageDictToArray_locale_keys_should_get_keys_from_dictionary___multilingual.rcov" NAME="LanguageController languageDictToArray locale_keys should get keys from dictionary : multilingual Coverage Results" MODIFIED="1538327226875" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
+    <SUITE FILE_PATH="coverage/multilingual@AppController_GET__index_returns_html__multilingual.rcov" NAME="AppController GET #index returns html: multilingual Coverage Results" MODIFIED="1537871082774" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
+    <SUITE FILE_PATH="coverage/multilingual@User_adds_a_language_testing_that_a_dom_is_rendered__multilingual.rcov" NAME="User adds a language testing that a dom is rendered: multilingual Coverage Results" MODIFIED="1538317359518" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
+    <SUITE FILE_PATH="coverage/multilingual@AppController_AppController_Actions_POST_create_should_create_a_new_yml_file_with_newlines_between_different_string__multilingual.rcov" NAME="AppController AppController Actions POST#create should create a new yml file with newlines between different string: multilingual Coverage Results" MODIFIED="1537972865992" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
+    <SUITE FILE_PATH="coverage/multilingual@AppController_AppController_Actions_POST_create_should_create_a_new_yml_file__multilingual.rcov" NAME="AppController AppController Actions POST#create should create a new yml file: multilingual Coverage Results" MODIFIED="1537982006554" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
+    <SUITE FILE_PATH="coverage/multilingual@Mission_validates_presence_of_duration__multilingual.rcov" NAME="Mission validates presence of duration: multilingual Coverage Results" MODIFIED="1538401823040" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
+    <SUITE FILE_PATH="coverage/multilingual@Mission_should_show_all_missions___multilingual.rcov" NAME="Mission should show all missions : multilingual Coverage Results" MODIFIED="1538407171786" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
+    <SUITE FILE_PATH="coverage/multilingual@missions_index__multilingual.rcov" NAME="missions/index: multilingual Coverage Results" MODIFIED="1538402330946" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
+    <SUITE FILE_PATH="coverage/multilingual@AppController_languageDictToArray_should_extract_dictionary_to_a_flat_array_of_key_value_pairs__multilingual.rcov" NAME="AppController languageDictToArray should extract dictionary to a flat array of key value pairs: multilingual Coverage Results" MODIFIED="1537888716601" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
+    <SUITE FILE_PATH="coverage/multilingual@User_adds_a_language_window_size_is_large_enough_for_tests__multilingual.rcov" NAME="User adds a language window size is large enough for tests: multilingual Coverage Results" MODIFIED="1538316100378" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
+    <SUITE FILE_PATH="coverage/multilingual@LanguageController__multilingual.rcov" NAME="LanguageController: multilingual Coverage Results" MODIFIED="1538388247986" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
+    <SUITE FILE_PATH="coverage/multilingual@MissionsController__multilingual.rcov" NAME="MissionsController: multilingual Coverage Results" MODIFIED="1538401906158" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="multilingual" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -191,6 +193,44 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="1665162092">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.opened" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="sh" value="180" />
+          <entry key="yml" value="40" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="PLAIN_TEXT" value="180" />
+          <entry key="YAML" value="40" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.js.language.service.starts" />
+      <usages-collector id="statistics.actions.runAnything" />
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="sh" value="2" />
+          <entry key="xml" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="PLAIN_TEXT" value="2" />
+          <entry key="XML" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.vcs.git.usages" />
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
@@ -206,11 +246,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spec/models/mission_with_locales_spec.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
+            <state relative-caret-position="675">
               <caret line="45" column="46" selection-start-line="45" selection-start-column="46" selection-end-line="45" selection-end-column="46" />
-              <folding>
-                <element signature="e#2096#3042#0" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -218,8 +255,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spec/rails_helper.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="76" selection-start-line="76" selection-end-line="76" />
+            <state relative-caret-position="484">
+              <caret line="78" column="7" selection-start-line="78" selection-start-column="7" selection-end-line="78" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -236,7 +273,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/mission.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
+            <state relative-caret-position="705">
               <caret line="47" column="31" selection-start-line="47" selection-start-column="31" selection-end-line="47" selection-end-column="31" />
             </state>
           </provider>
@@ -245,8 +282,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spec/functional/multilingual_spec.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="48" column="37" lean-forward="true" selection-start-line="48" selection-start-column="37" selection-end-line="48" selection-end-column="37" />
+            <state relative-caret-position="720">
+              <caret line="48" column="37" selection-start-line="48" selection-start-column="37" selection-end-line="48" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -254,10 +291,33 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/docker-compose.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="16" lean-forward="true" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
+            <state relative-caret-position="214">
+              <caret line="25" column="22" lean-forward="true" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/entry_for_web_container.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="4" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wait-for-it.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="16" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spec/reports/result.xml">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -286,9 +346,9 @@
       <find>send</find>
       <find>load</find>
       <find>save</find>
-      <find>load</find>
       <find>xit</find>
       <find>fr</find>
+      <find>RAILS_ENV</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -321,7 +381,6 @@
         <option value="$PROJECT_DIR$/spec/views/language/index.html.erb_spec.rb" />
         <option value="$PROJECT_DIR$/Rakefile" />
         <option value="$PROJECT_DIR$/Gemfile" />
-        <option value="$PROJECT_DIR$/spec/rails_helper.rb" />
         <option value="$PROJECT_DIR$/app/views/missions/_form.html.erb" />
         <option value="$PROJECT_DIR$/spec/views/missions/show.html.erb_spec.rb" />
         <option value="$PROJECT_DIR$/spec/views/missions/edit.html.erb_spec.rb" />
@@ -349,7 +408,10 @@
         <option value="$PROJECT_DIR$/spec/models/mission_with_locales_spec.rb" />
         <option value="$PROJECT_DIR$/app/models/mission.rb" />
         <option value="$PROJECT_DIR$/spec/functional/multilingual_spec.rb" />
+        <option value="$PROJECT_DIR$/spec/rails_helper.rb" />
+        <option value="$PROJECT_DIR$/entry_web_container.sh" />
         <option value="$PROJECT_DIR$/docker-compose.yml" />
+        <option value="$PROJECT_DIR$/entry_for_web_container.sh" />
       </list>
     </option>
   </component>
@@ -371,7 +433,7 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="width" value="1440" />
     <option name="height" value="900" />
   </component>
@@ -381,36 +443,14 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="RailsProjectView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="multilingual" type="b2602c69:ProjectViewProjectNode" />
-              <item name="multilingual" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="multilingual" type="b2602c69:ProjectViewProjectNode" />
-              <item name="multilingual" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="multilingual" type="b2602c69:ProjectViewProjectNode" />
-              <item name="multilingual" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="multilingual" type="b2602c69:ProjectViewProjectNode" />
-              <item name="multilingual" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="multilingual" type="b2602c69:ProjectViewProjectNode" />
-              <item name="multilingual" type="462c0819:PsiDirectoryNode" />
-              <item name="spec" type="462c0819:PsiDirectoryNode" />
+              <item name="Hello_word_multilingual_rails" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Hello_word_multilingual_rails" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -424,119 +464,12 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="ics" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
-    <UpdatedFiles>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Updated from server" />
-        <option name="myStatusName" value="Changed on server" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="CHANGED_ON_SERVER" />
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated" />
-          <option name="myStatusName" value="Changed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/spec/functional/missions_spec.rb</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/spec/functional/multilingual_spec.rb</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Created" />
-          <option name="myStatusName" value="Created" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CREATED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Deleted" />
-          <option name="myStatusName" value="Deleted" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="true" />
-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/docker/rails/Dockerfile</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Restored" />
-          <option name="myStatusName" value="Will be restored" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="RESTORED" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Modified" />
-        <option name="myStatusName" value="Modified" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MODIFIED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Skipped" />
-        <option name="myStatusName" value="Skipped" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SKIPPED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with conflicts" />
-        <option name="myStatusName" value="Will be merged with conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with tree conflicts" />
-        <option name="myStatusName" value="Merged with tree conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with property conflicts" />
-        <option name="myStatusName" value="Will be merged with property conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged" />
-        <option name="myStatusName" value="Will be merged" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Not in repository" />
-        <option name="myStatusName" value="Not in repository" />
-        <option name="mySupportsDeletion" value="true" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="UNKNOWN" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally added" />
-        <option name="myStatusName" value="Locally added" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_ADDED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally removed" />
-        <option name="myStatusName" value="Locally removed" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_REMOVED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Switched" />
-        <option name="myStatusName" value="Switched" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SWITCHED" />
-      </FILE-GROUP>
-    </UpdatedFiles>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
   <component name="RubyModuleManagerSettings">
     <option name="blackListedRootsPaths">
@@ -557,7 +490,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="RSpec.Mission should save the model with id: multilingual">
+  <component name="RunManager" selected="Rails.Development: Hello_word_multilingual_rails">
     <configuration name="Mission Missions form should support multiple language: multilingual" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true">
       <predefined_log_file id="RUBY_RSPEC" enabled="true" />
       <module name="multilingual" />
@@ -728,9 +661,9 @@
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Development: multilingual" type="RailsRunConfigurationType" factoryName="Rails">
+    <configuration name="Development: Hello_word_multilingual_rails" type="RailsRunConfigurationType" factoryName="Rails">
       <predefined_log_file id="RUBY_RAILS_SERVER" enabled="true" />
-      <module name="multilingual" />
+      <module name="Hello_word_multilingual_rails" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
@@ -752,9 +685,33 @@
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="LAUNCH_JS" VALUE="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Production: multilingual" type="RailsRunConfigurationType" factoryName="Rails">
+    <configuration name="Development: multilingual" type="RailsRunConfigurationType" factoryName="Rails">
       <predefined_log_file id="RUBY_RAILS_SERVER" enabled="true" />
       <module name="multilingual" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$PROJECT_DIR$" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="SCRIPT_ARGS" VALUE="" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="PORT" VALUE="3000" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="IP" VALUE="0.0.0.0" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="DUMMY_APP" VALUE="test/dummy" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RAILS_SERVER_TYPE" VALUE="Default" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ENVIRONMENT_TYPE" VALUE="development" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="LAUNCH_JS" VALUE="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Production: Hello_word_multilingual_rails" type="RailsRunConfigurationType" factoryName="Rails">
+      <predefined_log_file id="RUBY_RAILS_SERVER" enabled="true" />
+      <module name="Hello_word_multilingual_rails" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
@@ -776,6 +733,52 @@
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="LAUNCH_JS" VALUE="false" />
       <method v="2" />
     </configuration>
+    <configuration name="Production: multilingual" type="RailsRunConfigurationType" factoryName="Rails">
+      <predefined_log_file id="RUBY_RAILS_SERVER" enabled="true" />
+      <module name="multilingual" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$PROJECT_DIR$" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="SCRIPT_ARGS" VALUE="" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="PORT" VALUE="3000" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="IP" VALUE="0.0.0.0" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="DUMMY_APP" VALUE="test/dummy" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RAILS_SERVER_TYPE" VALUE="Default" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ENVIRONMENT_TYPE" VALUE="production" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="LAUNCH_JS" VALUE="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="spec: Hello_word_multilingual_rails" type="RakeRunConfigurationType" factoryName="Rake">
+      <module name="Hello_word_multilingual_rails" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_NAME" VALUE="spec" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ARGS" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ATTACHED_TEST_FRAMEWORKS" VALUE=":rspec " />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TRACE" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_DRYRUN" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_PREREQS" VALUE="false" />
+      <method v="2" />
+    </configuration>
     <configuration name="spec: multilingual" type="RakeRunConfigurationType" factoryName="Rake">
       <module name="multilingual" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
@@ -793,6 +796,31 @@
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_NAME" VALUE="spec" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ARGS" VALUE="" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ATTACHED_TEST_FRAMEWORKS" VALUE=":rspec " />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TRACE" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_DRYRUN" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_PREREQS" VALUE="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test: Hello_word_multilingual_rails" type="RakeRunConfigurationType" factoryName="Rake">
+      <module name="Hello_word_multilingual_rails" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs>
+        <env name="RAILS_ENV" value="test" />
+      </envs>
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_NAME" VALUE="test" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ARGS" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ATTACHED_TEST_FRAMEWORKS" VALUE=":test_unit " />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TRACE" VALUE="false" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_DRYRUN" VALUE="false" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_PREREQS" VALUE="false" />
@@ -828,6 +856,10 @@
       <item itemvalue="Rake.spec: multilingual" />
       <item itemvalue="Rails.Production: multilingual" />
       <item itemvalue="Rails.Development: multilingual" />
+      <item itemvalue="Rake.test: Hello_word_multilingual_rails" />
+      <item itemvalue="Rake.spec: Hello_word_multilingual_rails" />
+      <item itemvalue="Rails.Production: Hello_word_multilingual_rails" />
+      <item itemvalue="Rails.Development: Hello_word_multilingual_rails" />
       <item itemvalue="RSpec.missions/new should render the language field: multilingual" />
       <item itemvalue="RSpec.Mission Missions form should support multiple language: multilingual" />
       <item itemvalue="RSpec.MissionsController GET #index returns all missions in english given a LANG header of english: multilingual" />
@@ -861,6 +893,9 @@
       <workItem from="1538063173456" duration="189000" />
       <workItem from="1538063366601" duration="22689000" />
       <workItem from="1538651408830" duration="27050000" />
+      <workItem from="1538787129860" duration="2896000" />
+      <workItem from="1538811360814" duration="2367000" />
+      <workItem from="1538816815149" duration="3311000" />
     </task>
     <task id="LOCAL-00001" summary="[WIP]form to add language">
       <created>1537965255073</created>
@@ -933,7 +968,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="134476000" />
+    <option name="totallyTimeSpent" value="143050000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -945,10 +980,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15522175" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16165951" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Repositories" order="3" weight="0.3297568" />
@@ -960,9 +995,9 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4985694" weight="0.3256936" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="8" weight="0.3293124" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49928468" weight="0.59831125" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4985694" weight="0.4668275" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" weight="0.3293124" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49928468" weight="0.26417372" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.4985694" visible="true" weight="0.4668275" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50143063" side_tool="true" weight="0.3293124" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.3293124" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -1075,16 +1110,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/db/seeds.rb">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$USER_HOME$/.rvm/gems/ruby-2.5.1/gems/capybara-3.8.2/lib/capybara/node/finders.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="294" selection-start-line="294" selection-end-line="294" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -1204,13 +1229,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wait-for-it.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20181002092446_add_language_to_mission.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -1232,9 +1250,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/locales/ar_test.yml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/config/locales/ar_test.yml" />
     <entry file="file://$PROJECT_DIR$/app/views/language/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -1302,13 +1318,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
-          <folding>
-            <element signature="e#540#926#0" />
-            <element signature="e#966#1425#0" />
-            <element signature="e#1486#1969#0" />
-            <element signature="e#2030#2359#0" />
-            <element signature="e#2434#3544#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1340,13 +1349,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/locales/demo_test_en.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/config/locales/demo_test_en.yml" />
     <entry file="file://$PROJECT_DIR$/config/locales/ar.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -1354,13 +1357,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/locales/en_test.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="6" lean-forward="true" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/config/locales/en_test.yml" />
     <entry file="file://$PROJECT_DIR$/config/locales/fr.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -1384,18 +1381,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/spec/models/mission_with_locales_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
+        <state relative-caret-position="675">
           <caret line="45" column="46" selection-start-line="45" selection-start-column="46" selection-end-line="45" selection-end-column="46" />
-          <folding>
-            <element signature="e#2096#3042#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spec/rails_helper.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="76" selection-start-line="76" selection-end-line="76" />
         </state>
       </provider>
     </entry>
@@ -1408,22 +1395,46 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/mission.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
+        <state relative-caret-position="705">
           <caret line="47" column="31" selection-start-line="47" selection-start-column="31" selection-end-line="47" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/spec/functional/multilingual_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="48" column="37" lean-forward="true" selection-start-line="48" selection-start-column="37" selection-end-line="48" selection-end-column="37" />
+        <state relative-caret-position="720">
+          <caret line="48" column="37" selection-start-line="48" selection-start-column="37" selection-end-line="48" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/reports/result.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wait-for-it.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="16" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/rails_helper.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="78" column="7" selection-start-line="78" selection-start-column="7" selection-end-line="78" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/entry_for_web_container.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="4" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/docker-compose.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="16" lean-forward="true" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
+        <state relative-caret-position="214">
+          <caret line="25" column="22" lean-forward="true" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
         </state>
       </provider>
     </entry>
