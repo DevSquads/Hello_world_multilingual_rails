@@ -29,7 +29,7 @@ feature 'Mission' do
   end
 
   scenario 'should edit successfully' do
-    Mission.create!(title: 'title', instructions: 'instructions', duration: 10, category: 'category', :language => "en")
+    Mission.create!(title: 'title', instructions: 'instructions', duration: 10, category: 'category')
 
     visit "#{default_url}/missions/1/edit"
 
@@ -43,9 +43,12 @@ feature 'Mission' do
   end
 
   scenario 'should show all missions when go to missions/' do
-    Mission.create!(title: 'first mission', instructions: 'instructions', duration: 10, category: 'category', :language => "en")
-    Mission.create!(title: 'second mission', instructions: 'instructions', duration: 10, category: 'category',:language => "fr")
-    Mission.create!(title: 'third mission', instructions: 'instructions', duration: 10, category: 'category', :language => "sp")
+    I18n.locale = "en"
+    Mission.create!(title: 'first mission', instructions: 'instructions', duration: 10, category: 'category')
+    I18n.locale = "fr"
+    Mission.create!(title: 'second mission', instructions: 'instructions', duration: 10, category: 'category')
+    I18n.locale = "sp"
+    Mission.create!(title: 'third mission', instructions: 'instructions', duration: 10, category: 'category')
 
     visit "#{default_url}/missions"
 
@@ -53,7 +56,7 @@ feature 'Mission' do
   end
 
   scenario 'should delete the mission with destroy button' do
-    Mission.create!(title: 'title', instructions: 'instructions', duration: 10, category: 'category', :language => "en")
+    Mission.create!(title: 'title', instructions: 'instructions', duration: 10, category: 'category')
 
     visit "#{default_url}/missions"
 

@@ -7,7 +7,6 @@ RSpec.describe "missions/new", type: :view do
         :instructions => "MyString",
         :duration => 12,
         :category => "MyString",
-        :language => "en"
     ))
   end
 

@@ -3,8 +3,8 @@ en:
   missions:
     hello: Hello, world!
     m_1:
-      :title: title
-      :instructions: instructions
+      :title: Title
+      :instructions: Instructions
     m_2:
       :title: Title
       :instructions: Instructions
