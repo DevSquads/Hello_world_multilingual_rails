@@ -1,7 +1,8 @@
 require 'rails_helper'
-
+require 'locale_helpers'
 RSpec.describe "missions/index", type: :view do
   before(:each) do
+    reset_locale "en_test"
     assign(:missions, [
       Mission.create!(
         :title => "Title",
@@ -20,11 +21,13 @@ RSpec.describe "missions/index", type: :view do
 
   it "renders a list of missions" do
     render
-    assert_select "tr>td", :text => "dummy title1".to_s, :count => 1
-    assert_select "tr>td", :text => "dummy title2".to_s, :count => 1
-    assert_select "tr>td", :text => "dummy instructions1".to_s, :count => 1
-    assert_select "tr>td", :text => "dummy instructions2".to_s, :count => 1
+    assert_select "tr>td", :text => "Title".to_s, :count => 2
+    assert_select "tr>td", :text => "Instructions".to_s, :count => 2
     assert_select "tr>td", :text => 10.to_s, :count => 2
     assert_select "tr>td", :text => "Category".to_s, :count => 2
+  end
+
+  after(:each) do
+    remove_locale_file "en_test"
   end
 end

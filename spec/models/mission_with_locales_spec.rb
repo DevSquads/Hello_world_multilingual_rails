@@ -106,10 +106,8 @@ describe 'Mission returns title and instructions by language' do
     expect(record.instructions).to eql(ar_instructions)
 
   ensure
-    en_yaml_path = yml_path 'en_test'
-    File.delete(en_yaml_path) if File.exist?(en_yaml_path)
-    ar_yaml_path = yml_path'ar_test'
-    File.delete(ar_yaml_path) if File.exist?(ar_yaml_path)
+    reset_locale 'en_test'
+    reset_locale 'ar_test'
   end
 
 

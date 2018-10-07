@@ -1,7 +1,9 @@
 require 'rails_helper'
-
+require 'locale_helpers'
 RSpec.describe "missions/new", type: :view do
   before(:each) do
+    reset_locale 'en_test'
+
     assign(:mission, Mission.new(
         :title => "MyString",
         :instructions => "MyString",
@@ -35,4 +37,7 @@ RSpec.describe "missions/new", type: :view do
     assert_select "input[name=?]", "mission[language]"
   end
 
+  after(:all) do
+    remove_locale_file 'en_test'
+  end
 end

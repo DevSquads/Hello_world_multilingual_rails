@@ -12,7 +12,10 @@ class Mission < ApplicationRecord
 
   def title
     if id
-      I18n.backend.send(:translations)[I18n.locale][:missions]["m_#{id}".to_sym][:title]
+      trans = I18n.backend.send(:translations)
+      missions = trans[I18n.locale][:missions]
+      single_mission = missions["m_#{id}".to_sym]
+      title = single_mission[:title]
     else
       ''
     end

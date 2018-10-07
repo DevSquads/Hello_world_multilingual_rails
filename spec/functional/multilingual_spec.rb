@@ -20,7 +20,7 @@ feature 'User adds a language', js: true do
 
     expect(html).to match('language_name')
   end
-  
+
   scenario 'fills form and adds a language' do
     visit default_url
 
@@ -54,6 +54,13 @@ feature 'User adds a language', js: true do
     expect(find('h1').text).to eql('bonjour')
   ensure
     File.delete(file_path) if File.exist? file_path
+
+    new_load_paths = I18n.load_path.map do |path|
+      path unless path.include?('fr.yml')
+    end.compact
+
+    I18n.load_path = new_load_paths
+
     I18n.locale = I18n.default_locale
   end
 end

@@ -31,7 +31,11 @@ def reset_locale language
 end
 
 def remove_locale_file language
-  File.delete if File.exists?(yml_path language)
+  File.delete yml_path(language) if File.exists?(yml_path language)
 
-  I18n.load_path = Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
+  new_load_paths = I18n.load_path.map do |path|
+    path unless path.include?("#{language}.yml")
+  end.compact
+
+  I18n.load_path = new_load_paths
 end

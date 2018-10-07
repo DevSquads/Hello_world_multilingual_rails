@@ -1,7 +1,10 @@
 # frozen_string_literal: true
-
+require 'locale_helpers'
 RSpec.describe Mission, type: :model do
 
+  before(:all) do
+    reset_locale "en"
+  end
   xit 'validates presence of title' do
     record = Mission.new
     record.title = ''
@@ -17,6 +20,7 @@ RSpec.describe Mission, type: :model do
   end
 
   it 'validates presence of duration' do
+
     record = Mission.new
     record.duration = {}
     record.valid?
