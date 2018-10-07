@@ -20,6 +20,8 @@ RSpec.describe "missions/index", type: :view do
   end
 
   it "renders a list of missions" do
+    #TODO figure out how to update the translations runtime hash without reloading all locales
+    reset_locale "en_test"
     render
     assert_select "tr>td", :text => "Title".to_s, :count => 2
     assert_select "tr>td", :text => "Instructions".to_s, :count => 2
