@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
+require 'locale_helpers'
+
 default_url = 'http://localhost:3001'
 
 def fill_mission_form(mission_category, mission_duration, mission_instructions, mission_language, mission_title)
@@ -43,11 +45,11 @@ feature 'Mission' do
   end
 
   scenario 'should show all missions when go to missions/' do
-    I18n.locale = "en"
+    reset_locale "en"
     Mission.create!(title: 'first mission', instructions: 'instructions', duration: 10, category: 'category')
-    I18n.locale = "fr"
+    reset_locale "fr"
     Mission.create!(title: 'second mission', instructions: 'instructions', duration: 10, category: 'category')
-    I18n.locale = "sp"
+    reset_locale "sp"
     Mission.create!(title: 'third mission', instructions: 'instructions', duration: 10, category: 'category')
 
     visit "#{default_url}/missions"
@@ -100,4 +102,5 @@ feature 'Mission' do
     expect(find('tbody > tr:nth-child(1) > td:nth-child(1)')).to have_text(mission_title)
     expect(find('tbody > tr:nth-child(1) > td:nth-child(2)')).to have_text(mission_instructions)
   end
+
 end

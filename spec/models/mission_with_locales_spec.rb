@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'locale_helpers'
 require 'yaml'
 
 
@@ -23,17 +24,14 @@ describe 'Mission returns title and instructions by language' do
     record.duration = 10
     record.title = 'demo_test_title'
     record.instructions = 'instructions'
-    en_yml_path = Rails.root.join('config/locales/en_test.yml')
-    create_base_yml_file_without_missions(en_yml_path, 'en_test')
 
-    I18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
-    I18n.locale = 'en_test'
+    reset_locale 'en_test'
     record.save
 
-    yml_hash = YAML.load(File.read(en_yml_path))
+    yml_hash = YAML.load(File.read(yml_path('en_test')))
     expect(yml_hash['en_test']['missions']["m_#{record.id.to_s}"][:title]).to eql('demo_test_title')
   ensure
-    File.delete(en_yml_path) if File.exists? en_yml_path
+    remove_locale_file 'en_test'
   end
 
   it 'should save the instructions to the locale' do
@@ -117,23 +115,5 @@ describe 'Mission returns title and instructions by language' do
     File.delete(ar_yaml_path) if File.exist?(ar_yaml_path)
   end
 
-  #todo remove duplication
-  def create_base_yml_file_without_missions(yaml_path, main_language)
-    File.open(yaml_path, 'w+') do |file|
-      file.write("#{main_language}:\n")
-      file.write((' ' * 2) + "missions:\n")
-      file.write((' ' * 4) + "hello: \"Hello world!\"\n")
 
-    end
-  end
-
-  def create_yml_file_for_locale_mission(yaml_path, main_language, id, title, instructions)
-    File.open(yaml_path, 'w+') do |file|
-      file.write("#{main_language}:\n")
-      file.write((' ' * 2) + "missions:\n")
-      file.write((' ' * 4) + "m_#{id}:\n")
-      file.write((' ' * 6) + "title: '#{title}'\n")
-      file.write((' ' * 6) + "instructions: '#{instructions}'")
-    end
-  end
 end

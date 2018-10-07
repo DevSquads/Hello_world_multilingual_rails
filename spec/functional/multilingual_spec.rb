@@ -53,7 +53,7 @@ feature 'User adds a language', js: true do
     visit "#{default_url}/?locale=fr"
     expect(find('h1').text).to eql('bonjour')
   ensure
+    File.delete(file_path) if File.exist? file_path
     I18n.locale = I18n.default_locale
-    # File.delete(file_path) if File.exist? file_path
   end
 end

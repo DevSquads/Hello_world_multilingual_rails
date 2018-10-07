@@ -1,0 +1,10 @@
+---
+sp:
+  missions:
+    hello: Hello world!
+    m_3:
+      :title: third mission
+      :instructions: instructions
+    m_1:
+      :title: title
+      :instructions: instructions
