@@ -17,14 +17,7 @@ pipeline {
         }
         stage('Reporting Tests') {
             steps {
-               timeout(150) {
-                   waitUntil {
-                      script {
-                        echo "check report file isn't empty"
-                        [ -s  spec/reports/result.xml ]
-                      }
-                   }
-               }
+               sleep 150
                junit 'spec/reports/*.xml'
             }
         }
