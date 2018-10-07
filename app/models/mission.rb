@@ -7,6 +7,7 @@ class Mission < ApplicationRecord
   validates :category, presence: true
 
   after_create :write_title_to_yml_file
+  after_update :write_title_to_yml_file
 
   #TODO check existence of mission id before adding or editing
 
@@ -30,12 +31,10 @@ class Mission < ApplicationRecord
   end
 
   def title=(value)
-
     @mission_locale_title = value
   end
 
   def instructions=(value)
-
     @mission_locale_instructions = value
   end
 
@@ -51,5 +50,6 @@ class Mission < ApplicationRecord
     File.open(yml_file_path, 'w') do |file|
       file.write(yml_file_content.to_yaml)
     end
+    reset_locale(I18n.locale)
   end
 end

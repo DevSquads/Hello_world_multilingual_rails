@@ -98,4 +98,35 @@ describe 'Mission returns title and instructions by language' do
     remove_locale_file 'en_test'
     remove_locale_file 'ar_test'
   end
+
+  it 'update title and instructions from locale ' do
+    reset_locale 'en_test'
+    record = Mission.new
+    record.title = 'initial_title'
+    record.instructions = 'initial_instruction'
+    record.category = '10'
+    record.duration = 5
+    record.save
+    reset_locale 'en_test'
+    expect(record.id).to be_truthy
+    expect(record.title).to eql('initial_title')
+    expect(record.instructions).to eql('initial_instruction')
+
+    updated_record =  Mission.find(record.id)
+
+    updated_record.title = "modified_title"
+    updated_record.instructions = "modified_instructions"
+    updated_record.save
+    expect(updated_record.id).to be_truthy
+    expect(updated_record.title).to eql('modified_title')
+    expect(updated_record.instructions).to eql('modified_instructions')
+
+    updated_record =  Mission.find(record.id)
+    expect(updated_record.id).to be_truthy
+    expect(updated_record.title).to eql('modified_title')
+    expect(updated_record.instructions).to eql('modified_instructions')
+
+  ensure
+    remove_locale_file 'en_test'
+  end
 end

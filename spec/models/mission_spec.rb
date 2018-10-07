@@ -5,14 +5,14 @@ RSpec.describe Mission, type: :model do
   before(:all) do
     reset_locale "en"
   end
-  xit 'validates presence of title' do
+  it 'validates presence of title' do
     record = Mission.new
     record.title = ''
     record.valid?
     expect(record.errors[:title]).to include('can\'t be blank')
   end
 
-  xit 'validates presence of instructions' do
+  it 'validates presence of instructions' do
     record = Mission.new
     record.instructions = ''
     record.valid?
@@ -33,6 +33,5 @@ RSpec.describe Mission, type: :model do
     record.valid?
     expect(record.errors[:category]).to include('can\'t be blank')
   end
-
 
 end

@@ -102,7 +102,7 @@ RSpec.describe MissionsController, type: :controller do
         {title: 'new_title', instructions: 'new_instructions', category: 'new_category', duration: 10}
       }
 
-      xit 'updates the requested mission' do
+      it 'updates the requested mission' do
         mission = Mission.create! valid_attributes
         put :update, params: {id: mission.to_param, mission: new_attributes}, session: valid_session
         mission.reload
