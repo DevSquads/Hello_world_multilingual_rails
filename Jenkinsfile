@@ -5,8 +5,6 @@ pipeline {
             steps {
                 echo "Cleaning docker compose containers"
                 sh 'docker-compose down'
-                echo "Cleaning test reports directory"
-                sh 'rm -rf spec/reports/result.xml'
             }
         }
         stage('Docker compose in test mode') {
