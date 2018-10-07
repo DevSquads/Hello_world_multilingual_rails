@@ -11,7 +11,7 @@
 /spec/reports/*
 
 # Ignore Idea project folder
-/.idea/*
+/.idea/**/*
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
@@ -35,3 +35,9 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+#ignore docker
+docker-compose.yml
+
+#ignore database setup
+/config/database.yml
