@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "missions/show", type: :view do
   before(:each) do
+    reset_locale 'en_test'
     @mission = assign(:mission, Mission.create!(
       :title => "Title",
       :instructions => "Instructions",
@@ -11,10 +12,11 @@ RSpec.describe "missions/show", type: :view do
   end
 
   it "renders attributes in <p>" do
+    reset_locale 'en_test'
     render
     expect(rendered).to match(/Title/)
     expect(rendered).to match(/Instructions/)
-    expect(rendered).to match(//)
+    expect(rendered).to match(/10/)
     expect(rendered).to match(/Category/)
   end
 end

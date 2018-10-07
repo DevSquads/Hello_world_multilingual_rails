@@ -1,0 +1,7 @@
+---
+en_test:
+  missions:
+    hello: Hello world!
+    m_1:
+      :title: Title
+      :instructions: Instructions
