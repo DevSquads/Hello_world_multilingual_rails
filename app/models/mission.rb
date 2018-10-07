@@ -12,7 +12,7 @@ class Mission < ApplicationRecord
 
   def title
     if id
-      I18n.backend.send(:translations)[I18n.locale][:missions][id][:title]
+      I18n.backend.send(:translations)[I18n.locale][:missions]["m_#{id}".to_sym][:title]
     else
       ''
     end
@@ -20,7 +20,7 @@ class Mission < ApplicationRecord
 
   def instructions
     if id
-      I18n.backend.send(:translations)[I18n.locale][:missions][id][:instructions]
+      I18n.backend.send(:translations)[I18n.locale][:missions]["m_#{id}".to_sym][:instructions]
     else
       ''
     end

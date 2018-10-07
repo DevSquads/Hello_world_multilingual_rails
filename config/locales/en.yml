@@ -2,15 +2,6 @@
 en:
   missions:
     hello: Hello, world!
-    1:
-      title: dummy title1
-      instructions: dummy instructions1
-    2:
-      title: dummy title2
-      instructions: dummy instructions2
-    3:
-      title: dummy title3
-      instructions: dummy instructions3
     m_1:
       :title: Title
       :instructions: Instructions
