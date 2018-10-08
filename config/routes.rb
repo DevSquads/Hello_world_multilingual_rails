@@ -8,5 +8,5 @@ Rails.application.routes.draw do
 
   get '/missions/list/by_lang', to: 'missions#by_lang'
 
-  root 'language#index'
+  root 'missions#new'
 end

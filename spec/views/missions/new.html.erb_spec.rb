@@ -32,9 +32,27 @@ RSpec.describe "missions/new", type: :view do
     assert_select "input[name='mission[duration]']", :type => :number
   end
 
-  it "should render the language field" do
+  it "should render the language field as data list" do
     render
     assert_select "input[name=?]", "mission[language]"
+    assert_select "input[list=?]", "languages"
+
+    assert_select "datalist[id=?]", "languages"
+
+    assert_select "datalist[id='languages']" do
+      assert_select "option"
+    end
+  end
+
+  it "should render the locale languages in the language datalist" do
+    render
+
+    available_locale_length = I18n.available_locales.length
+    expect(available_locale_length).to eql(3)
+
+    assert_select "datalist[id='languages']" do
+      assert_select "option", available_locale_length
+    end
   end
 
   after(:all) do

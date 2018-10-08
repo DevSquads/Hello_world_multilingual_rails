@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
-default_url = 'http://localhost:3001/la'
+default_url = 'http://localhost:3001/language/index'
 
 feature 'User adds a language', js: true do
   scenario 'window size is large enough for tests' do

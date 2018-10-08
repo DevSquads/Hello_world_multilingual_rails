@@ -28,6 +28,15 @@ feature 'Mission' do
 
     expect(find('p#notice')).to have_text('Mission was successfully created.')
     expect(current_path).to eql('/missions/1')
+
+    new_mission = Mission.find(1)
+    expect(new_mission.category).to eql('Healthy')
+    expect(new_mission.duration).to eql(22)
+    reset_locale('en_test')
+    expect(new_mission.title).to eql('New Mission')
+    expect(new_mission.instructions).to eql('New Mission Description')
+
+
   end
 
   scenario 'should edit successfully' do
@@ -46,7 +55,7 @@ feature 'Mission' do
     expect(current_path).to eql('/missions/1')
   end
 
-  scenario 'should show all missions when go to missions/' do
+  scenario 'should show all missions when go to missions' do
     reset_locale 'en_test'
     Mission.create!(title: 'first mission', instructions: 'instructions', duration: 10, category: 'category')
     reset_locale 'fr_test'
@@ -78,7 +87,7 @@ feature 'Mission' do
     expect(find_all('tbody tr').length).to eql(0)
   end
 
-  it 'Missions form should support creation of different language' do
+  scenario 'Missions form should support creation of different language' do
     mission_title = 'مهمة جديدة'
     mission_instructions = 'وصف المهمة الجديدة'
     mission_duration = '22'
@@ -109,5 +118,16 @@ feature 'Mission' do
     expect(find('tbody > tr:nth-child(1) > td:nth-child(1)')).to have_text(mission_title)
     expect(find('tbody > tr:nth-child(1) > td:nth-child(2)')).to have_text(mission_instructions)
   end
+
+  scenario 'Homepage takes you to creating a new mission /missions/new' do
+    visit "#{default_url}"
+    expect(find_all('h1#homepage_title').length).to eql(1)
+    expect(find('h1#homepage_title')).to have_text("Admin")
+
+    expect(find_all('h3#create_mission_title').length).to eql(1)
+    expect(find('h3#create_mission_title')).to have_text("Create New Mission")
+  end
+
+  #todo test that the drop list adds a new language when adding a mission with a previously unsupported language
 
 end
