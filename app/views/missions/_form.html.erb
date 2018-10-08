@@ -13,7 +13,10 @@
 
   <div class="field">
     <%= form.label :language %>
-    <%= form.text_field :language %>
+    <%= form.text_field :language, list: "languages" %>
+    <datalist id="languages">
+      <option value="en">
+    </datalist>
   </div>
 
   <div class="field">

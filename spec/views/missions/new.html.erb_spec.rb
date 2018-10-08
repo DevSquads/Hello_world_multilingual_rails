@@ -32,10 +32,18 @@ RSpec.describe "missions/new", type: :view do
     assert_select "input[name='mission[duration]']", :type => :number
   end
 
-  it "should render the language field" do
+  it "should render the language field as data list" do
     render
     assert_select "input[name=?]", "mission[language]"
+    assert_select "input[list=?]", "languages"
+
+    assert_select "datalist[id=?]", "languages"
+
+    assert_select "datalist[id='languages']" do
+      assert_select "option"
+    end
   end
+
 
   after(:all) do
     remove_locale_file 'en_test'
