@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+require 'rails_helper'
 require 'locale_helpers'
 
 RSpec.describe Mission, type: :model do
@@ -36,4 +37,16 @@ RSpec.describe Mission, type: :model do
     expect(record.errors[:category]).to include('can\'t be blank')
   end
 
+  it ' should create mission with successful validation, no errors ' do
+    reset_locale 'en_test'
+
+    record = Mission.new
+    record.title = 'initial_title'
+    record.instructions = 'initial_instruction'
+    record.category = '10'
+    record.duration = 5
+    record.save
+    reset_locale 'en_test'
+    expect(record.errors.messages).to eql({})
+  end
 end

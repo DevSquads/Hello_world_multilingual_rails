@@ -6,6 +6,8 @@ class Mission < ApplicationRecord
   # TODO: set title and instructions independently of @after_create
   validates :duration, presence: true
   validates :category, presence: true
+  validates :title, presence: true
+  validates :instructions, presence: true
 
   after_create :add_info_to_locale
   after_update :add_info_to_locale
@@ -20,7 +22,7 @@ class Mission < ApplicationRecord
 
       requested_mission[:title]
     else
-      ''
+      @mission_locale_title
     end
   end
 
@@ -32,7 +34,7 @@ class Mission < ApplicationRecord
 
       requested_mission[:instructions]
     else
-      ''
+      @mission_locale_instructions
     end
   end
 
@@ -53,7 +55,7 @@ class Mission < ApplicationRecord
 
     missions = yml_file_content[I18n.locale.to_s]['missions']
 
-    new_mission_info = {generate_mission_id(id)=> {title: @mission_locale_title, instructions: @mission_locale_instructions}}
+    new_mission_info = {generate_mission_id(id) => {title: @mission_locale_title, instructions: @mission_locale_instructions}}
 
     missions.merge!(new_mission_info)
 
