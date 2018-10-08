@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+require 'locale_helpers'
 
 class LanguageController < ApplicationController
 
@@ -6,6 +7,7 @@ class LanguageController < ApplicationController
 
   def index
     @key_array = LanguageController.language_dict_to_keys_array(:en)
+    reset_locale(params[:locale])
     render :index
   end
 
@@ -21,6 +23,7 @@ class LanguageController < ApplicationController
   end
 
   def self.language_dict_to_keys_array(lang)
+    reset_locale(lang)
     locale_dictionary = I18n.backend.send(:translations)[lang][@@custom_locale_domain] || {}
     extract_keys_from_dict(locale_dictionary)
   end

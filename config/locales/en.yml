@@ -2,12 +2,27 @@
 en:
   missions:
     hello: Hello, world!
-    m_1:
-      :title: sdaf
-      :instructions: asdf
+    m_7:
+      :title: New title
+      :instructions: New Description
     m_2:
       :title: test
       :instructions: 'test '
     m_3:
-      :title: third mission
-      :instructions: instructions
+      :title: voila
+      :instructions: comci comca
+    m_4:
+      :title: asdf
+      :instructions: asfd
+    m_5:
+      :title: test
+      :instructions: test
+    m_6:
+      :title: asfdlkj
+      :instructions: laksfdj
+    m_1:
+      :title: MyString
+      :instructions: MyString
+    m_9:
+      :title: sdaasdf
+      :instructions: sadf

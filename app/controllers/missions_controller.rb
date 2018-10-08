@@ -24,11 +24,13 @@ class MissionsController < ApplicationController
   # POST /missions
   # POST /missions.json
   def create
+    current_locale = params[:mission][:language]
+    reset_locale(current_locale)
     @mission = Mission.new(mission_params)
 
     respond_to do |format|
       if @mission.save
-        format.html {redirect_to @mission, notice: 'Mission was successfully created.'}
+        format.html {redirect_to @mission, notice: 'Mission was successfully created.' }
         format.json {render :show, status: :created, location: @mission}
       else
         format.html {render :new}

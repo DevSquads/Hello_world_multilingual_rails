@@ -1,7 +1,13 @@
+---
 ar:
   missions:
-    hello: "هيللو ورلد!"
-
+    hello: هيللو ورلد!
     1:
-      title: 'دامي تيتل'
-      instructions: 'دامي انستراكشانس'
+      title: دامي تيتل
+      instructions: دامي انستراكشانس
+    m_1:
+      :title: مهمة جديدة
+      :instructions: وصف المهمة الجديدة
+    m_10:
+      :title: as
+      :instructions: asd

@@ -21,13 +21,22 @@ feature 'Mission' do
     fill_mission_form('Healthy',
                       '22',
                       'New Mission Description',
-                      'en',
+                      'en_test',
                       'New Mission')
 
     click_button 'Create Mission'
 
     expect(find('p#notice')).to have_text('Mission was successfully created.')
     expect(current_path).to eql('/missions/1')
+
+    new_mission = Mission.find(1)
+    expect(new_mission.category).to eql('Healthy')
+    expect(new_mission.duration).to eql(22)
+    reset_locale('en_test')
+    expect(new_mission.title).to eql('New Mission')
+    expect(new_mission.instructions).to eql('New Mission Description')
+
+
   end
 
   scenario 'should edit successfully' do
@@ -44,7 +53,7 @@ feature 'Mission' do
     expect(current_path).to eql('/missions/1')
   end
 
-  scenario 'should show all missions when go to missions/' do
+  scenario 'should show all missions when go to missions' do
     reset_locale 'en_test'
     Mission.create!(title: 'first mission', instructions: 'instructions', duration: 10, category: 'category')
     reset_locale 'fr_test'
@@ -116,5 +125,7 @@ feature 'Mission' do
     expect(find_all('h3#create_mission_title').length).to eql(1)
     expect(find('h3#create_mission_title')).to have_text("Create New Mission")
   end
+
+  #todo test that the drop list adds a new language when adding a mission with a previously unsupported language
 
 end
