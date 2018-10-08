@@ -44,7 +44,7 @@ feature 'Mission' do
     expect(current_path).to eql('/missions/1')
   end
 
-  scenario 'should show all missions when go to missions/' do
+  scenario 'should show all missions in a specific language in homepage' do
     reset_locale 'en_test'
     Mission.create!(title: 'first mission', instructions: 'instructions', duration: 10, category: 'category')
     reset_locale 'fr_test'

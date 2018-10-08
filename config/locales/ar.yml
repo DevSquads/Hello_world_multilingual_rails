@@ -1,7 +1,12 @@
+---
 ar:
   missions:
-    hello: "هيللو ورلد!"
+    hello: هيللو ورلد!
 
-    1:
-      title: 'دامي تيتل'
-      instructions: 'دامي انستراكشانس'
+    m_1:
+      :title: bel3araby
+      :instructions: bardo bel 3araby
+
+    m_2:
+      :title: bel3araby2
+      :instructions: bardo bel 3araby2
