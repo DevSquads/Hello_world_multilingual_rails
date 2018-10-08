@@ -56,13 +56,7 @@ RSpec.describe MissionsController, type: :controller do
   # MissionsController. Be sure to keep this updated too.
   let(:valid_session) {{}}
 
-  describe 'GET #index' do
-    it 'returns a success response' do
-      Mission.create! valid_attributes
-      get :index, params: {}, session: valid_session
-      expect(response).to be_successful
-    end
-
+  describe 'GET #by_lang' do
     it 'retrieves all missions in a specific language' do
       first_mission = Mission.create! first_en_valid_attributes
       second_mission = Mission.create! second_en_valid_attributes
@@ -79,6 +73,34 @@ RSpec.describe MissionsController, type: :controller do
       expect(missions[0].title).to eql(first_en_valid_attributes[:title])
       expect(missions[1].id).to eql(second_mission.id)
       expect(missions[1].title).to eql(second_en_valid_attributes[:title])
+    end
+  end
+
+  describe 'GET #index' do
+    it 'returns a success response' do
+      Mission.create! valid_attributes
+      get :index, params: {}, session: valid_session
+      expect(response).to be_successful
+    end
+
+    it 'should return all missions in all languages' do
+      reset_locale 'en_test'
+      first_mission = Mission.create! valid_attributes
+
+      reset_locale 'ar_test'
+      first_mission.title = ar_valid_attributes[:title]
+      first_mission.instructions = ar_valid_attributes[:instructions]
+      first_mission.save
+
+      reset_locale 'sp_test'
+      first_mission.title = valid_attributes[:title] + 'sp'
+      first_mission.instructions = valid_attributes[:instructions] + 'sp'
+      first_mission.save
+
+      get :index
+
+      missions = assigns(:missions)
+      expect(missions.length).to eql(3)
     end
   end
 
@@ -175,7 +197,8 @@ RSpec.describe MissionsController, type: :controller do
   end
 
   after(:all) do
-    # remove_locale_file 'en_test'
-    # remove_locale_file 'ar_test'
+    remove_locale_file 'en_test'
+    remove_locale_file 'ar_test'
+    remove_locale_file 'sp_test'
   end
 end

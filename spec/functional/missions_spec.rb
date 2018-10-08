@@ -21,7 +21,7 @@ feature 'Mission' do
     fill_mission_form('Healthy',
                       '22',
                       'New Mission Description',
-                      'en',
+                      'en_test',
                       'New Mission')
 
     click_button 'Create Mission'
@@ -31,12 +31,14 @@ feature 'Mission' do
   end
 
   scenario 'should edit successfully' do
+    reset_locale 'en_test'
     Mission.create!(title: 'title', instructions: 'instructions', duration: 10, category: 'category')
 
     visit "#{default_url}/missions/1/edit"
 
     fill_in 'mission_title', with: 'edited mission title'
     fill_in 'mission_instructions', with: 'edited mission title'
+    fill_in 'mission_language', with: 'en_test'
 
     click_button 'Update Mission'
 
@@ -44,7 +46,7 @@ feature 'Mission' do
     expect(current_path).to eql('/missions/1')
   end
 
-  scenario 'should show all missions in a specific language in homepage' do
+  scenario 'should show all missions when go to missions/' do
     reset_locale 'en_test'
     Mission.create!(title: 'first mission', instructions: 'instructions', duration: 10, category: 'category')
     reset_locale 'fr_test'
@@ -81,7 +83,7 @@ feature 'Mission' do
     mission_instructions = 'وصف المهمة الجديدة'
     mission_duration = '22'
     mission_category = 'Healthy'
-    mission_language =  'ar'
+    mission_language =  'ar_test'
 
     visit "#{default_url}/missions/new"
 

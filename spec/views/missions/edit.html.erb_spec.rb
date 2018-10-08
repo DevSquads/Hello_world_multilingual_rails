@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "missions/edit", type: :view do
   before(:each) do
+    reset_locale 'en_test'
     @mission = assign(:mission, Mission.create!(
       :title => "MyString",
       :instructions => "MyString",

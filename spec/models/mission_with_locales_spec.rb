@@ -6,6 +6,7 @@ require 'yaml'
 describe 'Mission returns title and instructions by language' do
 
   it 'should save the model with id' do
+    reset_locale 'en_test'
     record = Mission.create!({title: 'title', instructions: 'instructions', duration: 10, category: 'category'})
 
     expect(record.errors[:title].length).to eql(0)

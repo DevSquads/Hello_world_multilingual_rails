@@ -24,6 +24,9 @@ end
 
 
 def reset_locale language
+  if language.nil? or language.empty?
+    return
+  end
   create_base_yml_file_without_missions(language) unless File.exists?(yml_path(language))
 
   I18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]

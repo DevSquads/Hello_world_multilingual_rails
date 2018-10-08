@@ -2,6 +2,3 @@
 en:
   missions:
     hello: Hello, world!
-    m_1:
-      :title: MyString
-      :instructions: MyString

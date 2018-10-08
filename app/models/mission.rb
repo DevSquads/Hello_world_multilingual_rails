@@ -22,9 +22,11 @@ class Mission < ApplicationRecord
       all_missions = local_translation_tables[:missions]
       requested_mission = all_missions[generate_mission_id(id).to_sym]
 
-      puts "Mission : ID : #{generate_mission_id(id)}"
-
-      requested_mission[:title]
+      if requested_mission
+        requested_mission[:title]
+      else
+        "title is not supported in this language: #{I18n.locale}"
+      end
     else
       @mission_locale_title
     end
@@ -36,7 +38,11 @@ class Mission < ApplicationRecord
       all_missions = local_translation_tables[:missions]
       requested_mission = all_missions[generate_mission_id(id).to_sym]
 
-      requested_mission[:instructions]
+      if requested_mission
+        requested_mission[:instructions]
+      else
+        "instructions are not supported in this language: #{I18n.locale}"
+      end
     else
       @mission_locale_instructions
     end

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
-default_url = 'http://localhost:3001'
+default_url = 'http://localhost:3001/la'
 
 feature 'User adds a language', js: true do
   scenario 'window size is large enough for tests' do
@@ -28,7 +28,7 @@ feature 'User adds a language', js: true do
 
     fill_in 'translations[hello]', with: 'bonjour'
 
-    fill_in 'translations[m_1]', with: 'merde'
+    fill_in 'translations[1]', with: 'merde'
 
     click_button 'add_language'
 

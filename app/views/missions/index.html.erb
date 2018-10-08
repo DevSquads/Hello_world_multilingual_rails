@@ -16,13 +16,13 @@
   <tbody>
     <% @missions.each do |mission| %>
       <tr>
-        <td><%= mission.title %></td>
-        <td><%= mission.instructions %></td>
-        <td><%= mission.duration %></td>
-        <td><%= mission.category %></td>
-        <td><%= link_to 'Show', mission %></td>
-        <td><%= link_to 'Edit', edit_mission_path(mission) %></td>
-        <td><%= link_to 'Destroy', mission, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= mission[:title] %></td>
+        <td><%= mission[:instructions] %></td>
+        <td><%= mission[:duration] %></td>
+        <td><%= mission[:category] %></td>
+        <td><%= link_to 'Show', mission_path(mission[:id]) %></td>
+        <td><%= link_to 'Edit', edit_mission_path(mission[:id]) %></td>
+        <td><%= link_to 'Destroy', mission_path(mission[:id]), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
