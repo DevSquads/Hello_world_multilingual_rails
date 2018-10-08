@@ -17,7 +17,7 @@ describe 'Mission returns title and instructions by language' do
     record = Mission.create!({title: 'demo_test_title', instructions: 'instructions', duration: 10, category: 'category'})
 
     yml_hash = YAML.load(File.read(yml_path('en_test')))
-    expect(yml_hash['en_test']['missions']["m_#{record.id.to_s}"][:title]).to eql('demo_test_title')
+    expect(yml_hash['en_test']['missions'][generate_mission_id(record.id)][:title]).to eql('demo_test_title')
   ensure
     remove_locale_file 'en_test'
   end
@@ -27,7 +27,7 @@ describe 'Mission returns title and instructions by language' do
     record = Mission.create!({title: 'demo_test_title', instructions: 'go up and down', duration: 10, category: 'category'})
 
     yml_hash = YAML.load(File.read(yml_path('en_test')))
-    expect(yml_hash['en_test']['missions']["m_#{record.id.to_s}"][:instructions]).to eql('go up and down')
+    expect(yml_hash['en_test']['missions'][generate_mission_id(record.id)][:instructions]).to eql('go up and down')
   ensure
     remove_locale_file 'en_test'
   end
