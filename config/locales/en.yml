@@ -6,8 +6,8 @@ en:
       :title: MyString
       :instructions: MyString
     m_2:
-      :title: Title
-      :instructions: Instructions
+      :title: test
+      :instructions: 'test '
     m_3:
       :title: third mission
       :instructions: instructions

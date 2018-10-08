@@ -6,5 +6,5 @@ Rails.application.routes.draw do
 
   post '/language', to: 'language#create'
 
-  root 'language#index'
+  root 'missions#new'
 end

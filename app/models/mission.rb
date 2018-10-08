@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 require 'mission_helpers'
+require 'locale_helpers'
 class Mission < ApplicationRecord
   include ActiveModel::Validations
 

@@ -76,7 +76,7 @@ feature 'Mission' do
     expect(find_all('tbody tr').length).to eql(0)
   end
 
-  it 'Missions form should support creation of different language' do
+  scenario 'Missions form should support creation of different language' do
     mission_title = 'مهمة جديدة'
     mission_instructions = 'وصف المهمة الجديدة'
     mission_duration = '22'
@@ -106,6 +106,15 @@ feature 'Mission' do
     expect(find_all('tbody tr').length).to eql(1)
     expect(find('tbody > tr:nth-child(1) > td:nth-child(1)')).to have_text(mission_title)
     expect(find('tbody > tr:nth-child(1) > td:nth-child(2)')).to have_text(mission_instructions)
+  end
+
+  scenario 'Homepage takes you to creating a new mission /missions/new' do
+    visit "#{default_url}"
+    expect(find_all('h1#homepage_title').length).to eql(1)
+    expect(find('h1#homepage_title')).to have_text("Admin")
+
+    expect(find_all('h3#create_mission_title').length).to eql(1)
+    expect(find('h3#create_mission_title')).to have_text("Create New Mission")
   end
 
 end
