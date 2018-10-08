@@ -85,6 +85,7 @@ class MissionsController < ApplicationController
   def update
     current_locale = params[:mission][:language]
     reset_locale current_locale
+
     respond_to do |format|
       if @mission.update(mission_params)
         format.html {redirect_to @mission, notice: 'Mission was successfully updated.'}

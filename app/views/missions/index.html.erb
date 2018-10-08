@@ -16,8 +16,8 @@
   <tbody>
     <% @missions.each do |mission| %>
       <tr>
-        <td><%= mission[:title] %></td>
-        <td><%= mission[:instructions] %></td>
+        <td><%= mission[:title] || mission.title %></td>
+        <td><%= mission[:instructions] || mission.instructions %></td>
         <td><%= mission[:duration] %></td>
         <td><%= mission[:category] %></td>
         <td><%= link_to 'Show', mission_path(mission[:id]) %></td>
