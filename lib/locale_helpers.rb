@@ -38,4 +38,6 @@ def remove_locale_file language
   end.compact
 
   I18n.load_path = new_load_paths
+
+  I18n.locale = I18n.default_locale
 end

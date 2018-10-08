@@ -19,4 +19,8 @@ RSpec.describe "missions/show", type: :view do
     expect(rendered).to match(/10/)
     expect(rendered).to match(/Category/)
   end
+
+  after(:all) do
+    remove_locale_file 'en_test'
+  end
 end

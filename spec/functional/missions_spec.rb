@@ -45,19 +45,24 @@ feature 'Mission' do
   end
 
   scenario 'should show all missions when go to missions/' do
-    reset_locale "en"
+    reset_locale 'en_test'
     Mission.create!(title: 'first mission', instructions: 'instructions', duration: 10, category: 'category')
-    reset_locale "fr"
+    reset_locale 'fr_test'
     Mission.create!(title: 'second mission', instructions: 'instructions', duration: 10, category: 'category')
-    reset_locale "sp"
+    reset_locale 'sp_test'
     Mission.create!(title: 'third mission', instructions: 'instructions', duration: 10, category: 'category')
 
     visit "#{default_url}/missions"
 
     expect(find_all('tbody tr').length).to eql(3)
+  ensure
+    remove_locale_file 'en_test'
+    remove_locale_file 'fr_test'
+    remove_locale_file 'sp_test'
   end
 
   scenario 'should delete the mission with destroy button' do
+    reset_locale 'en_test'
     Mission.create!(title: 'title', instructions: 'instructions', duration: 10, category: 'category')
 
     visit "#{default_url}/missions"
