@@ -34,5 +34,9 @@ RSpec.describe MissionsController, type: :routing do
     it "routes to #destroy" do
       expect(:delete => "/missions/1").to route_to("missions#destroy", :id => "1")
     end
+
+    it "root routes to new missions" do
+      expect(:get => "/").to route_to("missions#new")
+    end
   end
 end

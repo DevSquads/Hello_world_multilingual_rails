@@ -29,7 +29,7 @@
 
 /node_modules
 /yarn-error.log
-
+o
 /public/assets
 .byebug_history
 
