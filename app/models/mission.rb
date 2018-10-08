@@ -22,6 +22,8 @@ class Mission < ApplicationRecord
       all_missions = local_translation_tables[:missions]
       requested_mission = all_missions[generate_mission_id(id).to_sym]
 
+      puts "Mission : ID : #{generate_mission_id(id)}"
+
       requested_mission[:title]
     else
       @mission_locale_title

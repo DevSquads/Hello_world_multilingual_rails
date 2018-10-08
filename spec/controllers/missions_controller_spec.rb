@@ -71,7 +71,7 @@ RSpec.describe MissionsController, type: :controller do
       fourth_mission = Mission.create! valid_attributes
 
       request.headers["LANG"] = "en_test"
-      get :index, params: {}, session: valid_session
+      get :by_lang, params: {}, session: valid_session
 
       missions = assigns(:missions)
       expect(missions.length).to eql(2)

@@ -6,5 +6,7 @@ Rails.application.routes.draw do
 
   post '/language', to: 'language#create'
 
+  get '/missions/list/by_lang', to: 'missions#by_lang'
+
   root 'language#index'
 end

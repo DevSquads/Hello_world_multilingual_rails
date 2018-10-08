@@ -4,20 +4,23 @@ class MissionsController < ApplicationController
   # GET /missions
   # GET /missions.json
   def index
+    # we should retrieve all locals and get their  missions
     @missions = Mission.all
+  end
 
+  def by_lang
+    @missions = Mission.all
     local_translation_tables = I18n.backend.send(:translations)[I18n.locale]
     all_missions = local_translation_tables[:missions]
-
     filtered_missions = []
     @missions.each do |current_mission|
       current_mission_key = generate_mission_id(current_mission.id).to_sym
       filtered_missions.push(current_mission) if all_missions.key?(current_mission_key)
     end
+    puts "ms: #{filtered_missions}"
 
     @missions = filtered_missions
   end
-
   # GET /missions/1
   # GET /missions/1.json
   def show
