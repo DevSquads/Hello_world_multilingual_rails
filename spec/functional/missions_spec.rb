@@ -36,7 +36,8 @@ feature 'Mission' do
     expect(new_mission.title).to eql('New Mission')
     expect(new_mission.instructions).to eql('New Mission Description')
 
-
+  ensure
+    remove_locale_file 'en_test'
   end
 
   scenario 'should edit successfully' do
@@ -92,7 +93,7 @@ feature 'Mission' do
     mission_instructions = 'وصف المهمة الجديدة'
     mission_duration = '22'
     mission_category = 'Healthy'
-    mission_language =  'ar_test'
+    mission_language = 'ar_test'
 
     visit "#{default_url}/missions/new"
 
