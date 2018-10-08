@@ -5,6 +5,8 @@ class Mission < ApplicationRecord
   # TODO: set title and instructions independently of @after_create
   validates :duration, presence: true
   validates :category, presence: true
+  validates :title, presence: true
+  validates :instructions, presence: true
 
   after_create :write_title_to_yml_file
   after_update :write_title_to_yml_file
@@ -16,9 +18,9 @@ class Mission < ApplicationRecord
       trans = I18n.backend.send(:translations)
       missions = trans[I18n.locale][:missions]
       single_mission = missions["m_#{id}".to_sym]
-      title = single_mission[:title]
+      single_mission[:title]
     else
-      ''
+      @mission_locale_title
     end
   end
 
@@ -26,7 +28,7 @@ class Mission < ApplicationRecord
     if id
       I18n.backend.send(:translations)[I18n.locale][:missions]["m_#{id}".to_sym][:instructions]
     else
-      ''
+      @mission_locale_instructions
     end
   end
 
