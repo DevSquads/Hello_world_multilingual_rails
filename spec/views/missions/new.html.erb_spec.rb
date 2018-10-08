@@ -44,6 +44,16 @@ RSpec.describe "missions/new", type: :view do
     end
   end
 
+  it "should render the locale languages in the language datalist" do
+    render
+
+    available_locale_length = I18n.available_locales.length
+    expect(available_locale_length).to eql(3)
+
+    assert_select "datalist[id='languages']" do
+      assert_select "option", available_locale_length
+    end
+  end
 
   after(:all) do
     remove_locale_file 'en_test'

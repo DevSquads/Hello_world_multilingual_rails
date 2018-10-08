@@ -3,8 +3,8 @@ en:
   missions:
     hello: Hello, world!
     m_1:
-      :title: MyString
-      :instructions: MyString
+      :title: sdaf
+      :instructions: asdf
     m_2:
       :title: test
       :instructions: 'test '
