@@ -2,21 +2,23 @@
 
 class Mission < ApplicationRecord
   include ActiveModel::Validations
+
   # TODO: set title and instructions independently of @after_create
   validates :duration, presence: true
   validates :category, presence: true
 
-  after_create :write_title_to_yml_file
-  after_update :write_title_to_yml_file
+  after_create :add_info_to_locale
+  after_update :add_info_to_locale
 
   #TODO check existence of mission id before adding or editing
 
   def title
     if id
-      trans = I18n.backend.send(:translations)
-      missions = trans[I18n.locale][:missions]
-      single_mission = missions["m_#{id}".to_sym]
-      title = single_mission[:title]
+      local_translation_tables = I18n.backend.send(:translations)[I18n.locale]
+      all_missions = local_translation_tables[:missions]
+      requested_mission = all_missions["m_#{id}".to_sym]
+
+      requested_mission[:title]
     else
       ''
     end
@@ -24,7 +26,11 @@ class Mission < ApplicationRecord
 
   def instructions
     if id
-      I18n.backend.send(:translations)[I18n.locale][:missions]["m_#{id}".to_sym][:instructions]
+      local_translation_tables = I18n.backend.send(:translations)[I18n.locale]
+      all_missions = local_translation_tables[:missions]
+      requested_mission = all_missions["m_#{id}".to_sym]
+
+      requested_mission[:instructions]
     else
       ''
     end
@@ -38,7 +44,7 @@ class Mission < ApplicationRecord
     @mission_locale_instructions = value
   end
 
-  def write_title_to_yml_file
+  def add_info_to_locale
     yml_file_path = Rails.root.join("config/locales/#{I18n.locale}.yml")
 
     file_content = File.open(yml_file_path, 'r').read
