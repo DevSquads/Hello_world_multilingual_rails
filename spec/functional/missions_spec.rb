@@ -136,7 +136,8 @@ feature 'Mission' do
     expect(find('.missions_table_row .mission_instructions')).to have_text(mission_instructions)
   end
 
-  def create_mission_with_form(url, mission_title, mission_instructions, mission_duration, mission_category, mission_language)
+  def create_mission_with_form(url, mission_title, mission_instructions,
+                               mission_duration, mission_category, mission_language)
     visit url
 
     fill_mission_form(mission_title,

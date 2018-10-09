@@ -4,15 +4,15 @@ class MissionsController < ApplicationController
   # GET /missions
   # GET /missions.json
   def index
-    # we should retrieve all locals and get their  missions
+    # we should retrieve all locales and get their  missions
     @missions = Mission.all
     all_missions_in_all_languages = []
-    local_translation_tables = I18n.backend.send(:translations)
+    locale_translation_tables = I18n.backend.send(:translations)
 
     @missions.each do |current_mission|
-      current_mission_key = generate_mission_id current_mission.id
+      current_mission_key = mission_id_to_locale_id current_mission.id
 
-      local_translation_tables.each do |current_locale|
+      locale_translation_tables.each do |current_locale|
         current_mission_hash = current_locale[1][:missions]
 
         if current_mission_hash.key? current_mission_key.to_sym
@@ -41,7 +41,7 @@ class MissionsController < ApplicationController
     all_missions = local_translation_tables[:missions]
     filtered_missions = []
     @missions.each do |current_mission|
-      current_mission_key = generate_mission_id(current_mission.id).to_sym
+      current_mission_key = mission_id_to_locale_id(current_mission.id).to_sym
       filtered_missions.push(current_mission) if all_missions.key?(current_mission_key)
     end
 
