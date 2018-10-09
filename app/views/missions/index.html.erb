@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>ID</th>
       <th>Title</th>
       <th>Instructions</th>
       <th>Duration</th>
@@ -16,6 +17,7 @@
   <tbody>
     <% @missions.each do |mission| %>
       <tr>
+        <td><%= mission[:id] || mission.id %></td>
         <td><%= mission[:title] || mission.title %></td>
         <td><%= mission[:instructions] || mission.instructions %></td>
         <td><%= mission[:duration] %></td>

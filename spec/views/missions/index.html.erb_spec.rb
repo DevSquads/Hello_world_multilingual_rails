@@ -7,16 +7,16 @@ RSpec.describe 'missions/index', type: :view do
     reset_locale 'en_test'
     assign(:missions, [
              Mission.create!(
-               title: 'Title',
-               instructions: 'Instructions',
+               title: 'Title one',
+               instructions: 'Instruction one',
                duration: 10,
-               category: 'Category'
+               category: 'Category one'
              ),
              Mission.create!(
-               title: 'Title',
-               instructions: 'Instructions',
-               duration: 10,
-               category: 'Category'
+               title: 'Title two',
+               instructions: 'Instruction two',
+               duration: 11,
+               category: 'Category two'
              )
            ])
   end
@@ -24,10 +24,17 @@ RSpec.describe 'missions/index', type: :view do
   it 'renders a list of missions' do
     reset_locale 'en_test'
     render
-    assert_select 'tr>td', text: 'Title'.to_s, count: 2
-    assert_select 'tr>td', text: 'Instructions'.to_s, count: 2
-    assert_select 'tr>td', text: 10.to_s, count: 2
-    assert_select 'tr>td', text: 'Category'.to_s, count: 2
+    assert_select 'tr>td', text: '1'.to_s, count: 1
+    assert_select 'tr>td', text: 'Title one'.to_s, count: 1
+    assert_select 'tr>td', text: 'Instruction one'.to_s, count: 1
+    assert_select 'tr>td', text: 10.to_s, count: 1
+    assert_select 'tr>td', text: 'Category one'.to_s, count: 1
+
+    assert_select 'tr>td', text: '2'.to_s, count: 1
+    assert_select 'tr>td', text: 'Title two'.to_s, count: 1
+    assert_select 'tr>td', text: 'Instruction two'.to_s, count: 1
+    assert_select 'tr>td', text: 11.to_s, count: 1
+    assert_select 'tr>td', text: 'Category two'.to_s, count: 1
   end
 
   after(:each) do
