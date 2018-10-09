@@ -22,18 +22,22 @@ feature 'Mission' do
     expect(find('p#notice')).to have_text('Mission was successfully created.')
     expect(current_path).to eql('/')
 
+    # Assert that duration and category are successfully inserted in the database
     new_mission = Mission.find(1)
     expect(new_mission.category).to eql(mission_category)
     expect(new_mission.duration).to eql(mission_duration)
 
+    # Assert that title and instructions are successfully written to locale
     reset_locale(en_test_locale)
     expect(new_mission.title).to eql(mission_title)
     expect(new_mission.instructions).to eql(mission_instructions)
 
+    # Assert that title and instructions retrieval in an invalid locale is handled with a descriptive error message
     reset_locale('en')
     expect(new_mission.title).to eql('Mission is not supported in this language: en.')
     expect(new_mission.instructions).to eql('Mission is not supported in this language: en.')
 
+    # Assert that the created mission's info is successfully displayed in homepage
     check_missions_table(mission_title,
                          mission_instructions,
                          'Mission was successfully created.')

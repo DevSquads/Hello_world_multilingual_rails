@@ -2,3 +2,6 @@
 en:
   missions:
     hello: Hello, world!
+    m_9:
+      :title: first
+      :instructions: first after editing
