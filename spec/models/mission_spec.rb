@@ -39,15 +39,14 @@ RSpec.describe Mission, type: :model do
   it 'should create mission with successful validation, no errors ' do
     reset_locale 'en_test'
 
-    record = Mission.new
-    record.title = 'initial_title'
-    record.instructions = 'initial_instruction'
-    record.category = '10'
-    record.duration = 5
-    record.save
+    record = Mission.create! ({
+      title: 'initial_title',
+      instructions: 'initial_instruction',
+      category: 'initial_category',
+      duration: 5
+    })
+
     reset_locale 'en_test'
     expect(record.errors.messages).to eql({})
   end
-
-
 end
