@@ -17,10 +17,12 @@
 <table class="missions_table">
   <thead>
   <tr>
+    <th>ID</th>
     <th>Title</th>
     <th>Instructions</th>
     <th>Duration</th>
-    <th>Category</th>
+    <th>Category
+    <th>Language</th>
     <th colspan="3"></th>
   </tr>
   </thead>
@@ -29,10 +31,12 @@
   <tbody>
   <% @missions.each do |mission| %>
     <tr class="missions_table_row">
+      <td class="mission_id" ><%= mission[:id] %></td>
       <td class="mission_title"><%= mission[:title] || mission.title %></td>
       <td class="mission_instructions"><%= mission[:instructions] || mission.instructions %></td>
       <td><%= mission[:duration] %></td>
       <td><%= mission[:category] %></td>
+      <td class="mission_language" ><%= mission[:language] %></td>
       <td><%= link_to 'Show', mission_path(mission[:id]) %></td>
       <td><%= link_to 'Edit', edit_mission_path(mission[:id]) %></td>
       <td><%= link_to 'Destroy', mission_path(mission[:id]), method: :delete, data: { confirm: 'Are you sure?' } %></td>

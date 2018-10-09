@@ -35,17 +35,21 @@ feature 'Mission' do
     expect(new_mission.title).to eql('Mission is not supported in this language: en.')
     expect(new_mission.instructions).to eql('Mission is not supported in this language: en.')
 
-    # Assert that the created mission's info is successfully displayed in homepage
-    check_missions_table(mission_title,
-                         mission_instructions,
-                         'Mission was successfully created.')
+    # Assert that the created mission's info is successfully displayed in homepage table
+    check_missions_table(
+        new_mission.id,
+        mission_title,
+        mission_instructions,
+        en_test_locale,
+        'Mission was successfully created.'
+    )
   ensure
     remove_locale_file en_test_locale
   end
 
   scenario 'should edit successfully' do
     reset_locale en_test_locale
-    Mission.create!(title: 'title', instructions: 'instructions', duration: 10, category: 'category')
+    record = Mission.create!(title: 'title', instructions: 'instructions', duration: 10, category: 'category')
 
     visit "#{default_url}/missions/1/edit"
     fill_in 'mission_title', with: 'edited mission title'
@@ -53,9 +57,14 @@ feature 'Mission' do
     fill_in 'mission_language', with: en_test_locale
     click_button 'Update Mission'
 
-    check_missions_table('edited mission title',
-                         'edited mission instructions',
-                         'Mission was successfully updated.')
+    # Assert the edited mission info is in the homepage table
+    check_missions_table(
+        record.id,
+        'edited mission title',
+        'edited mission instructions',
+        en_test_locale,
+        'Mission was successfully updated.'
+    )
   ensure
     remove_locale_file en_test_locale
   end
@@ -98,9 +107,22 @@ feature 'Mission' do
     mission_category = 'Healthy'
     mission_language = 'ar_test'
 
-    create_mission_with_form(default_url, mission_title, mission_instructions, mission_duration, mission_category, mission_language)
+    create_mission_with_form(
+        default_url,
+        mission_title,
+        mission_instructions,
+        mission_duration,
+        mission_category,
+        mission_language
+    )
 
-    check_missions_table(mission_title, mission_instructions, 'Mission was successfully created.')
+    check_missions_table(
+        1,
+        mission_title,
+        mission_instructions,
+        mission_language,
+        'Mission was successfully created.'
+    )
   ensure
     remove_locale_file 'ar_test'
   end
@@ -138,14 +160,14 @@ feature 'Mission' do
 
   scenario 'filter button change locale in url when click on an option' do
     reset_locale en_test_locale
-    Mission.create!(title: 'first mission', instructions: 'instructions', duration: 10, category: 'category')
+    mission_one = Mission.create!(title: 'first mission', instructions: 'instructions', duration: 10, category: 'category')
     reset_locale 'ar_test'
-    Mission.create!(title: 'second mission', instructions: 'second instructions', duration: 10, category: 'category')
+    mission_two = Mission.create!(title: 'second mission', instructions: 'second instructions', duration: 10, category: 'category')
     visit "#{default_url}"
     find('#en_test').click
-    check_missions_table('first mission', 'instructions', '')
+    check_missions_table( mission_one.id,'first mission', 'instructions', '')
     find('#ar_test').click
-    check_missions_table('second mission', 'instructions', '')
+    check_missions_table(mission_two.id,'second mission', 'instructions', '')
   ensure
     remove_locale_file en_test_locale
     remove_locale_file 'ar_test'
@@ -154,20 +176,20 @@ feature 'Mission' do
   scenario 'should filter the missions based on language by filter ' do
 
     reset_locale en_test_locale
-    Mission.create!(title: 'first mission', instructions: 'instructions', duration: 10, category: 'category')
+    record1 = Mission.create!(title: 'first mission', instructions: 'instructions', duration: 10, category: 'category')
     reset_locale 'fr_test'
-    Mission.create!(title: 'second mission', instructions: 'instructions', duration: 10, category: 'category')
+    record2 = Mission.create!(title: 'second mission', instructions: 'instructions', duration: 10, category: 'category')
     reset_locale 'sp_test'
-    Mission.create!(title: 'third mission', instructions: 'instructions', duration: 10, category: 'category')
+    record3 = Mission.create!(title: 'third mission', instructions: 'instructions', duration: 10, category: 'category')
 
     visit "#{default_url}/?locale=#{en_test_locale}"
-    check_missions_table('first mission', 'instructions', '')
+    check_missions_table(record1.id, 'first mission', 'instructions', en_test_locale)
 
-    visit "#{default_url}/?locale=#{'fr_test'}"
-    check_missions_table('second mission', 'instructions', '')
+    visit "#{default_url}/?locale=fr_test"
+    check_missions_table(record2.id, 'second mission', 'instructions', 'fr_test')
 
-    visit "#{default_url}/?locale=#{'sp_test'}"
-    check_missions_table('third mission', 'instructions', '')
+    visit "#{default_url}/?locale=sp_test"
+    check_missions_table(record3.id,'third mission', 'instructions', 'sp_test')
 
   ensure
     remove_locale_file en_test_locale
@@ -184,17 +206,21 @@ feature 'Mission' do
     fill_in 'mission_language', with: mission_language
   end
 
-  def check_missions_table(mission_title, mission_instructions, notice)
-    if notice.nil? or notice.empty?
+  def check_missions_table(mission_id, mission_title, mission_instructions, mission_language, notice = '')
+
+    unless notice.nil? or notice.empty?
       expect(find('p#notice').text).to eql(notice)
     end
+
     expect(current_path).to eql('/')
 
     expect(find('.missions_table')).to be_truthy
     expect(find_all('.missions_table_row').length).to eql(1)
 
+    expect(find('.missions_table_row .mission_id')).to have_text(mission_id)
     expect(find('.missions_table_row .mission_title')).to have_text(mission_title)
     expect(find('.missions_table_row .mission_instructions')).to have_text(mission_instructions)
+    expect(find('.missions_table_row .mission_language')).to have_text(mission_language)
   end
 
   def create_mission_with_form(url, mission_title, mission_instructions,
