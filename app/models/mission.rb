@@ -1,15 +1,22 @@
 # frozen_string_literal: true
 
+# This model is non-standard
+# Duration, category and ID are persisted in the database as per usual active records
+# title and instructions are calculated by getting them from locale files depending on the
+# current locale
+
 require 'mission_helpers'
 require 'locale_helpers'
 
 class Mission < ApplicationRecord
   include ActiveModel::Validations
 
+  #duration, category, title, and instruction cannot be null
   validates :duration, presence: true
   validates :category, presence: true
   validates :title, presence: true
   validates :instructions, presence: true
+
 
   after_create :add_info_to_locale
   after_update :add_info_to_locale
@@ -63,26 +70,24 @@ class Mission < ApplicationRecord
 
   # Writes the mission's info to a local file whether after updating or creating the record
   def add_info_to_locale
-    yml_file_path = Rails.root.join("config/locales/#{I18n.locale}.yml")
-
+    #load missions from the appropriate locale
+    yml_file_path = yml_path I18n.locale
     file_content = File.open(yml_file_path, 'r').read
-
     yml_file_content = YAML.load file_content
-
     missions = yml_file_content[I18n.locale.to_s]['missions']
 
-    # Info to be written
+    # create a new mission object that is merged with the locale data (title and instructions)
     new_mission_info = {mission_id_to_locale_id(id) => {
         title: @mission_locale_title,
         instructions: @mission_locale_instructions
     }}
-
-    # Merges the new/updated mission to the retrieved yaml content to be written
     missions.merge!(new_mission_info)
 
+    #update the locale file by writing the missions hash back to the file
     File.open(yml_file_path, 'w') do |file|
       file.write(yml_file_content.to_yaml)
     end
+    #reload the locale hash based on the new file content
     reset_locale(I18n.locale)
   end
 
