@@ -54,7 +54,13 @@ class MissionsController < ApplicationController
   # GET /missions/new
   def new
     @mission = Mission.new
-    @missions = index
+
+    if params[:locale]
+      @missions = by_lang
+    else
+      @missions = index
+    end
+
   end
 
   # GET /missions/1/edit

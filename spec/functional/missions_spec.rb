@@ -4,8 +4,6 @@ require 'rails_helper'
 require 'locale_helpers'
 
 
-
-
 feature 'Mission' do
   default_url = 'http://localhost:3001'
   en_test_locale = 'en_test'
@@ -131,6 +129,32 @@ feature 'Mission' do
     remove_locale_file 'unsupported_language'
   end
 
+
+  scenario 'should filter the missions based on language by filter ' do
+
+    reset_locale en_test_locale
+    Mission.create!(title: 'first mission', instructions: 'instructions', duration: 10, category: 'category')
+    reset_locale 'fr_test'
+    Mission.create!(title: 'second mission', instructions: 'instructions', duration: 10, category: 'category')
+    reset_locale 'sp_test'
+    Mission.create!(title: 'third mission', instructions: 'instructions', duration: 10, category: 'category')
+
+    visit "#{default_url}/?locale=#{en_test_locale}"
+    check_missions_table('first mission', 'instructions', '')
+
+    visit "#{default_url}/?locale=#{'fr_test'}"
+    check_missions_table('second mission', 'instructions', '')
+
+    visit "#{default_url}/?locale=#{'sp_test'}"
+    check_missions_table('third mission', 'instructions', '')
+
+  ensure
+    remove_locale_file en_test_locale
+    remove_locale_file 'fr_test'
+    remove_locale_file 'sp_test'
+  end
+
+
   def fill_mission_form(mission_title, mission_instructions, mission_duration, mission_category, mission_language)
     fill_in 'mission_title', with: mission_title
     fill_in 'mission_instructions', with: mission_instructions
@@ -140,7 +164,9 @@ feature 'Mission' do
   end
 
   def check_missions_table(mission_title, mission_instructions, notice)
-    expect(find('p#notice').text).to eql(notice)
+    if notice.nil? or notice.empty?
+      expect(find('p#notice').text).to eql(notice)
+    end
     expect(current_path).to eql('/')
 
     expect(find('.missions_table')).to be_truthy
