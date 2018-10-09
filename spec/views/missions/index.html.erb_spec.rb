@@ -1,7 +1,7 @@
 # frozen_string_literal: true
-
 require 'rails_helper'
 require 'locale_helpers'
+
 RSpec.describe 'missions/index', type: :view do
   before(:each) do
     reset_locale 'en_test'
