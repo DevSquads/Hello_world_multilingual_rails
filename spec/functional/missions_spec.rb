@@ -26,7 +26,7 @@ feature 'Mission' do
         en_test_locale
     )
 
-    click_link 'Edit', wait:0
+    click_link 'Edit'
 
     expect(current_url).to eql(default_url + '/missions/1/edit/?locale=en_test')
     expect(find('#mission_language').value).to eql(en_test_locale)

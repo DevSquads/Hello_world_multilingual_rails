@@ -89,11 +89,12 @@ class Mission < ApplicationRecord
   # Deletes a mission's locale entry on delete
   def clean_locale
     I18n.available_locales.each do |locale_language|
-      yml_file_path = Rails.root.join("config/locales/#{locale_language}.yml")
+      yml_file_path = yml_path locale_language
       file_content = File.open(yml_file_path, 'r').read
       yml_file_content = YAML.load file_content
       missions = yml_file_content[locale_language.to_s]['missions']
-      missions.delete('m_1')
+
+      missions.delete(mission_id_to_locale_id(id))
 
       File.open(yml_file_path, 'w') do |file|
         file.write(yml_file_content.to_yaml)
