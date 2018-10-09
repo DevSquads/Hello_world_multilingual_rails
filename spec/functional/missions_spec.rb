@@ -32,6 +32,8 @@ feature 'Mission' do
     expect(find('#mission_language').value).to eql(en_test_locale)
     expect(find('#mission_title').value).to eql(mission_template[:title])
     expect(find('#mission_instructions').value).to eql(mission_template[:instructions])
+  ensure
+    remove_locale_file en_test_locale
   end
 
   scenario 'should create successfully' do
