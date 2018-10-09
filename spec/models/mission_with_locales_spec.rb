@@ -105,12 +105,12 @@ describe 'Mission returns title and instructions by language' do
     mission = Mission.create!({title: 'initial_title', instructions: 'initial_instruction', duration: 5, category: 'category'})
 
     yml_hash = YAML.load(File.read(yml_path('en_test')))
-    expect(yml_hash['en_test']['missions']).to include(generate_mission_id(mission.id))
+    expect(yml_hash['en_test']['missions']).to include(mission_id_to_locale_id(mission.id))
 
     mission.destroy
 
     yml_hash = YAML.load(File.read(yml_path('en_test')))
-    expect(yml_hash['en_test']['missions']).not_to include(generate_mission_id(mission.id))
+    expect(yml_hash['en_test']['missions']).not_to include(mission_id_to_locale_id(mission.id))
     ensure
       remove_locale_file 'en_test'
   end
