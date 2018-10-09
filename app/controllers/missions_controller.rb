@@ -9,7 +9,7 @@ class MissionsController < ApplicationController
   def index
     @missions = Mission.all
     all_missions_in_all_languages = []
-    locale_translation_tables = I18n.backend.send(:translations)
+    locale_translation_tables = get_all_translation_tables_from_I18n
 
     # loop through all missions and then loop through all languages
     @missions.each do |mission_to_match|
@@ -32,9 +32,9 @@ class MissionsController < ApplicationController
     @missions = all_missions_in_all_languages
   end
 
-  def by_lang
+  def list_by_language
     @missions = Mission.all
-    local_translation_tables = I18n.backend.send(:translations)[I18n.locale]
+    local_translation_tables = get_all_translation_tables_from_I18n[I18n.locale]
     all_missions = local_translation_tables[:missions]
     filtered_missions = []
 
@@ -52,7 +52,7 @@ class MissionsController < ApplicationController
 
   # GET /missions/1
   # GET /missions/1.json
-  def show;
+  def show
   end
 
   # GET /missions/new
@@ -60,7 +60,7 @@ class MissionsController < ApplicationController
     @mission = Mission.new
 
     if params[:locale]
-      @missions = by_lang
+      @missions = list_by_language
     else
       @missions = index
     end
@@ -123,6 +123,10 @@ class MissionsController < ApplicationController
   end
 
   private
+
+  def get_all_translation_tables_from_I18n
+    I18n.backend.send(:translations)
+  end
 
   # Creates a mission object from data retrieved from locale and database
   # the mission object merges the title, instructions, and language which do not get
