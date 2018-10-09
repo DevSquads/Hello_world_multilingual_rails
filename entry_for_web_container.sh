@@ -1,7 +1,6 @@
 #!/bin/sh
 # entry_for_web_container.sh
 
-#TODO make rails_CI argument passable
 if  $RAILS_CI ; then
     ./wait-for-postgres.sh postgdb 5432
     bundle exec rails s -d -p 3000 -b '0.0.0.0'
