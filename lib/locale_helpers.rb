@@ -1,19 +1,26 @@
+def write_locale_file_headers(file, main_language)
+  file.write("#{main_language}:\n")
+  file.write((' ' * 2) + "missions:\n")
+end
+
+def write_mission_to_locale(file, id, instructions, title)
+  file.write((' ' * 4) + "#{mission_id_to_locale_id(id)}:\n")
+  file.write((' ' * 6) + "title: '#{title}'\n")
+  file.write((' ' * 6) + "instructions: '#{instructions}'")
+end
+
 #todo remove duplication
 def create_yml_file_for_locale_mission(main_language, id, title, instructions)
   File.open(yml_path(main_language), 'w+') do |file|
-    file.write("#{main_language}:\n")
-    file.write((' ' * 2) + "missions:\n")
-    file.write((' ' * 4) + "#{mission_id_to_locale_id(id)}:\n")
-    file.write((' ' * 6) + "title: '#{title}'\n")
-    file.write((' ' * 6) + "instructions: '#{instructions}'")
+    write_locale_file_headers(file, main_language)
+    write_mission_to_locale(file, id, instructions, title)
   end
 end
 
 
 def create_base_yml_file_without_missions(main_language)
   File.open(yml_path(main_language), 'w+') do |file|
-    file.write("#{main_language}:\n")
-    file.write((' ' * 2) + "missions:\n")
+    write_locale_file_headers(file, main_language)
     file.write((' ' * 4) + "hello: \"Hello world!\"\n")
   end
 end

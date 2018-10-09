@@ -15,8 +15,6 @@ class Mission < ApplicationRecord
   after_update :add_info_to_locale
   after_destroy :clean_locale
 
-  #TODO check existence of mission id before adding or editing
-
   def title
     if id
       local_translation_tables = I18n.backend.send(:translations)[I18n.locale]
