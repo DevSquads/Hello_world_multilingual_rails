@@ -48,4 +48,6 @@ RSpec.describe Mission, type: :model do
     reset_locale 'en_test'
     expect(record.errors.messages).to eql({})
   end
+
+
 end

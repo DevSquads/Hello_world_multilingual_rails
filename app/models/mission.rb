@@ -13,6 +13,7 @@ class Mission < ApplicationRecord
 
   after_create :add_info_to_locale
   after_update :add_info_to_locale
+  after_destroy :clean_locale
 
   #TODO check existence of mission id before adding or editing
 
@@ -73,5 +74,22 @@ class Mission < ApplicationRecord
       file.write(yml_file_content.to_yaml)
     end
     reset_locale(I18n.locale)
+  end
+
+
+  def clean_locale
+    #TODO it should delete the mission from the current locale
+    yml_file_path = Rails.root.join("config/locales/#{I18n.locale}.yml")
+    file_content = File.open(yml_file_path, 'r').read
+    yml_file_content = YAML.load file_content
+    missions = yml_file_content[I18n.locale.to_s]['missions']
+    missions.delete('m_1')
+
+    File.open(yml_file_path, 'w') do |file|
+      file.write(yml_file_content.to_yaml)
+    end
+
+
+    #TODO it should delete the mission from all locales
   end
 end

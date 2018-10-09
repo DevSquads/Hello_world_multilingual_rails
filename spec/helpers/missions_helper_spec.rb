@@ -11,4 +11,12 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe MissionsHelper, type: :helper do
+  describe 'language form validation' do
+    it "shouldn't create a language if no language entered " do
+      reset_locale nil
+      path = Rails.root.join('config', 'locales', ".yml")
+
+      expect(File.exists?(path)).to eql(false)
+    end
+  end
 end

@@ -1,5 +1,6 @@
 require 'rails_helper'
 require 'locale_helpers'
+require 'mission_helpers'
 require 'yaml'
 
 
@@ -94,7 +95,25 @@ describe 'Mission returns title and instructions by language' do
     expect(updated_record.id).to be_truthy
     expect(updated_record.title).to eql('modified_title')
     expect(updated_record.instructions).to eql('modified_instructions')
-  ensure
-    remove_locale_file 'en_test'
+    ensure
+      remove_locale_file 'en_test'
   end
+
+
+  it 'remove the mission from locale file after destroy the mission' do
+    reset_locale 'en_test'
+    mission = Mission.create!({title: 'initial_title', instructions: 'initial_instruction', duration: 5, category: 'category'})
+
+    yml_hash = YAML.load(File.read(yml_path('en_test')))
+    expect(yml_hash['en_test']['missions']).to include(generate_mission_id(mission.id))
+
+    mission.destroy
+
+    yml_hash = YAML.load(File.read(yml_path('en_test')))
+    expect(yml_hash['en_test']['missions']).not_to include(generate_mission_id(mission.id))
+    ensure
+      remove_locale_file 'en_test'
+  end
+
+
 end
