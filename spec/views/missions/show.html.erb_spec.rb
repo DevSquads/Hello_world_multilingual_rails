@@ -1,17 +1,17 @@
 require 'rails_helper'
 
-RSpec.describe "missions/show", type: :view do
+RSpec.describe 'missions/show', type: :view do
   before(:each) do
     reset_locale 'en_test'
     @mission = assign(:mission, Mission.create!(
-      :title => "Title",
-      :instructions => "Instructions",
+      :title => 'Title',
+      :instructions => 'Instructions',
       :duration => 10,
-      :category => "Category",
+      :category => 'Category',
     ))
   end
 
-  it "renders attributes in <p>" do
+  it 'renders attributes in <p>' do
     reset_locale 'en_test'
     render
     expect(rendered).to match(/Title/)

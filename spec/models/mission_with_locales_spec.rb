@@ -126,6 +126,5 @@ describe 'Mission returns title and instructions by language' do
   ensure
     remove_locale_file 'en_test'
     remove_locale_file 'ar_test'
-
   end
 end
