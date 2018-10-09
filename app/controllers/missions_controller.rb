@@ -68,7 +68,7 @@ class MissionsController < ApplicationController
   end
 
   # GET /missions/1/edit
-  def edit;
+  def edit
   end
 
   # POST /missions
