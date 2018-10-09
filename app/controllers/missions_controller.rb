@@ -74,11 +74,14 @@ class MissionsController < ApplicationController
   # POST /missions
   # POST /missions.json
   def create
+    #set locale
     current_locale = params[:mission][:language]
     reset_locale current_locale
 
+    #create a mission using the current_locale that has been set
     @mission = Mission.new(mission_params)
 
+    #now save and return an appropriate error message
     respond_to do |format|
       if @mission.save
         format.html {redirect_to '/', notice: 'Mission was successfully created.'}
@@ -93,9 +96,11 @@ class MissionsController < ApplicationController
   # PATCH/PUT /missions/1
   # PATCH/PUT /missions/1.json
   def update
+    #set the current locale from the request parameters
     current_locale = params[:mission][:language]
     reset_locale current_locale
 
+    #now update and return an appropriate error message
     respond_to do |format|
       if @mission.update(mission_params)
         format.html {redirect_to '/', notice: 'Mission was successfully updated.'}
@@ -120,6 +125,8 @@ class MissionsController < ApplicationController
   private
 
   # Creates a mission object from data retrieved from locale and database
+  # the mission object merges the title, instructions, and language which do not get
+  # passed to the UI by default because they are calculated methods
   def get_language_specific_mission(current_mission, current_mission_info, language)
     {
         id: current_mission.id,
@@ -145,7 +152,7 @@ class MissionsController < ApplicationController
 end
 
 private
-
+#does this mission have a message in the given locale
 def mission_supports_language(current_mission_hash, current_mission_key)
   current_mission_hash.key? current_mission_key.to_sym
 end
