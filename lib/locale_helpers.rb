@@ -9,7 +9,6 @@ def write_mission_to_locale(file, id, instructions, title)
   file.write((' ' * 6) + "instructions: '#{instructions}'")
 end
 
-#todo remove duplication
 def create_yml_file_for_locale_mission(main_language, id, title, instructions)
   File.open(yml_path(main_language), 'w+') do |file|
     write_locale_file_headers(file, main_language)
