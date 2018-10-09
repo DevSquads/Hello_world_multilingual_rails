@@ -20,7 +20,7 @@ class Mission < ApplicationRecord
     if id
       local_translation_tables = I18n.backend.send(:translations)[I18n.locale]
       all_missions = local_translation_tables[:missions]
-      requested_mission = all_missions[generate_mission_id(id).to_sym]
+      requested_mission = all_missions[mission_id_to_locale_id(id).to_sym]
 
       if requested_mission
         requested_mission[:title]
@@ -36,7 +36,7 @@ class Mission < ApplicationRecord
     if id
       local_translation_tables = I18n.backend.send(:translations)[I18n.locale]
       all_missions = local_translation_tables[:missions]
-      requested_mission = all_missions[generate_mission_id(id).to_sym]
+      requested_mission = all_missions[mission_id_to_locale_id(id).to_sym]
 
       if requested_mission
         requested_mission[:instructions]
@@ -65,7 +65,7 @@ class Mission < ApplicationRecord
 
     missions = yml_file_content[I18n.locale.to_s]['missions']
 
-    new_mission_info = {generate_mission_id(id) => {title: @mission_locale_title, instructions: @mission_locale_instructions}}
+    new_mission_info = {mission_id_to_locale_id(id) => {title: @mission_locale_title, instructions: @mission_locale_instructions}}
 
     missions.merge!(new_mission_info)
 

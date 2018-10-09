@@ -3,7 +3,7 @@ def create_yml_file_for_locale_mission(main_language, id, title, instructions)
   File.open(yml_path(main_language), 'w+') do |file|
     file.write("#{main_language}:\n")
     file.write((' ' * 2) + "missions:\n")
-    file.write((' ' * 4) + "#{generate_mission_id(id)}:\n")
+    file.write((' ' * 4) + "#{mission_id_to_locale_id(id)}:\n")
     file.write((' ' * 6) + "title: '#{title}'\n")
     file.write((' ' * 6) + "instructions: '#{instructions}'")
   end
