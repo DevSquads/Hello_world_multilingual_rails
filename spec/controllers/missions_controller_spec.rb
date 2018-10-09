@@ -52,10 +52,10 @@ RSpec.describe MissionsController, type: :controller do
       #assert that we are getting the two en_test missions
       missions = assigns(:missions)
       expect(missions.length).to eql(2)
-      expect(missions[0].id).to eql(first_mission.id)
-      expect(missions[0].title).to eql(first_en_valid_attributes[:title])
-      expect(missions[1].id).to eql(second_mission.id)
-      expect(missions[1].title).to eql(second_en_valid_attributes[:title])
+      expect(missions[0][:id]).to eql(first_mission.id)
+      expect(missions[0][:title]).to eql(first_en_valid_attributes[:title])
+      expect(missions[1][:id]).to eql(second_mission.id)
+      expect(missions[1][:title]).to eql(second_en_valid_attributes[:title])
     end
   end
 

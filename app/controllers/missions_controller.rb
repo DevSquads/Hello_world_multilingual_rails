@@ -40,7 +40,11 @@ class MissionsController < ApplicationController
 
     @missions.each do |current_mission|
       current_mission_key = mission_id_to_locale_id(current_mission.id).to_sym
-      filtered_missions.push(current_mission) if all_missions.key?(current_mission_key)
+      if all_missions.key?(current_mission_key)
+        filtered_missions.push(get_language_specific_mission(current_mission,
+                                                             all_missions[current_mission_key],
+                                                             I18n.locale))
+      end
     end
 
     @missions = filtered_missions
@@ -54,7 +58,13 @@ class MissionsController < ApplicationController
   # GET /missions/new
   def new
     @mission = Mission.new
-    @missions = index
+
+    if params[:locale]
+      @missions = by_lang
+    else
+      @missions = index
+    end
+
   end
 
   # GET /missions/1/edit
@@ -111,7 +121,6 @@ class MissionsController < ApplicationController
 
   # Creates a mission object from data retrieved from locale and database
   def get_language_specific_mission(current_mission, current_mission_info, language)
-
     {
         id: current_mission.id,
         title: current_mission_info[:title],
