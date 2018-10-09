@@ -1,37 +1,33 @@
+# frozen_string_literal: true
+
 class MissionsController < ApplicationController
-  before_action :set_mission, only: [:show, :edit, :update, :destroy]
+  before_action :set_mission, only: %i[show edit update destroy]
 
   # GET /missions
   # GET /missions.json
+  # retrieves all missions and all their translations
   def index
-    # we should retrieve all locales and get their  missions
     @missions = Mission.all
     all_missions_in_all_languages = []
     locale_translation_tables = I18n.backend.send(:translations)
 
+    #loop through all missions and then loop through all languages
     @missions.each do |current_mission|
       current_mission_key = mission_id_to_locale_id current_mission.id
 
       locale_translation_tables.each do |current_locale|
-        current_mission_hash = current_locale[1][:missions]
+        current_missions_hash = current_locale[1][:missions]
 
-        if current_mission_hash.key? current_mission_key.to_sym
-
-          current_mission_info = current_mission_hash[current_mission_key.to_sym]
-          mission_in_specific_language = {
-              id: current_mission.id,
-              title: current_mission_info[:title],
-              instructions: current_mission_info[:instructions],
-              duration: current_mission.duration,
-              category: current_mission.category,
-              created_at: current_mission.created_at,
-              updated_at: current_mission.updated_at
-          }
-          all_missions_in_all_languages.push(mission_in_specific_language)
+        if mission_supports_language(current_missions_hash, current_mission_key)
+          all_missions_in_all_languages.push(get_language_specific_mission(
+                                                 current_mission,
+                                                 current_missions_hash,
+                                                 current_mission_key
+                                             ))
         end
       end
     end
-
+    #make visible to view
     @missions = all_missions_in_all_languages
   end
 
@@ -50,7 +46,7 @@ class MissionsController < ApplicationController
 
   # GET /missions/1
   # GET /missions/1.json
-  def show
+  def show;
   end
 
   # GET /missions/new
@@ -60,7 +56,7 @@ class MissionsController < ApplicationController
   end
 
   # GET /missions/1/edit
-  def edit
+  def edit;
   end
 
   # POST /missions
@@ -111,6 +107,19 @@ class MissionsController < ApplicationController
 
   private
 
+  def get_language_specific_mission(current_mission, current_mission_hash, current_mission_key)
+    current_mission_info = current_mission_hash[current_mission_key.to_sym]
+    mission_in_specific_language = {
+        id: current_mission.id,
+        title: current_mission_info[:title],
+        instructions: current_mission_info[:instructions],
+        duration: current_mission.duration,
+        category: current_mission.category,
+        created_at: current_mission.created_at,
+        updated_at: current_mission.updated_at
+    }
+  end
+
   # Use callbacks to share common setup or constraints between actions.
   def set_mission
     @mission = Mission.find(params[:id])
@@ -120,4 +129,10 @@ class MissionsController < ApplicationController
   def mission_params
     params.require(:mission).permit(:title, :instructions, :duration, :category)
   end
+end
+
+private
+
+def mission_supports_language(current_mission_hash, current_mission_key)
+  current_mission_hash.key? current_mission_key.to_sym
 end
