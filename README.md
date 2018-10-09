@@ -1,14 +1,15 @@
 # Hello World Multi-lingual 
 
-This project aims to practise multilingual setup for rails web app
+This project aims to practise multilingual setup for a rails web app.
 
 ## To start running tests using docker
-* install docker ( Mac https://download.docker.com/mac/stable/Docker.dmg )
+* install docker.
 * run & build the docker images
 `docker-compose up --build `
-This will run the docker in Test mode for CI
+This will run the docker in Test mode for CI.
+* The test results is shown in spec/reports/result.xml.
 
-## To start developing docker
+## To start developing with docker
 * change the environment variable from docker-compose 
       ` RAILS_CI=true`
 to
@@ -21,11 +22,11 @@ to
 
 ## To start WITHOUT Docker
 * install ruby 2.5.1  
-https://www.ruby-lang.org/en/documentation/installation/
 * install rails 5.2.1
-https://www.digitalocean.com/community/tutorials/how-to-install-ruby-on-rails-with-rvm-on-ubuntu-16-04
 * install postgresql
 * change the config/database.yml for pg user 
 * run `bundle install`
+* run `rake db:setup`
+* run `rake db:migrate`
 * run the app `rails s`
 * run the tests `rspec`
