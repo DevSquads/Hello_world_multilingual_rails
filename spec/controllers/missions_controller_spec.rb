@@ -189,7 +189,7 @@ RSpec.describe MissionsController, type: :controller do
     it 'redirects to the missions list' do
       mission = Mission.create! valid_attributes
       delete :destroy, params: {id: mission.to_param}
-      expect(response).to redirect_to(missions_url)
+      expect(response).to redirect_to('/')
     end
   end
 
