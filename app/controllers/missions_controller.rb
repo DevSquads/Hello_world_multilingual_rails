@@ -58,17 +58,17 @@ class MissionsController < ApplicationController
   # GET /missions/new
   def new
     @mission = Mission.new
-
     if params[:locale]
       @missions = by_lang
     else
       @missions = index
+      @all_languages_locale_is_set = true
     end
 
   end
 
   # GET /missions/1/edit
-  def edit;
+  def edit
   end
 
   # POST /missions

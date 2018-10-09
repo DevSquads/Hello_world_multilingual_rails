@@ -57,7 +57,14 @@ RSpec.describe "missions/new", type: :view do
     end
   end
 
-  it "should render the available locales in filter select" do
+  it "should render  all locale in the option list of a filter drop list" do
+    render
+    assert_select "select[id='filter_languages']" do
+      assert_select "option[id=?]", "All"
+    end
+  end
+
+  it "should render the available locales in filter drop list" do
     reset_locale 'fr_test'
     render
 
@@ -65,10 +72,16 @@ RSpec.describe "missions/new", type: :view do
     expect(available_locale_length).to eql(4)
 
     assert_select "select[id='filter_languages']" do
-      assert_select "option", available_locale_length
+      four_languages_plus_all = available_locale_length + 1
+      assert_select "option", four_languages_plus_all
     end
     ensure
     remove_locale_file 'fr_test'
+  end
+
+  it 'filter button should exists in the homepage' do
+    render
+    assert_select '#filter_languages'
 
   end
 

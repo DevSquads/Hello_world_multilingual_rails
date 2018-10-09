@@ -8,6 +8,32 @@ feature 'Mission' do
   default_url = 'http://localhost:3001'
   en_test_locale = 'en_test'
 
+
+  scenario 'should edit mission in its language' do
+    mission_template = {
+        title: 'title',
+        instructions: 'instructions',
+        duration: 10,
+        category: 'category',
+    }
+
+    create_mission_with_form(
+        default_url,
+        mission_template[:title],
+        mission_template[:instructions],
+        mission_template[:duration],
+        mission_template[:category],
+        en_test_locale
+    )
+
+    click_link 'Edit'
+
+    expect(current_url).to eql(default_url + '/missions/1/edit/?locale=en_test')
+    expect(find('#mission_language').value).to eql(en_test_locale)
+    expect(find('#mission_title').value).to eql(mission_template[:title])
+    expect(find('#mission_instructions').value).to eql(mission_template[:instructions])
+  end
+
   scenario 'should create successfully' do
     mission_title = 'New Mission'
     mission_instructions = 'New Mission Description'
@@ -151,13 +177,6 @@ feature 'Mission' do
     remove_locale_file 'unsupported_language'
   end
 
-  scenario 'filter button should exists in the homepage' do
-    visit "#{default_url}"
-    expect(find('#filter_languages')).to be_truthy
-
-  end
-
-
   scenario 'filter button change locale in url when click on an option' do
     reset_locale en_test_locale
     mission_one = Mission.create!(title: 'first mission', instructions: 'instructions', duration: 10, category: 'category')
@@ -165,16 +184,15 @@ feature 'Mission' do
     mission_two = Mission.create!(title: 'second mission', instructions: 'second instructions', duration: 10, category: 'category')
     visit "#{default_url}"
     find('#en_test').click
-    check_missions_table( mission_one.id,'first mission', 'instructions', '')
+    check_missions_table(mission_one.id, 'first mission', 'instructions', '')
     find('#ar_test').click
-    check_missions_table(mission_two.id,'second mission', 'instructions', '')
+    check_missions_table(mission_two.id, 'second mission', 'instructions', '')
   ensure
     remove_locale_file en_test_locale
     remove_locale_file 'ar_test'
   end
 
   scenario 'should filter the missions based on language by filter ' do
-
     reset_locale en_test_locale
     record1 = Mission.create!(title: 'first mission', instructions: 'instructions', duration: 10, category: 'category')
     reset_locale 'fr_test'
@@ -189,12 +207,23 @@ feature 'Mission' do
     check_missions_table(record2.id, 'second mission', 'instructions', 'fr_test')
 
     visit "#{default_url}/?locale=sp_test"
-    check_missions_table(record3.id,'third mission', 'instructions', 'sp_test')
+    check_missions_table(record3.id, 'third mission', 'instructions', 'sp_test')
 
   ensure
     remove_locale_file en_test_locale
     remove_locale_file 'fr_test'
     remove_locale_file 'sp_test'
+  end
+
+  scenario 'filter value should be the same as the current active local' do
+    reset_locale en_test_locale
+    visit "#{default_url}/?locale=en_test"
+    expect(find('#en_test')[:selected]).to match('true')
+
+    visit "#{default_url}/"
+    expect(find('#All')[:selected]).to match('true')
+  ensure
+    remove_locale_file en_test_locale
   end
 
 
