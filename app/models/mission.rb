@@ -6,7 +6,6 @@ require 'locale_helpers'
 class Mission < ApplicationRecord
   include ActiveModel::Validations
 
-  # TODO: set title and instructions independently of @after_create
   validates :duration, presence: true
   validates :category, presence: true
   validates :title, presence: true
