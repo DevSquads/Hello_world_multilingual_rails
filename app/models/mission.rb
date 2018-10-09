@@ -25,7 +25,7 @@ class Mission < ApplicationRecord
       if requested_mission
         requested_mission[:title]
       else
-        "title is not supported in this language: #{I18n.locale}"
+        "Mission is not supported in this language: #{I18n.locale}."
       end
     else
       @mission_locale_title
@@ -41,7 +41,7 @@ class Mission < ApplicationRecord
       if requested_mission
         requested_mission[:instructions]
       else
-        "instructions are not supported in this language: #{I18n.locale}"
+        "Mission is not supported in this language: #{I18n.locale}."
       end
     else
       @mission_locale_instructions

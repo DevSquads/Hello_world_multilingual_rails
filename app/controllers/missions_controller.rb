@@ -90,7 +90,7 @@ class MissionsController < ApplicationController
 
     respond_to do |format|
       if @mission.update(mission_params)
-        format.html {redirect_to @mission, notice: 'Mission was successfully updated.'}
+        format.html {redirect_to '/', notice: 'Mission was successfully updated.'}
         format.json {render :show, status: :ok, location: @mission}
       else
         format.html {render :edit}
