@@ -16,16 +16,20 @@ describe 'Mission returns title and instructions by language' do
 
   it 'should save the title to the locale' do
     reset_locale 'en_test'
+
     record = Mission.create!({title: 'demo_test_title', instructions: 'instructions', duration: 10, category: 'category'})
 
     yml_hash = YAML.load(File.read(yml_path('en_test')))
-    expect(yml_hash['en_test']['missions'][mission_id_to_locale_id(record.id)][:title]).to eql('demo_test_title')
+    en_missions_hash = yml_hash['en_test']['missions']
+    mission = en_missions_hash[mission_id_to_locale_id(record.id)]
+    expect(mission[:title]).to eql('demo_test_title')
   ensure
     remove_locale_file 'en_test'
   end
 
   it 'should save the instructions to the locale' do
     reset_locale 'en_test'
+
     record = Mission.create!({title: 'demo_test_title', instructions: 'go up and down', duration: 10, category: 'category'})
 
     yml_hash = YAML.load(File.read(yml_path('en_test')))
@@ -37,15 +41,13 @@ describe 'Mission returns title and instructions by language' do
   it 'reads the title correctly based on locale' do
     ar_title = 'daght'
     en_title = 'pushup'
-
     create_yml_file_for_locale_mission('ar_test', 1, ar_title, 'instructions')
-
     reset_locale 'en_test'
+
     record = Mission.create!({title: en_title, instructions: 'exercise', duration: 10, category: 'category'})
 
     reset_locale 'en_test'
     expect(record.title).to eql(en_title)
-
     reset_locale 'ar_test'
     expect(record.title).to eql(ar_title)
   ensure
@@ -56,10 +58,9 @@ describe 'Mission returns title and instructions by language' do
   it 'reads the instructions correctly based on locale' do
     en_instructions = 'exercise'
     ar_instructions = 'tamarin'
-
     create_yml_file_for_locale_mission('ar_test', 1, 'ar_title', ar_instructions)
-
     reset_locale 'en_test'
+
     record = Mission.create!({title: 'en_title', instructions: en_instructions, duration: 10, category: 'category'})
 
     reset_locale 'en_test'
@@ -75,21 +76,16 @@ describe 'Mission returns title and instructions by language' do
   it 'update title and instructions from locale ' do
     reset_locale 'en_test'
     record = Mission.create!({title: 'initial_title', instructions: 'initial_instruction', duration: 5, category: 'category'})
+    record_to_be_updated = Mission.find(record.id)
 
-    expect(record.id).to be_truthy
-    expect(record.title).to eql('initial_title')
-    expect(record.instructions).to eql('initial_instruction')
+    record_to_be_updated.title = "modified_title"
+    record_to_be_updated.instructions = "modified_instructions"
+    record_to_be_updated.save
 
-    updated_record = Mission.find(record.id)
-
-    updated_record.title = "modified_title"
-    updated_record.instructions = "modified_instructions"
-    updated_record.save
-
-    expect(updated_record.id).to be_truthy
-    expect(updated_record.title).to eql('modified_title')
-    expect(updated_record.instructions).to eql('modified_instructions')
-
+    expect(record_to_be_updated.title).to eql('modified_title')
+    expect(record_to_be_updated.instructions).to eql('modified_instructions')
+  ensure
+    remove_locale_file 'en_test'
     updated_record = Mission.find(record.id)
 
     expect(updated_record.id).to be_truthy
@@ -104,12 +100,13 @@ describe 'Mission returns title and instructions by language' do
     reset_locale 'en_test'
     mission = Mission.create!({title: 'initial_title', instructions: 'initial_instruction', duration: 5, category: 'category'})
 
-    yml_hash = YAML.load(File.read(yml_path('en_test')))
-    expect(yml_hash['en_test']['missions']).to include(mission_id_to_locale_id(mission.id))
-
     mission.destroy
 
     yml_hash = YAML.load(File.read(yml_path('en_test')))
+    en_missions = yml_hash['en_test']['missions']
+    expect(en_missions).not_to include(mission_id_to_locale_id(mission.id))
+  ensure
+    remove_locale_file 'en_test'
     expect(yml_hash['en_test']['missions']).not_to include(mission_id_to_locale_id(mission.id))
   ensure
     remove_locale_file 'en_test'

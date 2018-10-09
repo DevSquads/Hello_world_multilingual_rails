@@ -104,7 +104,7 @@ feature 'Mission' do
   end
 
   scenario 'Homepage takes you to creating a new mission /missions/new' do
-    visit "#{default_url}"
+    visit default_url
 
     expect(find_all('h1#homepage_title').length).to eql(1)
     expect(find('h1#homepage_title')).to have_text("Admin")
@@ -114,7 +114,17 @@ feature 'Mission' do
   end
 
   scenario 'The drop list adds a new language when adding a mission with a previously unsupported langauge' do
+    create_mission_with_form(default_url,
+                             'unsupported_title',
+                             'unsupported_instructions',
+                             11,
+                             'unsupported_category',
+                             'unsupported_language')
+    available_languages = find_all('#languages option')
 
+    expect(available_languages.last.value).to eql('unsupported_language')
+  ensure
+    remove_locale_file 'unsupported_language'
   end
 
   def fill_mission_form(mission_title, mission_instructions, mission_duration, mission_category, mission_language)

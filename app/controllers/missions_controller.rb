@@ -11,7 +11,7 @@ class MissionsController < ApplicationController
     all_missions_in_all_languages = []
     locale_translation_tables = I18n.backend.send(:translations)
 
-    #loop through all missions and then loop through all languages
+    # loop through all missions and then loop through all languages
     @missions.each do |current_mission|
       current_mission_key = mission_id_to_locale_id current_mission.id
 
@@ -19,6 +19,7 @@ class MissionsController < ApplicationController
         current_missions_hash = current_locale[1][:missions]
 
         if mission_supports_language(current_missions_hash, current_mission_key)
+
           all_missions_in_all_languages.push(get_language_specific_mission(
                                                  current_mission,
                                                  current_missions_hash,
@@ -27,7 +28,7 @@ class MissionsController < ApplicationController
         end
       end
     end
-    #make visible to view
+    # make visible to view
     @missions = all_missions_in_all_languages
   end
 
@@ -36,6 +37,7 @@ class MissionsController < ApplicationController
     local_translation_tables = I18n.backend.send(:translations)[I18n.locale]
     all_missions = local_translation_tables[:missions]
     filtered_missions = []
+
     @missions.each do |current_mission|
       current_mission_key = mission_id_to_locale_id(current_mission.id).to_sym
       filtered_missions.push(current_mission) if all_missions.key?(current_mission_key)
@@ -109,7 +111,8 @@ class MissionsController < ApplicationController
 
   def get_language_specific_mission(current_mission, current_mission_hash, current_mission_key)
     current_mission_info = current_mission_hash[current_mission_key.to_sym]
-    mission_in_specific_language = {
+
+    {
         id: current_mission.id,
         title: current_mission_info[:title],
         instructions: current_mission_info[:instructions],
