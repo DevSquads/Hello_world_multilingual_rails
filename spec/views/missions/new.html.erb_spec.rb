@@ -57,6 +57,21 @@ RSpec.describe "missions/new", type: :view do
     end
   end
 
+  it "should render the available locales in filter select" do
+    reset_locale 'fr_test'
+    render
+
+    available_locale_length = I18n.available_locales.length
+    expect(available_locale_length).to eql(4)
+
+    assert_select "select[id='filter_languages']" do
+      assert_select "option", available_locale_length
+    end
+    ensure
+    remove_locale_file 'fr_test'
+
+  end
+
   after(:all) do
     remove_locale_file 'en_test'
   end

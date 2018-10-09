@@ -5,6 +5,15 @@
 <h3 id="create_mission_title">Create New Mission</h3>
 <%= render 'form', mission: @mission %>
 
+
+<select  id="filter_languages" onchange="location = this.value;">
+  <% I18n.available_locales.each do |locale_language|%>
+      <option id="<%= locale_language %>" value="/?locale=<%= locale_language %>" >
+        <%= locale_language %>
+      </option>
+  <% end %>
+</select>
+
 <table class="missions_table">
   <thead>
   <tr>
@@ -15,6 +24,7 @@
     <th colspan="3"></th>
   </tr>
   </thead>
+
 
   <tbody>
   <% @missions.each do |mission| %>

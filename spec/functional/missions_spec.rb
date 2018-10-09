@@ -129,6 +129,27 @@ feature 'Mission' do
     remove_locale_file 'unsupported_language'
   end
 
+  scenario 'filter button should exists in the homepage' do
+    visit "#{default_url}"
+    expect(find('#filter_languages')).to be_truthy
+
+  end
+
+
+  scenario 'filter button change locale in url when click on an option' do
+    reset_locale en_test_locale
+    Mission.create!(title: 'first mission', instructions: 'instructions', duration: 10, category: 'category')
+    reset_locale 'ar_test'
+    Mission.create!(title: 'second mission', instructions: 'second instructions', duration: 10, category: 'category')
+    visit "#{default_url}"
+    find('#en_test').click
+    check_missions_table('first mission', 'instructions', '')
+    find('#ar_test').click
+    check_missions_table('second mission', 'instructions', '')
+  ensure
+    remove_locale_file en_test_locale
+    remove_locale_file 'ar_test'
+  end
 
   scenario 'should filter the missions based on language by filter ' do
 
