@@ -88,6 +88,9 @@ RSpec.describe MissionsController, type: :controller do
       expect(missions[0][:title]).to eql(valid_attributes[:title])
       expect(missions[1][:title]).to eql(ar_valid_attributes[:title])
       expect(missions[2][:title]).to eql(sp_valid_attributes[:title])
+      expect(missions[0][:language]).to eql('en_test')
+      expect(missions[1][:language]).to eql('ar_test')
+      expect(missions[2][:language]).to eql('sp_test')
     end
   end
 

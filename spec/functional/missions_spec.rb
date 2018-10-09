@@ -37,7 +37,7 @@ feature 'Mission' do
     expect(new_mission.title).to eql('Mission is not supported in this language: en.')
     expect(new_mission.instructions).to eql('Mission is not supported in this language: en.')
 
-    # Assert that the created mission's info is successfully displayed in homepage
+    # Assert that the created mission's info is successfully displayed in homepage table
     check_missions_table(mission_title,
                          mission_instructions,
                          'Mission was successfully created.')
@@ -55,6 +55,7 @@ feature 'Mission' do
     fill_in 'mission_language', with: en_test_locale
     click_button 'Update Mission'
 
+    # Assert the edited mission info is in the homepage table
     check_missions_table('edited mission title',
                          'edited mission instructions',
                          'Mission was successfully updated.')

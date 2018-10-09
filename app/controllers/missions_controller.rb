@@ -12,18 +12,18 @@ class MissionsController < ApplicationController
     locale_translation_tables = I18n.backend.send(:translations)
 
     # loop through all missions and then loop through all languages
-    @missions.each do |current_mission|
-      current_mission_key = mission_id_to_locale_id current_mission.id
+    @missions.each do |mission_to_match|
+      current_mission_key = mission_id_to_locale_id mission_to_match.id
 
-      locale_translation_tables.each do |current_locale|
-        current_missions_hash = current_locale[1][:missions]
+      locale_translation_tables.each do |current_language_table|
+        current_language = current_language_table[0]
+        missions_for_language = current_language_table[1][:missions]
 
-        if mission_supports_language(current_missions_hash, current_mission_key)
-
+        if mission_supports_language(missions_for_language, current_mission_key)
           all_missions_in_all_languages.push(get_language_specific_mission(
-                                                 current_mission,
-                                                 current_missions_hash,
-                                                 current_mission_key
+                                                 mission_to_match,
+                                                 missions_for_language[current_mission_key.to_sym],
+                                                 current_language
                                              ))
         end
       end
@@ -109,8 +109,8 @@ class MissionsController < ApplicationController
 
   private
 
-  def get_language_specific_mission(current_mission, current_mission_hash, current_mission_key)
-    current_mission_info = current_mission_hash[current_mission_key.to_sym]
+  # Creates a mission object from data retrieved from locale and database
+  def get_language_specific_mission(current_mission, current_mission_info, language)
 
     {
         id: current_mission.id,
@@ -118,6 +118,7 @@ class MissionsController < ApplicationController
         instructions: current_mission_info[:instructions],
         duration: current_mission.duration,
         category: current_mission.category,
+        language: language.to_s,
         created_at: current_mission.created_at,
         updated_at: current_mission.updated_at
     }
