@@ -86,13 +86,6 @@ describe 'Mission returns title and instructions by language' do
     expect(record_to_be_updated.instructions).to eql('modified_instructions')
   ensure
     remove_locale_file 'en_test'
-    updated_record = Mission.find(record.id)
-
-    expect(updated_record.id).to be_truthy
-    expect(updated_record.title).to eql('modified_title')
-    expect(updated_record.instructions).to eql('modified_instructions')
-  ensure
-    remove_locale_file 'en_test'
   end
 
 
@@ -105,9 +98,7 @@ describe 'Mission returns title and instructions by language' do
     yml_hash = YAML.load(File.read(yml_path('en_test')))
     en_missions = yml_hash['en_test']['missions']
     expect(en_missions).not_to include(mission_id_to_locale_id(mission.id))
-  ensure
-    remove_locale_file 'en_test'
-    expect(yml_hash['en_test']['missions']).not_to include(mission_id_to_locale_id(mission.id))
+
   ensure
     remove_locale_file 'en_test'
   end
