@@ -68,15 +68,15 @@ class Mission < ApplicationRecord
 
     file_content = File.open(yml_file_path, 'r').read
 
-    yml_file_content = YAML.safe_load file_content
+    yml_file_content = YAML.load file_content
 
     missions = yml_file_content[I18n.locale.to_s]['missions']
 
     # Info to be written
-    new_mission_info = { mission_id_to_locale_id(id) => {
-      title: @mission_locale_title,
-      instructions: @mission_locale_instructions
-    } }
+    new_mission_info = {mission_id_to_locale_id(id) => {
+        title: @mission_locale_title,
+        instructions: @mission_locale_instructions
+    }}
 
     # Merges the new/updated mission to the retrieved yaml content to be written
     missions.merge!(new_mission_info)
@@ -100,5 +100,16 @@ class Mission < ApplicationRecord
         file.write(yml_file_content.to_yaml)
       end
     end
+  end
+
+  private
+
+  def get_mission_from_locale
+    # retrieve all locales available in the current I18n translation tables
+    local_translation_tables = I18n.backend.send(:translations)[I18n.locale]
+    # retrieve missions scope from local table
+    all_missions = local_translation_tables[:missions]
+    # retrieve a specific mission
+    all_missions[mission_id_to_locale_id(id).to_sym]
   end
 end
