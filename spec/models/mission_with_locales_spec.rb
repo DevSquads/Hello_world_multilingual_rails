@@ -95,8 +95,8 @@ describe 'Mission returns title and instructions by language' do
     expect(updated_record.id).to be_truthy
     expect(updated_record.title).to eql('modified_title')
     expect(updated_record.instructions).to eql('modified_instructions')
-    ensure
-      remove_locale_file 'en_test'
+  ensure
+    remove_locale_file 'en_test'
   end
 
 
@@ -111,9 +111,36 @@ describe 'Mission returns title and instructions by language' do
 
     yml_hash = YAML.load(File.read(yml_path('en_test')))
     expect(yml_hash['en_test']['missions']).not_to include(mission_id_to_locale_id(mission.id))
-    ensure
-      remove_locale_file 'en_test'
+  ensure
+    remove_locale_file 'en_test'
   end
 
+  it 'remove  the mission from  all locales file after destroy the mission' do
+    reset_locale 'en_test'
+    mission = Mission.create!({title: 'initial_title', instructions: 'initial_instruction', duration: 5, category: 'category'})
+    yml_hash_english = YAML.load(File.read(yml_path('en_test')))
+    expect(yml_hash_english['en_test']['missions']).to include(mission_id_to_locale_id(mission.id))
 
+    reset_locale 'ar_test'
+    mission.title = 'new title arabic'
+    mission.instructions = 'new arabic instructions'
+
+    mission.save
+
+    yml_hash_arabic = YAML.load(File.read(yml_path('ar_test')))
+    expect(yml_hash_arabic['ar_test']['missions']).to include(mission_id_to_locale_id(mission.id))
+
+
+    mission.destroy
+
+    yml_hash_arabic = YAML.load(File.read(yml_path('ar_test')))
+    expect(yml_hash_arabic['ar_test']['missions']).not_to include(mission_id_to_locale_id(mission.id))
+
+    yml_hash_english = YAML.load(File.read(yml_path('en_test')))
+    expect(yml_hash_english['en_test']['missions']).not_to include(mission_id_to_locale_id(mission.id))
+  ensure
+    remove_locale_file 'en_test'
+    remove_locale_file 'ar_test'
+
+  end
 end

@@ -1,5 +1,5 @@
 require 'rails_helper'
-
+require 'locale_helpers'
 # Specs in this file have access to a helper object that includes
 # the MissionsHelper. For example:
 #
