@@ -32,12 +32,15 @@ class MissionsController < ApplicationController
     @missions = all_missions_in_all_languages
   end
 
+  #list all missions for a specific language
+  # must set locale in the request header before calling
   def list_by_language
     @missions = Mission.all
     local_translation_tables = get_all_translation_tables_from_I18n[I18n.locale]
     all_missions = local_translation_tables[:missions]
     filtered_missions = []
 
+    #filter the missions from All that match the current locale
     @missions.each do |current_mission|
       current_mission_key = mission_id_to_locale_id(current_mission.id).to_sym
       if all_missions.key?(current_mission_key)
