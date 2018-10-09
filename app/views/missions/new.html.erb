@@ -1,3 +1,4 @@
+<! TODO: rename file - it now supports mission creation and listing missions -->
 <p id="notice"><%= notice %></p>
 
 <h1 id="homepage_title">Admin</h1>
@@ -36,7 +37,6 @@
       <td><%= mission[:duration] %></td>
       <td><%= mission[:category] %></td>
       <td class="mission_language" ><%= mission[:language] %></td>
-      <td><%= link_to 'Show', mission_path(mission[:id]) %></td>
       <td><%= link_to 'Edit', edit_mission_path(mission[:id]) + "/?locale=#{mission[:language]}" %></td>
       <td><%= link_to 'Destroy', mission_path(mission[:id]), method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>

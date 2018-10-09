@@ -36,7 +36,7 @@ RSpec.describe MissionsController, type: :controller do
   }
 
 
-  describe 'GET #by_lang' do
+  describe 'GET #list_by_language' do
     it 'lists all missions in a specific language' do
       #create 4 missions in 2 different languages to make sure we filter correctly
       first_mission = Mission.create! first_en_valid_attributes
@@ -47,7 +47,7 @@ RSpec.describe MissionsController, type: :controller do
 
       #get missions for language en_test
       request.headers["LANG"] = "en_test"
-      get :by_lang
+      get :list_by_language
 
       #assert that we are getting the two en_test missions
       missions = assigns(:missions)

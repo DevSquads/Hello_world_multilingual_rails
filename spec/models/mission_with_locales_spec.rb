@@ -106,29 +106,25 @@ describe 'Mission returns title and instructions by language' do
   it 'remove  the mission from  all locales file after destroy the mission' do
     reset_locale 'en_test'
     mission = Mission.create!({title: 'initial_title', instructions: 'initial_instruction', duration: 5, category: 'category'})
-    yml_hash_english = YAML.load(File.read(yml_path('en_test')))
-    expect(yml_hash_english['en_test']['missions']).to include(mission_id_to_locale_id(mission.id))
-
+    mission1 = Mission.create!({title: 'initial_title', instructions: 'initial_instruction', duration: 5, category: 'category'})
     reset_locale 'ar_test'
     mission.title = 'new title arabic'
     mission.instructions = 'new arabic instructions'
-
     mission.save
 
-    yml_hash_arabic = YAML.load(File.read(yml_path('ar_test')))
-    expect(yml_hash_arabic['ar_test']['missions']).to include(mission_id_to_locale_id(mission.id))
-
-
     mission.destroy
+    mission1.destroy
 
     yml_hash_arabic = YAML.load(File.read(yml_path('ar_test')))
-    expect(yml_hash_arabic['ar_test']['missions']).not_to include(mission_id_to_locale_id(mission.id))
-
+    arabic_missions = yml_hash_arabic['ar_test']['missions']
+    expect(arabic_missions).not_to include(mission_id_to_locale_id(mission.id))
+    expect(arabic_missions).not_to include(mission_id_to_locale_id(mission1.id))
     yml_hash_english = YAML.load(File.read(yml_path('en_test')))
-    expect(yml_hash_english['en_test']['missions']).not_to include(mission_id_to_locale_id(mission.id))
+    english_missions = yml_hash_english['en_test']['missions']
+    expect(english_missions).not_to include(mission_id_to_locale_id(mission.id))
+    expect(english_missions).not_to include(mission_id_to_locale_id(mission1.id))
   ensure
     remove_locale_file 'en_test'
     remove_locale_file 'ar_test'
-
   end
 end

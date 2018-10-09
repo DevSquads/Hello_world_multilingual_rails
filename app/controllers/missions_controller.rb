@@ -9,7 +9,7 @@ class MissionsController < ApplicationController
   def index
     @missions = Mission.all
     all_missions_in_all_languages = []
-    locale_translation_tables = I18n.backend.send(:translations)
+    locale_translation_tables = get_all_translation_tables_from_I18n
 
     # loop through all missions and then loop through all languages
     @missions.each do |mission_to_match|
@@ -32,9 +32,9 @@ class MissionsController < ApplicationController
     @missions = all_missions_in_all_languages
   end
 
-  def by_lang
+  def list_by_language
     @missions = Mission.all
-    local_translation_tables = I18n.backend.send(:translations)[I18n.locale]
+    local_translation_tables = get_all_translation_tables_from_I18n[I18n.locale]
     all_missions = local_translation_tables[:missions]
     filtered_missions = []
 
@@ -52,14 +52,14 @@ class MissionsController < ApplicationController
 
   # GET /missions/1
   # GET /missions/1.json
-  def show;
+  def show
   end
 
   # GET /missions/new
   def new
     @mission = Mission.new
     if params[:locale]
-      @missions = by_lang
+      @missions = list_by_language
     else
       @missions = index
       @all_languages_locale_is_set = true
@@ -74,11 +74,14 @@ class MissionsController < ApplicationController
   # POST /missions
   # POST /missions.json
   def create
+    #set locale
     current_locale = params[:mission][:language]
     reset_locale current_locale
 
+    #create a mission using the current_locale that has been set
     @mission = Mission.new(mission_params)
 
+    #now save and return an appropriate error message
     respond_to do |format|
       if @mission.save
         format.html {redirect_to '/', notice: 'Mission was successfully created.'}
@@ -93,9 +96,11 @@ class MissionsController < ApplicationController
   # PATCH/PUT /missions/1
   # PATCH/PUT /missions/1.json
   def update
+    #set the current locale from the request parameters
     current_locale = params[:mission][:language]
     reset_locale current_locale
 
+    #now update and return an appropriate error message
     respond_to do |format|
       if @mission.update(mission_params)
         format.html {redirect_to '/', notice: 'Mission was successfully updated.'}
@@ -119,7 +124,13 @@ class MissionsController < ApplicationController
 
   private
 
+  def get_all_translation_tables_from_I18n
+    I18n.backend.send(:translations)
+  end
+
   # Creates a mission object from data retrieved from locale and database
+  # the mission object merges the title, instructions, and language which do not get
+  # passed to the UI by default because they are calculated methods
   def get_language_specific_mission(current_mission, current_mission_info, language)
     {
         id: current_mission.id,
@@ -145,7 +156,7 @@ class MissionsController < ApplicationController
 end
 
 private
-
+#does this mission have a message in the given locale
 def mission_supports_language(current_mission_hash, current_mission_key)
   current_mission_hash.key? current_mission_key.to_sym
 end

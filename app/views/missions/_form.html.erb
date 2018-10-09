@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= form.label :language %>
-    <%= form.text_field :language, list: "languages", value: I18n.locale %>
+    <%= form.text_field :language, list: "languages", value: params[:locale] %>
     <datalist id="languages">
       <% I18n.available_locales.each do |locale_language|%>
         <option value="<%= locale_language %>"/>
