@@ -36,11 +36,5 @@ o
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
-#ignore docker
-docker-compose.yml
-
-#ignore database setup
-/config/database.yml
-
 #ignore mac files
 **/.DS_Store
