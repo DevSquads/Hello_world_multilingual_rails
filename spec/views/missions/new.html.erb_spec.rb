@@ -10,6 +10,8 @@ RSpec.describe "missions/new", type: :view do
         :duration => 12,
         :category => "MyString",
     ))
+
+    assign(:missions, [])
   end
 
   it "renders new mission form" do

@@ -47,6 +47,7 @@ class MissionsController < ApplicationController
 
     @missions = filtered_missions
   end
+
   # GET /missions/1
   # GET /missions/1.json
   def show
@@ -55,6 +56,7 @@ class MissionsController < ApplicationController
   # GET /missions/new
   def new
     @mission = Mission.new
+    @missions = index
   end
 
   # GET /missions/1/edit
@@ -71,7 +73,7 @@ class MissionsController < ApplicationController
 
     respond_to do |format|
       if @mission.save
-        format.html {redirect_to @mission, notice: 'Mission was successfully created.' }
+        format.html {redirect_to '/', notice: 'Mission was successfully created.'}
         format.json {render :show, status: :created, location: @mission}
       else
         format.html {render :new}
@@ -116,6 +118,6 @@ class MissionsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def mission_params
-    params.require(:mission).permit( :title, :instructions, :duration, :category)
+    params.require(:mission).permit(:title, :instructions, :duration, :category)
   end
 end

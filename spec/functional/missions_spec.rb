@@ -27,7 +27,7 @@ feature 'Mission' do
     click_button 'Create Mission'
 
     expect(find('p#notice')).to have_text('Mission was successfully created.')
-    expect(current_path).to eql('/missions/1')
+    expect(current_path).to eql('/')
 
     new_mission = Mission.find(1)
     expect(new_mission.category).to eql('Healthy')
@@ -54,6 +54,8 @@ feature 'Mission' do
 
     expect(find('p#notice')).to have_text('Mission was successfully updated.')
     expect(current_path).to eql('/missions/1')
+  ensure
+    remove_locale_file 'en_test'
   end
 
   scenario 'should show all missions when go to missions' do
@@ -86,6 +88,9 @@ feature 'Mission' do
     end
 
     expect(find_all('tbody tr').length).to eql(0)
+
+  ensure
+    remove_locale_file 'en_test'
   end
 
   scenario 'Missions form should support creation of different language' do
@@ -95,7 +100,7 @@ feature 'Mission' do
     mission_category = 'Healthy'
     mission_language = 'ar_test'
 
-    visit "#{default_url}/missions/new"
+    visit "#{default_url}"
 
     fill_mission_form(mission_category,
                       mission_duration,
@@ -106,18 +111,15 @@ feature 'Mission' do
     click_button 'Create Mission'
 
     expect(find('p#notice').text).to eql('Mission was successfully created.')
-    expect(current_path).to eql('/missions/1')
+    expect(current_path).to eql('/')
 
-    # check the created mission in form redirection show
-    expect(find('body > p:nth-child(2)')).to have_text(mission_title)
-    expect(find('body > p:nth-child(3)')).to have_text(mission_instructions)
+    expect(find('.missions_table')).to be_truthy
+    expect(find_all('.missions_table_row').length).to eql(1)
 
-    # validate the created mission in show all
-    visit "#{default_url}/missions"
-
-    expect(find_all('tbody tr').length).to eql(1)
-    expect(find('tbody > tr:nth-child(1) > td:nth-child(1)')).to have_text(mission_title)
-    expect(find('tbody > tr:nth-child(1) > td:nth-child(2)')).to have_text(mission_instructions)
+    expect(find('.missions_table_row .mission_title')).to have_text(mission_title)
+    expect(find('.missions_table_row .mission_instructions')).to have_text(mission_instructions)
+  ensure
+    remove_locale_file 'ar_test'
   end
 
   scenario 'Homepage takes you to creating a new mission /missions/new' do

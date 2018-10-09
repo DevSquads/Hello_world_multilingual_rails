@@ -1,6 +1,34 @@
+<p id="notice"><%= notice %></p>
+
 <h1 id="homepage_title">Admin</h1>
 
 <h3 id="create_mission_title">Create New Mission</h3>
 <%= render 'form', mission: @mission %>
+
+<table class="missions_table">
+  <thead>
+  <tr>
+    <th>Title</th>
+    <th>Instructions</th>
+    <th>Duration</th>
+    <th>Category</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @missions.each do |mission| %>
+    <tr class="missions_table_row">
+      <td class="mission_title"><%= mission[:title] || mission.title %></td>
+      <td class="mission_instructions"><%= mission[:instructions] || mission.instructions %></td>
+      <td><%= mission[:duration] %></td>
+      <td><%= mission[:category] %></td>
+      <td><%= link_to 'Show', mission_path(mission[:id]) %></td>
+      <td><%= link_to 'Edit', edit_mission_path(mission[:id]) %></td>
+      <td><%= link_to 'Destroy', mission_path(mission[:id]), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
 
 <%= link_to 'Back', missions_path %>

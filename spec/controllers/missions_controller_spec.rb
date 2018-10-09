@@ -137,7 +137,7 @@ RSpec.describe MissionsController, type: :controller do
 
       it 'redirects to the created mission' do
         post :create, params: {mission: valid_attributes}, session: valid_session
-        expect(response).to redirect_to(Mission.last)
+        expect(response).to redirect_to('/')
       end
     end
 
